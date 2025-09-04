@@ -278,34 +278,177 @@ samples_mix = [
     ("ดอกไม้", "TH"),
     ("คอมพิวเตอร์", "TH"),
 ]
+samples_IT = [
+    ("Oggi il sole splende e il cielo è sereno.", "IT"),
+    ("Domani andrò al mercato per comprare frutta.", "IT"),
+    ("La biblioteca è chiusa durante il weekend.", "IT"),
+    ("Mi piace leggere libri nel tempo libero.", "IT"),
+    ("Il gatto dorme sul divano accanto alla finestra.", "IT"),
+    ("gatto", "IT"),
+    ("cane", "IT"),
+    ("libro", "IT"),
+    ("mare", "IT"),
+    ("fiore", "IT"),
+]
+samples_EN = [
+    ("The quick brown fox jumps over the lazy dog.", "EN"),
+    ("She loves reading books in the evening.", "EN"),
+    ("Tomorrow we will visit the museum in the city.", "EN"),
+    ("The children are playing football in the park.", "EN"),
+    ("He enjoys listening to classical music.", "EN"),
+    ("dog", "EN"),
+    ("book", "EN"),
+    ("sun", "EN"),
+    ("flower", "EN"),
+    ("computer", "EN"),
+]
+samples_FR = [
+    ("Demain, il fera beau et nous irons au marché.", "FR"),
+    ("Le chat dort sur le canapé près de la fenêtre.", "FR"),
+    ("J'aime lire des livres pendant mon temps libre.", "FR"),
+    ("La bibliothèque est fermée le week-end.", "FR"),
+    ("Elle écoute de la musique classique chaque soir.", "FR"),
+    ("chien", "FR"),
+    ("livre", "FR"),
+    ("soleil", "FR"),
+    ("fleur", "FR"),
+    ("ordinateur", "FR"),
+]
+samples_ES = [
+    ("La biblioteca está cerrada durante el fin de semana.", "ES"),
+    ("Mañana iremos al mercado a comprar frutas.", "ES"),
+    ("El gato duerme en el sofá cerca de la ventana.", "ES"),
+    ("Me gusta leer libros en mi tiempo libre.", "ES"),
+    ("Los niños juegan fútbol en el parque.", "ES"),
+    ("perro", "ES"),
+    ("libro", "ES"),
+    ("sol", "ES"),
+    ("flor", "ES"),
+    ("computadora", "ES"),
+]
+samples_DE = [
+    ("Der Winter ist kalt, aber auch sehr schön.", "DE"),
+    ("Die Kinder spielen im Park jeden Nachmittag.", "DE"),
+    ("Ich liebe es, Bücher in meiner Freizeit zu lesen.", "DE"),
+    ("Der Zug fährt um acht Uhr morgens ab.", "DE"),
+    ("Die Katze schläft auf dem Sofa neben dem Fenster.", "DE"),
+    ("Hund", "DE"),
+    ("Buch", "DE"),
+    ("Sonne", "DE"),
+    ("Blume", "DE"),
+    ("Computer", "DE"),
+]
+samples_PT = [
+    ("O café da manhã foi delicioso hoje.", "PT"),
+    ("A biblioteca está fechada durante o fim de semana.", "PT"),
+    ("O gato dorme no sofá perto da janela.", "PT"),
+    ("Eu gosto de ler livros no meu tempo livre.", "PT"),
+    ("As crianças brincam no parque todas as tardes.", "PT"),
+    ("gato", "PT"),
+    ("cão", "PT"),
+    ("livro", "PT"),
+    ("sol", "PT"),
+    ("flor", "PT"),
+]
+samples_NL = [
+    ("De kinderen spelen buiten in de tuin.", "NL"),
+    ("De kat slaapt op de bank naast het raam.", "NL"),
+    ("Ik lees graag boeken in mijn vrije tijd.", "NL"),
+    ("De bibliotheek is in het weekend gesloten.", "NL"),
+    ("Morgen ga ik naar de markt om fruit te kopen.", "NL"),
+    ("kat", "NL"),
+    ("hond", "NL"),
+    ("boek", "NL"),
+    ("zon", "NL"),
+    ("bloem", "NL"),
+]
+samples_RU = [
+    ("Сегодня вечером будет очень холодно.", "RU"),
+    ("Кошка спит на диване рядом с окном.", "RU"),
+    ("Я люблю читать книги в свободное время.", "RU"),
+    ("Библиотека закрыта на выходных.", "RU"),
+    ("Дети играют в парке каждый день.", "RU"),
+    ("кот", "RU"),
+    ("собака", "RU"),
+    ("книга", "RU"),
+    ("солнце", "RU"),
+    ("цветок", "RU"),
+]
+samples_ZH = [
+    ("今天的天气非常好。", "ZH"),
+    ("猫在窗边的沙发上睡觉。", "ZH"),
+    ("我喜欢在空闲时间阅读书籍。", "ZH"),
+    ("图书馆在周末关闭。", "ZH"),
+    ("孩子们每天在公园玩耍。", "ZH"),
+    ("猫", "ZH"),
+    ("狗", "ZH"),
+    ("书", "ZH"),
+    ("太阳", "ZH"),
+    ("花", "ZH"),
+]
+samples_JA = [
+    ("今日は学校に行きます。", "JA"),
+    ("猫は窓のそばのソファで寝ています。", "JA"),
+    ("私は自由時間に本を読むのが好きです。", "JA"),
+    ("図書館は週末閉館です。", "JA"),
+    ("子供たちは毎日公園で遊んでいます。", "JA"),
+    ("猫", "JA"),
+    ("犬", "JA"),
+    ("本", "JA"),
+    ("太陽", "JA"),
+    ("花", "JA"),
+]
+samples_AR = [
+    ("السماء صافية اليوم والشمس مشرقة.", "AR"),
+    ("القط ينام على الأريكة بجانب النافذة.", "AR"),
+    ("أحب قراءة الكتب في وقت فراغي.", "AR"),
+    ("المكتبة مغلقة في عطلة نهاية الأسبوع.", "AR"),
+    ("الأطفال يلعبون في الحديقة كل يوم.", "AR"),
+    ("قط", "AR"),
+    ("كلب", "AR"),
+    ("كتاب", "AR"),
+    ("شمس", "AR"),
+    ("زهرة", "AR"),
+]
 
-def lang_detection_accuracy(samples):
-    working_on_words = 1    # 1 = False
-                            # 0 = True
+
+def lang_detection_accuracy(samples, lang):
+    start_time = time.time()
+
     n_correct_words = 0
     n_correct_phrase = 0
     n_correct_global = 0
     for i, sample in enumerate(samples):
-        if i != 0 and (i + 1) % 5 == 0:
-            working_on_words = (working_on_words + 1) % 2   # It allows to cicle true and false every 5 iteration
         query = Query(sample[0])
         if query.lang == sample[1]:
             n_correct_global += 1
-            if working_on_words == 0:
+            if len(sample[0].split()) == 1:
                 n_correct_words += 1
             else:
                 n_correct_phrase += 1
-    return (n_correct_global / len(samples)), (n_correct_words / (len(samples) / 2)), (n_correct_phrase / (len(samples) / 2)) 
+    
+    elapsed_time = time.time() - start_time
 
-if __name__ == "__main__":
-    print("Language detection accuracy:")
-    start_time = time.time()
-    global_accuracy, words_accuracy, phrases_accuracy = lang_detection_accuracy()
-    print("Computed language detection accuracy:")
+    # Compute accuracies
+    global_accuracy = n_correct_global / len(samples)
+    words_accuracy = n_correct_words / (len(samples) / 2)
+    phrases_accuracy = n_correct_phrase / (len(samples) / 2) 
+    print(f"Computed language detection accuracy on {lang}:")
     print(f"    - Words accuracy: {words_accuracy}")
     print(f"    - Phrases accuracy: {phrases_accuracy}")
     print(f"    - Global accuracy: {global_accuracy}")
-    elapsed_time = time.time() - start_time
-    time_for_phrase = elapsed_time / len(samples_mix)
+    time_for_input = elapsed_time / len(samples_mix)
     print(f"Execution time: {elapsed_time} s")
-    print(f"Average detection time for single input: {time_for_phrase} s")
+    print(f"Average detection time for single input: {time_for_input * 100000} μs")
+
+if __name__ == "__main__":
+    print("Language detection accuracy:")
+    print("")
+    lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE")
+    lang_detection_accuracy(samples_EN, "ENGLISH")
+    lang_detection_accuracy(samples_IT, "ITALIAN")
+    lang_detection_accuracy(samples_ES, "SPANISH")
+    lang_detection_accuracy(samples_DE, "DEUTUSCH")
+    lang_detection_accuracy(samples_AR, "ARABIC")
+    lang_detection_accuracy(samples_RU, "RUSSIAN")
+    
