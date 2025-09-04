@@ -556,6 +556,7 @@ def lang_detection_accuracy(samples, lang):
     time_for_input = elapsed_time / len(samples_mix)
     print(f"Execution time: {elapsed_time} s")
     print(f"Average detection time for single input: {time_for_input * 100000} μs")
+    return global_accuracy, words_accuracy, phrases_accuracy, elapsed_time, time_for_input
 
 if __name__ == "__main__":
     print("Language detection accuracy:")
