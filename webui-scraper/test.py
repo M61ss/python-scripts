@@ -411,28 +411,144 @@ samples_AR = [
     ("زهرة", "AR"),
 ]
 
+sample_words_IT = [
+    ("gatto", "IT"),
+    ("cane", "IT"),
+    ("mare", "IT"),
+    ("montagna", "IT"),
+    ("città", "IT"),
+    ("libro", "IT"),
+    ("scuola", "IT"),
+    ("strada", "IT"),
+    ("sole", "IT"),
+    ("luna", "IT"),
+    ("albero", "IT"),
+    ("fiore", "IT"),
+    ("vino", "IT"),
+    ("pane", "IT"),
+    ("caffè", "IT"),
+    ("tempo", "IT"),
+    ("musica", "IT"),
+    ("stella", "IT"),
+    ("amore", "IT"),
+    ("notte", "IT"),
+]
+sample_words_EN = [
+    ("dog", "EN"),
+    ("cat", "EN"),
+    ("tree", "EN"),
+    ("flower", "EN"),
+    ("river", "EN"),
+    ("mountain", "EN"),
+    ("book", "EN"),
+    ("school", "EN"),
+    ("city", "EN"),
+    ("village", "EN"),
+    ("music", "EN"),
+    ("star", "EN"),
+    ("love", "EN"),
+    ("night", "EN"),
+    ("day", "EN"),
+    ("house", "EN"),
+    ("car", "EN"),
+    ("computer", "EN"),
+    ("window", "EN"),
+    ("sun", "EN"),
+]
+sample_words_FR = [
+    ("chien", "FR"),
+    ("chat", "FR"),
+    ("arbre", "FR"),
+    ("fleur", "FR"),
+    ("rivière", "FR"),
+    ("montagne", "FR"),
+    ("livre", "FR"),
+    ("école", "FR"),
+    ("ville", "FR"),
+    ("village", "FR"),
+    ("musique", "FR"),
+    ("étoile", "FR"),
+    ("amour", "FR"),
+    ("nuit", "FR"),
+    ("jour", "FR"),
+    ("maison", "FR"),
+    ("voiture", "FR"),
+    ("ordinateur", "FR"),
+    ("fenêtre", "FR"),
+    ("soleil", "FR"),
+]
+sample_words_ES = [
+    ("perro", "ES"),
+    ("gato", "ES"),
+    ("árbol", "ES"),
+    ("flor", "ES"),
+    ("río", "ES"),
+    ("montaña", "ES"),
+    ("libro", "ES"),
+    ("escuela", "ES"),
+    ("ciudad", "ES"),
+    ("pueblo", "ES"),
+    ("música", "ES"),
+    ("estrella", "ES"),
+    ("amor", "ES"),
+    ("noche", "ES"),
+    ("día", "ES"),
+    ("casa", "ES"),
+    ("coche", "ES"),
+    ("computadora", "ES"),
+    ("ventana", "ES"),
+    ("sol", "ES"),
+]
+sample_words_DE = [
+    ("Hund", "DE"),
+    ("Katze", "DE"),
+    ("Baum", "DE"),
+    ("Blume", "DE"),
+    ("Fluss", "DE"),
+    ("Berg", "DE"),
+    ("Buch", "DE"),
+    ("Schule", "DE"),
+    ("Stadt", "DE"),
+    ("Dorf", "DE"),
+    ("Musik", "DE"),
+    ("Stern", "DE"),
+    ("Liebe", "DE"),
+    ("Nacht", "DE"),
+    ("Tag", "DE"),
+    ("Haus", "DE"),
+    ("Auto", "DE"),
+    ("Computer", "DE"),
+    ("Fenster", "DE"),
+    ("Sonne", "DE"),
+]
 
 def lang_detection_accuracy(samples, lang):
     start_time = time.time()
 
+    n_words = 0
+    n_phrases = 0
     n_correct_words = 0
-    n_correct_phrase = 0
+    n_correct_phrases = 0
     n_correct_global = 0
     for i, sample in enumerate(samples):
         query = Query(sample[0])
+        if len(sample[0].split()) == 1:
+            n_words += 1
+        else:
+            n_phrases += 1
         if query.lang == sample[1]:
             n_correct_global += 1
             if len(sample[0].split()) == 1:
                 n_correct_words += 1
             else:
-                n_correct_phrase += 1
+                n_correct_phrases += 1
     
     elapsed_time = time.time() - start_time
 
     # Compute accuracies
-    global_accuracy = n_correct_global / len(samples)
-    words_accuracy = n_correct_words / (len(samples) / 2)
-    phrases_accuracy = n_correct_phrase / (len(samples) / 2) 
+    global_accuracy = n_correct_global / (n_words + n_phrases)
+    words_accuracy = (n_correct_words / n_words) if n_words != 0 else None
+    phrases_accuracy = (n_correct_phrases / n_phrases) if n_phrases != 0 else None
     print(f"Computed language detection accuracy on {lang}:")
     print(f"    - Words accuracy: {words_accuracy}")
     print(f"    - Phrases accuracy: {phrases_accuracy}")
@@ -451,4 +567,9 @@ if __name__ == "__main__":
     lang_detection_accuracy(samples_DE, "DEUTUSCH")
     lang_detection_accuracy(samples_AR, "ARABIC")
     lang_detection_accuracy(samples_RU, "RUSSIAN")
+    lang_detection_accuracy(sample_words_DE, "DEUTUSCH WORDS")
+    lang_detection_accuracy(sample_words_EN, "ENGLISH WORDS")
+    lang_detection_accuracy(sample_words_IT, "ITALIAN WORDS")
+    lang_detection_accuracy(sample_words_FR, "FRENCH WORDS")
+    lang_detection_accuracy(sample_words_ES, "SPANISH WORDS")
     
