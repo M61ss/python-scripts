@@ -1,10 +1,9 @@
-from bs4 import BeautifulSoup
-from selenium import webdriver
+import wikipedia
 from query import Query
 
 class Scraper:
     def __init__(self):
-        self.driver = webdriver.Firefox()
+        pass
 
     def scrape(self, query : Query):
         self.driver.get(f"https://www.google.com/ / search?q = {query.content}")
