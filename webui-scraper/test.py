@@ -1,4 +1,3 @@
-from main import App
 from query import Query
 import time
 
