@@ -280,18 +280,32 @@ samples = [
 ]
 
 def lang_detection_accuracy():
-    n_correct = 0
+    working_on_words = 1    # 1 = False
+                            # 0 = True
+    n_correct_words = 0
+    n_correct_phrase = 0
+    n_correct_global = 0
     for i, sample in enumerate(samples):
+        if i != 0 and (i + 1) % 5 == 0:
+            working_on_words = (working_on_words + 1) % 2   # It allows to cicle true and false every 5 iteration
         query = Query(sample[0])
         if query.lang == sample[1]:
-            n_correct += 1
-    return n_correct / len(samples)
+            n_correct_global += 1
+            if working_on_words == 0:
+                n_correct_words += 1
+            else:
+                n_correct_phrase += 1
+    return (n_correct_global / len(samples)), (n_correct_words / (len(samples) / 2)), (n_correct_phrase / (len(samples) / 2)) 
 
 if __name__ == "__main__":
     print("Language detection accuracy:")
     start_time = time.time()
-    print(f"Computed global language detection accuracy: {lang_detection_accuracy()}")
+    global_accuracy, words_accuracy, phrases_accuracy = lang_detection_accuracy()
+    print("Computed language detection accuracy:")
+    print(f"    - Words accuracy: {words_accuracy}")
+    print(f"    - Phrases accuracy: {phrases_accuracy}")
+    print(f"    - Global accuracy: {global_accuracy}")
     elapsed_time = time.time() - start_time
     time_for_phrase = elapsed_time / len(samples)
     print(f"Execution time: {elapsed_time} s")
-    print(f"Average detection time for single phrase: {time_for_phrase} s")
+    print(f"Average detection time for single input: {time_for_phrase} s")
