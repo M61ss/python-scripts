@@ -7,6 +7,6 @@ class Query:
 
     def __detect_language(self):
         detector = LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build()
-        language = detector.detect_language_of(self.content)
+        language : Language = detector.detect_language_of(self.content)
         return language.iso_code_639_1.name
     
