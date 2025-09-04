@@ -1,5 +1,7 @@
 from query import Query
 import time
+import sys
+from scraper import Scraper
 
 samples_mix = [
     # Italiano
@@ -522,6 +524,31 @@ sample_words_DE = [
     ("Sonne", "DE"),
 ]
 
+sample_words_wikisearch_IT = [
+    Query("gatto"),
+    Query("cane"),
+    Query("scienza"),
+    Query("università"),
+    Query("Italia"),
+    Query("politica"),
+    Query("arte"),
+    Query("musica"),
+    Query("letteratura"),
+    Query("storia"),
+]
+sample_words_wikisearch_EN = [
+    Query("cat"),
+    Query("dog"),
+    Query("science"),
+    Query("university"),
+    Query("Italy"),
+    Query("politics"),
+    Query("art"),
+    Query("music"),
+    Query("literature"),
+    Query("history"),
+]
+
 def lang_detection_accuracy(samples, lang):
     start_time = time.time()
 
@@ -559,18 +586,27 @@ def lang_detection_accuracy(samples, lang):
     return global_accuracy, words_accuracy, phrases_accuracy, elapsed_time, time_for_input
 
 if __name__ == "__main__":
-    print("Language detection accuracy:")
-    print("")
-    lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE")
-    lang_detection_accuracy(samples_EN, "ENGLISH")
-    lang_detection_accuracy(samples_IT, "ITALIAN")
-    lang_detection_accuracy(samples_ES, "SPANISH")
-    lang_detection_accuracy(samples_DE, "DEUTUSCH")
-    lang_detection_accuracy(samples_AR, "ARABIC")
-    lang_detection_accuracy(samples_RU, "RUSSIAN")
-    lang_detection_accuracy(sample_words_DE, "DEUTUSCH WORDS")
-    lang_detection_accuracy(sample_words_EN, "ENGLISH WORDS")
-    lang_detection_accuracy(sample_words_IT, "ITALIAN WORDS")
-    lang_detection_accuracy(sample_words_FR, "FRENCH WORDS")
-    lang_detection_accuracy(sample_words_ES, "SPANISH WORDS")
-    
+    if "--lang-detect" in sys.argv:
+        print("TEST MODULE: Language detection accuracy:")
+        print("")
+        lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE")
+        lang_detection_accuracy(samples_EN, "ENGLISH")
+        lang_detection_accuracy(samples_IT, "ITALIAN")
+        lang_detection_accuracy(samples_ES, "SPANISH")
+        lang_detection_accuracy(samples_DE, "DEUTUSCH")
+        lang_detection_accuracy(samples_AR, "ARABIC")
+        lang_detection_accuracy(samples_RU, "RUSSIAN")
+        lang_detection_accuracy(sample_words_DE, "DEUTUSCH WORDS")
+        lang_detection_accuracy(sample_words_EN, "ENGLISH WORDS")
+        lang_detection_accuracy(sample_words_IT, "ITALIAN WORDS")
+        lang_detection_accuracy(sample_words_FR, "FRENCH WORDS")
+        lang_detection_accuracy(sample_words_ES, "SPANISH WORDS")
+    if "--wiki-search" in sys.argv:
+        print("TEST MODULE: Ability to search on wikipedia")
+        print("")
+        scraper = Scraper()
+        for query in sample_words_wikisearch_IT:
+            scraper.scrape(query)
+        for query in sample_words_wikisearch_EN:
+            scraper.scrape(query)
+        

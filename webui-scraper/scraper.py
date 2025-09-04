@@ -6,4 +6,7 @@ class Scraper:
         pass
 
     def scrape(self, query : Query):
-        self.driver.get(f"https://www.google.com/ / search?q = {query.content}")
+        print(f"Start research on Wikipedia about: {query.content}")
+        results = wikipedia.search(query.content)
+        for i, result in enumerate(results[:3]):
+            print(f"- {i}: {result}")
