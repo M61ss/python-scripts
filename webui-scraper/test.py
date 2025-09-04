@@ -1,7 +1,7 @@
 from query import Query
 import time
 
-samples = [
+samples_mix = [
     # Italiano
     ("Oggi il sole splende e il cielo è sereno.", "IT"),
     ("Domani andrò al mercato per comprare frutta.", "IT"),
@@ -279,7 +279,7 @@ samples = [
     ("คอมพิวเตอร์", "TH"),
 ]
 
-def lang_detection_accuracy():
+def lang_detection_accuracy(samples):
     working_on_words = 1    # 1 = False
                             # 0 = True
     n_correct_words = 0
@@ -306,6 +306,6 @@ if __name__ == "__main__":
     print(f"    - Phrases accuracy: {phrases_accuracy}")
     print(f"    - Global accuracy: {global_accuracy}")
     elapsed_time = time.time() - start_time
-    time_for_phrase = elapsed_time / len(samples)
+    time_for_phrase = elapsed_time / len(samples_mix)
     print(f"Execution time: {elapsed_time} s")
     print(f"Average detection time for single input: {time_for_phrase} s")
