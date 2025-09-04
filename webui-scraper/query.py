@@ -1,4 +1,5 @@
 from lingua import Language, LanguageDetectorBuilder
+from keybert import KeyBERT
 
 class Query:
     def __init__(self, content):
