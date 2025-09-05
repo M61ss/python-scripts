@@ -1,7 +1,7 @@
 from scraper import Scraper
+from nlp import NLP
 from query import Query
 import sys
-from nlp import NLP
 
 class App:
     def __init__(self):
@@ -24,6 +24,7 @@ class App:
                 print(f"Query number {i}:")
                 print(f"    - Content: {query.content}")
                 print(f"    - Language: {query.lang}")
+                print(f"    - Keywords: {query.keywords}")
             print("")
             print(f"Total number of submitted queries: {len(self.queries)}")
 
@@ -33,17 +34,17 @@ if __name__ == "__main__":
     nlp = NLP(app.debug)
 
     queries = [
-        Query("Oggi il sole splende e il cielo è sereno.", nlp),             # Italiano, IT
-        Query("The quick brown fox jumps over the lazy dog.", nlp),          # Inglese, EN
-        Query("Demain, il fera beau et nous irons au marché.", nlp),         # Francese, FR
-        Query("La biblioteca está cerrada durante el fin de semana.", nlp),  # Spagnolo, ES
-        Query("Der Winter ist kalt, aber auch sehr schön.", nlp),            # Tedesco, DE
-        Query("O café da manhã foi delicioso hoje.", nlp),                   # Portoghese, PT
-        Query("De kinderen spelen buiten in de tuin.", nlp),                 # Olandese, NL
-        Query("Сегодня вечером будет очень холодно.", nlp),                  # Russo, RU
-        Query("今天的天气非常好。", nlp),                                      # Cinese, ZH
-        Query("今日は学校に行きます。", nlp),                                   # Giapponese, JA
-        Query("السماء صافية اليوم والشمس مشرقة.", nlp)                     # Arabo, AR
+        nlp.compose_query("Oggi il sole splende e il cielo è sereno."),             # Italiano, IT
+        nlp.compose_query("The quick brown fox jumps over the lazy dog."),          # Inglese, EN
+        nlp.compose_query("Demain, il fera beau et nous irons au marché."),         # Francese, FR
+        nlp.compose_query("La biblioteca está cerrada durante el fin de semana."),  # Spagnolo, ES
+        nlp.compose_query("Der Winter ist kalt, aber auch sehr schön."),            # Tedesco, DE
+        nlp.compose_query("O café da manhã foi delicioso hoje."),                   # Portoghese, PT
+        nlp.compose_query("De kinderen spelen buiten in de tuin."),                 # Olandese, NL
+        nlp.compose_query("Сегодня вечером будет очень холодно."),                  # Russo, RU
+        nlp.compose_query("今天的天气非常好。"),                                      # Cinese, ZH
+        nlp.compose_query("今日は学校に行きます。"),                                   # Giapponese, JA
+        nlp.compose_query("السماء صافية اليوم والشمس مشرقة."),                    # Arabo, AR
     ]
     
     app.submit_queries(queries)
