@@ -5,7 +5,18 @@ class Scraper:
     def __init__(self, debug : bool = False):
         self.debug : bool = debug
 
+    def set_language(self, query : Query):
+        query_lang : str = query.lang.lower()
+        if query_lang in wikipedia.languages():
+            wikipedia.set_lang(query_lang)
+            if self.debug:
+                print(f"Wikipedia API language set on: {query_lang}")
+        else:
+            if self.debug:
+                print(f"Language {query_lang} is not supported by Wikipedia. Wikipedia API language not set.")
+
     def search(self, query : Query):
+        self.set_language(query)
         keywords = query.keywords[:2]
         results = []
         if self.debug:

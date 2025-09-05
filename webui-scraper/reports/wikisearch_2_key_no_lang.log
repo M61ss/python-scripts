@@ -1,0 +1,503 @@
+NLP configured in: 3.7245540618896484 s
+
+TEST MODULE: Ability to search on Wikipedia
+
+Testing WORDS:
+
+Search results for query 'gatto':
+Keywords: [('gatto', 1.0)]
+- 1.1: Gatto
+- 1.2: Joe Gatto
+- 1.3: Genetic algorithm
+Search results for query 'cane':
+Keywords: [('cane', 1.0)]
+- 1.1: Cane
+- 1.2: Caning
+- 1.3: Sugarcane
+Search results for query 'scienza':
+Keywords: [('scienza', 1.0)]
+- 1.1: Léo Scienza
+- 1.2: The New Science
+- 1.3: Museo Galileo
+Search results for query 'università':
+Keywords: [('università', 1.0)]
+- 1.1: Universitas
+- 1.2: University of Bologna
+- 1.3: Sapienza University of Rome
+Search results for query 'Italia':
+Keywords: [('italia', 1.0)]
+- 1.1: Italy
+- 1.2: Roman Italy
+- 1.3: Italia (disambiguation)
+Search results for query 'politica':
+Keywords: [('politica', 1.0)]
+- 1.1: Politics (Aristotle)
+- 1.2: Șor Party
+- 1.3: Malolos Constitution
+Search results for query 'arte':
+Keywords: [('arte', 1.0)]
+- 1.1: Arte
+- 1.2: ARTE
+- 1.3: Commedia dell'arte
+Search results for query 'musica':
+Keywords: [('musica', 1.0)]
+- 1.1: Musica
+- 1.2: Musica reservata
+- 1.3: Musica ficta
+Search results for query 'letteratura':
+Keywords: [('letteratura', 1.0)]
+- 1.1: Storia della letteratura italiana
+- 1.2: Sequential art
+- 1.3: Francesco de Sanctis
+Search results for query 'storia':
+Keywords: [('storia', 1.0)]
+- 1.1: Storia
+- 1.2: Daihatsu Storia
+- 1.3: Traffic Jam (film)
+Search results for query 'cat':
+Keywords: [('cat', 1.0)]
+- 1.1: Cat
+- 1.2: Cat (disambiguation)
+- 1.3: The Cat
+Search results for query 'dog':
+Keywords: [('dog', 1.0)]
+- 1.1: Dog
+- 1.2: Dog (disambiguation)
+- 1.3: Dog Eat Dog
+Search results for query 'science':
+Keywords: [('science', 1.0)]
+- 1.1: Science
+- 1.2: Science (disambiguation)
+- 1.3: Christian Science
+Search results for query 'university':
+Keywords: [('university', 1.0)]
+- 1.1: University
+- 1.2: Anna University
+- 1.3: Howard University
+Search results for query 'Italy':
+Keywords: [('italy', 1.0)]
+- 1.1: Italy
+- 1.2: Italians
+- 1.3: Italian
+Search results for query 'politics':
+Keywords: [('politics', 1.0)]
+- 1.1: Politics
+- 1.2: Politics (disambiguation)
+- 1.3: American politics (political science)
+Search results for query 'art':
+Keywords: [('art', 1.0)]
+- 1.1: Art
+- 1.2: ART
+- 1.3: .art
+Search results for query 'music':
+Keywords: [('music', 1.0)]
+- 1.1: Music
+- 1.2: Music (disambiguation)
+- 1.3: .music
+Search results for query 'literature':
+Keywords: [('literature', 1.0)]
+- 1.1: Literature
+- 1.2: 13th century in literature
+- 1.3: 15th century in literature
+Search results for query 'history':
+Keywords: [('history', 1.0)]
+- 1.1: History
+- 1.2: HIStory: Past, Present and Future, Book I
+- 1.3: History of bitcoin
+
+Testing PERIODS:
+
+Search results for query 'Oggi il sole splende e molti turisti passeggiano nel centro storico, fermandosi spesso nei caffè e nei negozi di souvenir.':
+Keywords: [('fermandosi', 0.4283), ('spesso', 0.4055)]
+No results from Wikipedia for keyword '('fermandosi', 0.4283)'
+- 2.1: Black comedy
+- 2.2: Ricotta
+- 2.3: List of chocolate bar brands
+Search results for query 'La biblioteca comunale è stata rinnovata di recente. Ora offre spazi digitali, sale studio moderne e una collezione di manoscritti antichi che attirano ricercatori da tutta Europa.':
+Keywords: [('biblioteca', 0.6175), ('digitali', 0.5388)]
+- 1.1: Biblioteca Ayacucho
+- 1.2: Biblioteca Estense
+- 1.3: Biblioteca di Brera
+- 2.1: Digitalis
+- 2.2: Digitalis purpurea
+- 2.3: P. digitalis
+Search results for query 'Il calcio è lo sport più seguito in Italia. Le squadre locali hanno un forte legame con i tifosi, che partecipano con entusiasmo a ogni partita.':
+Keywords: [('italia', 0.4723), ('calcio', 0.4623)]
+- 1.1: Italy
+- 1.2: Roman Italy
+- 1.3: Italia (disambiguation)
+- 2.1: Calcio
+- 2.2: Calcio storico fiorentino
+- 2.3: AC Milan
+Search results for query 'Ho comprato un nuovo libro di storia dell’arte. È molto interessante e ben illustrato, con spiegazioni che rendono comprensibili anche i concetti più complessi.':
+Keywords: [('complessi', 0.466), ('comprato', 0.4443)]
+- 1.1: I complessi
+- 1.2: Mont Blanc
+- 1.3: Edy Campagnoli
+- 2.1: Maria Scicolone
+- 2.2: Sophia Loren
+- 2.3: Jacuzzi
+Search results for query 'Il treno ad alta velocità collega Milano e Roma in poche ore, trasformando radicalmente il modo di viaggiare tra le due città.':
+Keywords: [('roma', 0.4616), ('milano', 0.4591)]
+- 1.1: AS Roma
+- 1.2: Roma
+- 1.3: Romani people
+- 2.1: Milan
+- 2.2: Inter Milan
+- 2.3: Alyssa Milano
+Search results for query 'La cucina italiana è famosa per la pasta, la pizza e il vino. Ogni regione ha specialità diverse e tradizioni culinarie tramandate da generazioni.':
+Keywords: [('italiana', 0.559), ('generazioni', 0.4877)]
+- 1.1: Italiano (disambiguation)
+- 1.2: Corpo della Nobiltà Italiana
+- 1.3: Italy
+- 2.1: Italian cuisine
+- 2.2: Flag of Italy
+- 2.3: Sardinian language
+Search results for query 'Molti studenti si preparano agli esami universitari nelle biblioteche cittadine, spesso lavorando in gruppo fino a tarda sera.':
+Keywords: [('studenti', 0.5067), ('universitari', 0.4871)]
+- 1.1: Studenti Volley
+- 1.2: 2024–present Serbian anti-corruption protests
+- 1.3: Unione degli Studenti
+- 2.1: VSS-UNES-USU
+- 2.2: University training credit
+- 2.3: Hospital Universitari General de Catalunya
+Search results for query 'Il mare Mediterraneo ospita una grande varietà di pesci e specie marine, ma è anche minacciato dall’inquinamento e dalla pesca intensiva.':
+Keywords: [('mare', 0.4768), ('mediterraneo', 0.4762)]
+- 1.1: Mare
+- 1.2: Mare of Easttown
+- 1.3: Lunar mare
+- 2.1: Mediterraneo
+- 2.2: Mediterraneo (disambiguation)
+- 2.3: Mediterráneo
+Search results for query 'La tecnologia sta cambiando il modo in cui lavoriamo e comunichiamo, creando nuove opportunità ma anche nuove sfide per la società.':
+Keywords: [('cambiando', 0.4537), ('comunichiamo', 0.4495)]
+- 1.1: Magneto (band)
+- 1.2: Algo está cambiando
+- 1.3: Nicki Nicole
+No results from Wikipedia for keyword '('comunichiamo', 0.4495)'
+Search results for query 'Le Dolomiti sono considerate tra le montagne più belle del mondo, meta preferita di escursionisti, fotografi e amanti della natura.':
+Keywords: [('dolomiti', 0.4723), ('fotografi', 0.4652)]
+- 1.1: Dolomites
+- 1.2: Air Dolomiti
+- 1.3: Dolomiti Bellunesi (football club)
+- 2.1: Consolidated PBY Catalina
+- 2.2: Daguerreotype
+- 2.3: List of equipment of the Kosovo Security Force
+Search results for query 'The quick brown fox jumps over the lazy dog.':
+Keywords: [('fox', 0.481), ('jumps', 0.371)]
+- 1.1: Fox
+- 1.2: Fox Broadcasting Company
+- 1.3: Fox News
+- 2.1: Jumping
+- 2.2: BASE jumping
+- 2.3: The quick brown fox jumps over the lazy dog
+Search results for query 'Technology is evolving rapidly. Artificial intelligence and machine learning are now part of daily life, shaping industries and redefining how people interact with information.':
+Keywords: [('technology', 0.5084), ('evolving', 0.4241)]
+- 1.1: Technology
+- 1.2: Information technology
+- 1.3: ON Technology
+- 2.1: Evolution
+- 2.2: Evolve
+- 2.3: WWE Evolve
+Search results for query 'I love reading books in the evening. They help me relax after work and often inspire new ideas for my own writing projects.':
+Keywords: [('reading', 0.4813), ('evening', 0.4611)]
+- 1.1: Reading
+- 1.2: Reading, Berkshire
+- 1.3: Mind reading
+- 2.1: Evening
+- 2.2: Evening Star
+- 2.3: Evening Express
+Search results for query 'The city has built new parks and playgrounds for children, creating safer spaces and greener areas for the community.':
+Keywords: [('playgrounds', 0.569), ('parks', 0.4583)]
+- 1.1: Playground
+- 1.2: Playground (disambiguation)
+- 1.3: Swift Playgrounds
+- 2.1: Park
+- 2.2: Rosa Parks
+- 2.3: Alycia Parks
+Search results for query 'Traveling by train is fast and convenient in many European countries, and it is also more environmentally friendly than flying.':
+Keywords: [('traveling', 0.5037), ('train', 0.3718)]
+- 1.1: Travel
+- 1.2: Traveling Wilburys
+- 1.3: Travelling salesman
+- 2.1: Train
+- 2.2: Train (disambiguation)
+- 2.3: A Train
+Search results for query 'Music has the power to inspire and connect people. It is a universal language that transcends borders, cultures, and generations.':
+Keywords: [('music', 0.5569), ('cultures', 0.3445)]
+- 1.1: Music
+- 1.2: Music (disambiguation)
+- 1.3: .music
+- 2.1: Culture
+- 2.2: The Culture
+- 2.3: The Two Cultures
+Search results for query 'The library downtown is a peaceful place where many students gather, especially during exam season when every desk is full.':
+Keywords: [('library', 0.4169), ('downtown', 0.4036)]
+- 1.1: Library
+- 1.2: Z-Library
+- 1.3: The Library
+- 2.1: Downtown
+- 2.2: Downtown music
+- 2.3: Downtown Orlando
+Search results for query 'Climate change is one of the biggest challenges humanity faces today, demanding urgent solutions and cooperation between nations.':
+Keywords: [('climate', 0.5171), ('humanity', 0.4207)]
+- 1.1: Climate
+- 1.2: Köppen climate classification
+- 1.3: Climate change
+- 2.1: Humanity
+- 2.2: Humanity+
+- 2.3: Crimes against humanity
+Search results for query 'Modern art often surprises viewers with unusual shapes and colors, provoking debates about what art really means in contemporary society.':
+Keywords: [('art', 0.4495), ('modern', 0.3948)]
+- 1.1: Art
+- 1.2: ART
+- 1.3: .art
+- 2.1: Modern
+- 2.2: Modern Family
+- 2.3: Modern architecture
+Search results for query 'The new museum exhibition explores ancient civilizations and their cultures, presenting artifacts that reveal the complexity of early human societies.':
+Keywords: [('museum', 0.6105), ('civilizations', 0.5269)]
+- 1.1: Museum
+- 1.2: Society of Christian Doctrine
+- 1.3: .museum
+- 2.1: Civilization
+- 2.2: Galactic Civilizations
+- 2.3: Clash of Civilizations
+Search results for query 'Heute scheint die Sonne und viele Menschen spazieren durch die Altstadt.':
+Keywords: [('altstadt', 0.542), ('menschen', 0.5087)]
+- 1.1: Altstadt
+- 1.2: Altstadt (disambiguation)
+- 1.3: New Altstadt Church
+- 2.1: Ode to Joy
+- 2.2: Karlheinz Böhm
+- 2.3: Institute for Human Sciences
+Search results for query 'Die Stadtbibliothek wurde kürzlich renoviert. Sie bietet jetzt digitale Bereiche und moderne Lesesäle, die besonders bei Studenten beliebt sind.':
+Keywords: [('digitale', 0.4762), ('stadtbibliothek', 0.4398)]
+- 1.1: Digital Library for Dutch Literature
+- 1.2: Deutsche Digitale Bibliothek
+- 1.3: Rohde & Schwarz
+- 2.1: Stadtbibliothek Stuttgart
+- 2.2: Stadtbibliothek Schaffhausen
+- 2.3: Strudel
+Search results for query 'Fußball ist der beliebteste Sport in Deutschland. Die Fans sind sehr engagiert und folgen ihren Mannschaften durch das ganze Land.':
+Keywords: [('fußball', 0.7509), ('mannschaften', 0.4582)]
+- 1.1: Fussball
+- 1.2: Bayer 04 Leverkusen
+- 1.3: Bundesliga
+- 2.1: Ranks and insignia of the German Army (1935–1945)
+- 2.2: UEFA Euro 1980 squads
+- 2.3: 1982 FIFA World Cup squads
+Search results for query 'Ich habe ein neues Buch über Philosophie gekauft. Es ist spannend und gut geschrieben, mit Argumenten, die zum Nachdenken anregen.':
+Keywords: [('philosophie', 0.5433), ('geschrieben', 0.4365)]
+- 1.1: Philosophie zoologique
+- 1.2: Philipp Mainländer
+- 1.3: Peeters Publishers
+- 2.1: Written in the Stars (film)
+- 2.2: Pluperfect
+- 2.3: Johann Sebastian Bach
+Search results for query 'Der Hochgeschwindigkeitszug verbindet Berlin und München in wenigen Stunden, was Geschäftsreisen deutlich erleichtert.':
+Keywords: [('hochgeschwindigkeitszug', 0.6161), ('geschäftsreisen', 0.6007)]
+- 1.1: SBB RABe 501
+- 1.2: FS Class ETR 500
+- 1.3: Intercity Express
+- 2.1: Lanes & Planes
+Search results for query 'Die deutsche Küche ist bekannt für Brot, Wurst und Bier. Jede Region hat ihre Spezialitäten, die oft mit langen Traditionen verbunden sind.':
+Keywords: [('spezialitäten', 0.3777), ('küche', 0.3588)]
+- 1.1: Munich
+- 1.2: List of potato dishes
+- 1.3: Baba ghanoush
+- 2.1: Kinder, Küche, Kirche
+- 2.2: Kucha
+- 2.3: List of one-act plays by Tennessee Williams
+Search results for query 'Viele Studenten bereiten sich in Bibliotheken auf ihre Prüfungen vor, manchmal bis spät in die Nacht.':
+Keywords: [('bibliotheken', 0.5991), ('studenten', 0.4205)]
+- 1.1: Maschinelles Austauschformat für Bibliotheken
+- 1.2: National Library of Latvia
+- 1.3: Regeln für die alphabetische Katalogisierung
+- 2.1: Studenten
+- 2.2: Nationalistische Studentenvereniging
+- 2.3: Skadi Rowing Club
+Search results for query 'Die Nordsee ist bekannt für ihre raue Küste und starken Winde, aber auch für ihre malerischen Inseln.':
+Keywords: [('nordsee', 0.5029), ('malerischen', 0.4629)]
+- 1.1: Nordsee
+- 1.2: Nordsee One offshore wind farm
+- 1.3: Nordsee-Ost offshore wind farm
+- 2.1: Clovis I
+- 2.2: Moselle
+- 2.3: Amann & Söhne
+Search results for query 'Technologie verändert die Art, wie wir leben und arbeiten, jeden Tag, und eröffnet neue Möglichkeiten für Innovation.':
+Keywords: [('technologie', 0.6404), ('innovation', 0.553)]
+- 1.1: Black Lab
+- 1.2: Technologie Satelitarne
+- 1.3: Domain Technologie Control
+- 2.1: Innovation
+- 2.2: Japan Innovation Party
+- 2.3: Social innovation
+Search results for query 'Die Alpen bieten wunderschöne Landschaften und beliebte Skigebiete, die im Winter Tausende von Touristen anziehen.':
+Keywords: [('landschaften', 0.4835), ('touristen', 0.4826)]
+- 1.1: Virginia Jetzt!
+- 1.2: Black Forest
+- 1.3: Bleaching on the Lawn
+- 2.1: Paraguay
+- 2.2: Capri
+- 2.3: Hallstatt
+Search results for query 'Hoy hace sol y la ciudad está llena de turistas, que pasean por las calles antiguas y disfrutan de la gastronomía local.':
+Keywords: [('ciudad', 0.448), ('turistas', 0.4274)]
+- 1.1: Ciudad
+- 1.2: Mexico City
+- 1.3: Ciudad Juárez
+- 2.1: Turistas
+- 2.2: RC Celta Fortuna
+- 2.3: Beau Garrett
+Search results for query 'La biblioteca central fue renovada recientemente. Ahora tiene áreas digitales y espacios de estudio modernos que facilitan la investigación.':
+Keywords: [('biblioteca', 0.7051), ('digitales', 0.405)]
+- 1.1: Biblioteca Ayacucho
+- 1.2: Biblioteca Estense
+- 1.3: Biblioteca di Brera
+- 2.1: Digital
+- 2.2: Digitalization
+- 2.3: Stuart Price
+Search results for query 'El fútbol es el deporte más seguido en España. Los aficionados apoyan a sus equipos con entusiasmo y llenan los estadios en cada temporada.':
+Keywords: [('españa', 0.5436), ('fútbol', 0.4786)]
+- 1.1: Spain
+- 1.2: España (disambiguation)
+- 1.3: Vuelta a España
+- 2.1: Association football
+- 2.2: Elche CF
+- 2.3: Málaga CF
+Search results for query 'Compré un nuevo libro de literatura contemporánea. Es muy interesante y profundo, con personajes que reflejan la sociedad actual.':
+Keywords: [('personajes', 0.4932), ('contemporánea', 0.4512)]
+- 1.1: Tres Personajes
+- 1.2: Panteón de Dolores
+- 1.3: Dwayne Johnson
+- 2.1: Contemporânea
+- 2.2: Revista Contemporánea
+- 2.3: Inhotim
+Search results for query 'El tren de alta velocidad conecta Madrid y Barcelona en pocas horas, ofreciendo comodidad y eficiencia a miles de viajeros cada día.':
+Keywords: [('barcelona', 0.4965), ('madrid', 0.4667)]
+- 1.1: Barcelona
+- 1.2: FC Barcelona
+- 1.3: Vicky Cristina Barcelona
+- 2.1: Madrid
+- 2.2: Real Madrid CF
+- 2.3: Atlético Madrid
+Search results for query 'La cocina española es famosa por la paella, el jamón y las tapas. Cada región tiene su estilo propio y sus tradiciones culinarias.':
+Keywords: [('famosa', 0.5186), ('española', 0.5036)]
+- 1.1: A Famosa
+- 1.2: Rica, Famosa, Latina
+- 1.3: Wendy, perdida pero famosa
+- 2.1: Espanola
+- 2.2: RTVE
+- 2.3: Española, New Mexico
+Search results for query 'Muchos estudiantes preparan sus exámenes en las bibliotecas universitarias, donde encuentran un ambiente tranquilo y concentrado.':
+Keywords: [('bibliotecas', 0.5962), ('universitarias', 0.5144)]
+- 1.1: Biblioteca Ayacucho
+- 1.2: Biblioteca Estense
+- 1.3: Red de Bibliotecas Universitarias Españolas
+- 2.1: Rita Fernández Padilla
+- 2.2: Red de Bibliotecas Universitarias Españolas
+- 2.3: Ciudad Universitaria
+Search results for query 'El mar Mediterráneo es hogar de una gran diversidad de especies, pero enfrenta amenazas relacionadas con el cambio climático.':
+Keywords: [('climático', 0.545), ('mediterráneo', 0.4527)]
+- 1.1: Portugal
+- 1.2: Vatican City
+- 1.3: Climate change in Uruguay
+- 2.1: Mediterráneo
+- 2.2: Mediterraneo
+- 2.3: Mediterraneo (disambiguation)
+Search results for query 'La tecnología influye cada día más en la forma en que trabajamos y nos comunicamos, transformando también la educación y el ocio.':
+Keywords: [('educación', 0.6109), ('trabajamos', 0.4904)]
+- 1.1: Bad Education (2004 film)
+- 1.2: Radio Educación
+- 1.3: Texas Education Agency
+- 2.1: Mexican drug war
+- 2.2: Battle of Culiacán
+- 2.3: Victoria Villarruel
+Search results for query 'Los Pirineos son montañas hermosas con paisajes impresionantes y una gran variedad de actividades deportivas durante todo el año.':
+Keywords: [('actividades', 0.526), ('deportivas', 0.476)]
+- 1.1: National Space Activities Commission
+- 1.2: Bureau for the Repression of Communist Activities
+- 1.3: Comisión de Actividades Infantiles
+- 2.1: RC Celta de Vigo
+- 2.2: Levante UD
+- 2.3: UD Almería
+Search results for query 'Le soleil brille aujourd’hui et la place principale est pleine de visiteurs.':
+Keywords: [('visiteurs', 0.565), ('soleil', 0.4536)]
+- 1.1: Les Visiteurs
+- 1.2: Jean Reno
+- 1.3: Christian Clavier
+- 2.1: Soleil
+- 2.2: Cirque du Soleil
+- 2.3: SOLEIL
+Search results for query 'La bibliothèque nationale a ouvert une nouvelle section. Elle contient des manuscrits rares et précieux, étudiés par des spécialistes venus du monde entier.':
+Keywords: [('bibliothèque', 0.5288), ('venus', 0.4151)]
+- 1.1: Bibliothèque nationale de France
+- 1.2: Library
+- 1.3: Bibliothèque et Archives nationales du Québec
+- 2.1: Venus
+- 2.2: Venus Williams
+- 2.3: Venus (mythology)
+Search results for query 'Le football est un sport très populaire en France. Les supporters suivent chaque match avec passion et remplissent les stades de chants et de drapeaux.':
+Keywords: [('le', 0.399), ('les', 0.3878)]
+- 1.1: LE
+- 1.2: Le Le Le
+- 1.3: Les
+- 2.1: Les
+- 2.2: Lès
+- 2.3: LE
+Search results for query 'J’aime écouter de la musique classique le soir. Cela me détend et me donne de l’énergie, surtout après une longue journée de travail.':
+Keywords: [('musique', 0.655), ('une', 0.4195)]
+- 1.1: Musique
+- 1.2: Musique concrète
+- 1.3: Ici Musique
+- 2.1: UNE
+- 2.2: Une
+- 2.3: The Treachery of Images
+Search results for query 'Le train à grande vitesse relie Paris et Lyon en moins de deux heures, facilitant les voyages d’affaires et le tourisme.':
+Keywords: [('tourisme', 0.4459), ('voyages', 0.4322)]
+- 1.1: Maison du Tourisme
+- 1.2: Croses Tourisme
+- 1.3: Challenge International de Tourisme 1929
+- 2.1: These Are the Voyages...
+- 2.2: Virgin Voyages
+- 2.3: Voyage
+Search results for query 'La cuisine française est célèbre pour ses fromages, ses vins et ses desserts raffinés, qui varient considérablement d’une région à l’autre.':
+Keywords: [('française', 0.4934), ('cuisine', 0.4396)]
+- 1.1: Académie Française
+- 1.2: French
+- 1.3: Comédie-Française
+- 2.1: Cuisine
+- 2.2: French cuisine
+- 2.3: Indian cuisine
+Search results for query 'De nombreux étudiants fréquentent les cafés pour étudier ensemble, discuter de leurs projets et profiter d’une ambiance conviviale.':
+Keywords: [('cafés', 0.5719), ('étudiants', 0.5171)]
+- 1.1: Coffeehouse
+- 1.2: Internet café
+- 1.3: Delta Cafés
+- 2.1: Union des étudiants juifs de France
+- 2.2: Université de Sherbrooke
+- 2.3: We, Students!
+Search results for query 'La Méditerranée est une mer riche en histoire et en commerce, mais elle est aujourd’hui confrontée à de sérieux problèmes écologiques.':
+Keywords: [('écologiques', 0.5697), ('histoire', 0.3932)]
+- 1.1: Ecological Revolution for the Living
+- 1.2: New Ecological and Social People's Union
+- 1.3: Ministry of Ecological Transition (France)
+- 2.1: Histoire
+- 2.2: Nouvelle histoire
+- 2.3: Mon Histoire
+Search results for query 'La technologie change nos habitudes quotidiennes et nos relations sociales, créant parfois plus de dépendance que de liberté.':
+Keywords: [('technologie', 0.5041), ('sociales', 0.4481)]
+- 1.1: Black Lab
+- 1.2: Technologie Satelitarne
+- 1.3: Domain Technologie Control
+- 2.1: Social media
+- 2.2: Instagram
+- 2.3: India
+Search results for query 'Les Alpes françaises offrent des paysages magnifiques et des stations de ski réputées, attirant touristes et sportifs du monde entier.':
+Keywords: [('ski', 0.5329), ('magnifiques', 0.4401)]
+- 1.1: Ski
+- 1.2: Ski (disambiguation)
+- 1.3: Skiing
+- 2.1: Magnifique
+- 2.2: Magnifique (album)
+- 2.3: French ship Magnifique
