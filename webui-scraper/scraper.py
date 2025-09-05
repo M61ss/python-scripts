@@ -23,13 +23,13 @@ class Scraper:
             print(f"Search results for query '{query.content}':")
             print(f"Keywords: {keywords}")
         for i, keyword in enumerate(keywords):
-            curr_results = wikipedia.search(keyword[0])
+            curr_results = wikipedia.search(keyword[0], results=3)
             if self.debug:
                 if len(curr_results) == 0:
                     print(f"No results from Wikipedia for keyword '{keyword}'")
-                for j, result in enumerate(curr_results[:3]):
+                for j, result in enumerate(curr_results):
                     print(f"- {i + 1}.{j + 1}: {result}")
-            results.append(curr_results)
+            results.extend(curr_results)
         return results
 
     def scrape(self, query : Query):
@@ -37,10 +37,12 @@ class Scraper:
         pages = []
         for result in results:
             try:
-                page = wikipedia.page(result)
+                page : wikipedia.WikipediaPage = wikipedia.page(result)
+                if self.debug:
+                    print(f"Page found for '{result}':")
+                    print(f"Page summary: {page.summary}")
                 pages.append(page)
             except:
                 if self.debug:
-                    print(f"Page found for search result '{result}':")
-                    print(page)
+                    print(f"Page NOT found for '{result}'")
         return pages
