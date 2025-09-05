@@ -3,8 +3,8 @@ from nlp import NLP
 from query import Query
 import sys
 
-debug = True if "--debug" in sys.argv else False
-nlp = NLP(debug)
+debug : bool = True if "--debug" in sys.argv else False
+nlp : NLP = NLP(debug)
 
 query_contents = [
         "Oggi il sole splende e il cielo è sereno.",             # Italiano, IT
@@ -38,7 +38,7 @@ if debug:
     print("Start to scrape on Wikipedia using composed queries...")
     print("")
 
-scraper = Scraper(debug)
+scraper : Scraper = Scraper(debug)
 wiki_outputs = []
 for query in queries:
     wiki_output = scraper.scrape(query)

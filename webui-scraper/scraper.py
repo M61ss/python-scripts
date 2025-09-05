@@ -2,8 +2,8 @@ import wikipedia
 from query import Query
 
 class Scraper:
-    def __init__(self, debug = False):
-        self.debug = debug
+    def __init__(self, debug : bool = False):
+        self.debug : bool = debug
 
     def scrape(self, query : Query):
         results = wikipedia.search(query.content)

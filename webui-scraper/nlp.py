@@ -1,12 +1,12 @@
-from lingua import Language, LanguageDetectorBuilder
+from lingua import Language, LanguageDetectorBuilder, LanguageDetector
 from keybert import KeyBERT
 from query import Query
 
 class NLP:
-    def __init__(self, debug = False):
-        self.debug = debug
-        self.detector = LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build()
-        self.kw_model = KeyBERT()
+    def __init__(self, debug : bool = False):
+        self.debug : bool = debug
+        self.detector : LanguageDetector = LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build()
+        self.kw_model : KeyBERT = KeyBERT()
 
     def compose_query(self, content : str):
         query_lang = self.__detect_language(content)
