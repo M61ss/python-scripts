@@ -675,7 +675,30 @@ if __name__ == "__main__":
         lang_detection_accuracy(sample_words_ES, "SPANISH", nlp)
         print("")
     if "--wiki-search" in sys.argv:
-        print("TEST MODULE: Ability to search on wikipedia")
+        print("TEST MODULE: Ability to search on Wikipedia")
+        print("")
+        scraper = Scraper(debug=True)
+        print("Testing WORDS:")
+        print("")
+        for word in sample_words_wikisearch_IT:
+            scraper.search(nlp.compose_query(word))
+        for word in sample_words_wikisearch_EN:
+            scraper.search(nlp.compose_query(word))
+        print("")
+        print("Testing PERIODS:")
+        print("")
+        for period in samples_periods_wikisearch_IT:
+            scraper.search(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_EN:
+            scraper.search(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_DE:
+            scraper.search(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_ES:
+            scraper.search(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_FR:
+            scraper.search(nlp.compose_query(period))
+    if "--wiki-scrape" in sys.argv:
+        print("TEST MODULE: Ability to scrape information from Wikipedia")
         print("")
         scraper = Scraper(debug=True)
         print("Testing WORDS:")
@@ -697,4 +720,3 @@ if __name__ == "__main__":
             scraper.scrape(nlp.compose_query(period))
         for period in samples_periods_wikisearch_FR:
             scraper.scrape(nlp.compose_query(period))
-        
