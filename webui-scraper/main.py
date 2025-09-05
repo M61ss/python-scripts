@@ -17,7 +17,7 @@ class App:
         outputs.append(query_output)
         return outputs
 
-    def submit_queries(self, query_content : str):
+    def submit_query(self, query_content : str):
         query : Query = self.nlp.compose_query(query_content)
         if self.debug:
             print(f"Query information:")
@@ -47,4 +47,4 @@ if __name__ == "__main__":
     ]
     
     for query_content in query_contents:
-        app.submit_queries(query_content)
+        app.submit_query(query_content)
