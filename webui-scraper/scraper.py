@@ -6,7 +6,7 @@ class Scraper:
         self.debug : bool = debug
 
     def scrape(self, query : Query):
-        keywords = query.keywords[:3]
+        keywords = query.keywords[:2]
         if self.debug:
             print(f"Search results for query '{query.content}':")
             print(f"Keywords: {keywords}")
