@@ -8,7 +8,7 @@ class App:
         self.queries = []
 
     def retrive_scraping(self):
-        scraper = Scraper()
+        scraper = Scraper(self.debug)
         outputs = []
         for query in self.queries:
             query_output = scraper.scrape(query)
@@ -31,17 +31,17 @@ if __name__ == "__main__":
     app = App()
 
     queries = [
-        Query("Oggi il sole splende e il cielo è sereno."),             # Italiano, IT
-        Query("The quick brown fox jumps over the lazy dog."),          # Inglese, EN
-        Query("Demain, il fera beau et nous irons au marché."),         # Francese, FR
-        Query("La biblioteca está cerrada durante el fin de semana."),  # Spagnolo, ES
-        Query("Der Winter ist kalt, aber auch sehr schön."),            # Tedesco, DE
-        Query("O café da manhã foi delicioso hoje."),                   # Portoghese, PT
-        Query("De kinderen spelen buiten in de tuin."),                 # Olandese, NL
-        Query("Сегодня вечером будет очень холодно."),                  # Russo, RU
-        Query("今天的天气非常好。"),                                      # Cinese, ZH
-        Query("今日は学校に行きます。"),                                   # Giapponese, JA
-        Query("السماء صافية اليوم والشمس مشرقة.")                     # Arabo, AR
+        Query("Oggi il sole splende e il cielo è sereno.", app.debug),             # Italiano, IT
+        Query("The quick brown fox jumps over the lazy dog.", app.debug),          # Inglese, EN
+        Query("Demain, il fera beau et nous irons au marché.", app.debug),         # Francese, FR
+        Query("La biblioteca está cerrada durante el fin de semana.", app.debug),  # Spagnolo, ES
+        Query("Der Winter ist kalt, aber auch sehr schön.", app.debug),            # Tedesco, DE
+        Query("O café da manhã foi delicioso hoje.", app.debug),                   # Portoghese, PT
+        Query("De kinderen spelen buiten in de tuin.", app.debug),                 # Olandese, NL
+        Query("Сегодня вечером будет очень холодно.", app.debug),                  # Russo, RU
+        Query("今天的天气非常好。", app.debug),                                      # Cinese, ZH
+        Query("今日は学校に行きます。", app.debug),                                   # Giapponese, JA
+        Query("السماء صافية اليوم والشمس مشرقة.", app.debug)                     # Arabo, AR
     ]
     
     app.submit_queries(queries)
