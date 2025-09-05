@@ -6,6 +6,7 @@ class NLP:
     def __init__(self, debug = False):
         self.debug = debug
         self.detector = LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build()
+        self.kw_model = KeyBERT()
 
     def compose_query(self, content : str):
         query_lang = self.__detect_language(content)
@@ -19,4 +20,4 @@ class NLP:
         return language.iso_code_639_1.name
     
     def __extract_keywords(self, content : str):
-        pass
+        return self.kw_model.extract_keywords(content)

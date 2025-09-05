@@ -1,7 +1,7 @@
-from query import Query
 import time
 import sys
 from scraper import Scraper
+from nlp import NLP
 
 samples_mix = [
     # Italiano
@@ -525,31 +525,31 @@ sample_words_DE = [
 ]
 
 sample_words_wikisearch_IT = [
-    Query("gatto"),
-    Query("cane"),
-    Query("scienza"),
-    Query("università"),
-    Query("Italia"),
-    Query("politica"),
-    Query("arte"),
-    Query("musica"),
-    Query("letteratura"),
-    Query("storia"),
+    "gatto",
+    "cane",
+    "scienza",
+    "università",
+    "Italia",
+    "politica",
+    "arte",
+    "musica",
+    "letteratura",
+    "storia",
 ]
 sample_words_wikisearch_EN = [
-    Query("cat"),
-    Query("dog"),
-    Query("science"),
-    Query("university"),
-    Query("Italy"),
-    Query("politics"),
-    Query("art"),
-    Query("music"),
-    Query("literature"),
-    Query("history"),
+    "cat",
+    "dog",
+    "science",
+    "university",
+    "Italy",
+    "politics",
+    "art",
+    "music",
+    "literature",
+    "history",
 ]
 
-def lang_detection_accuracy(samples, lang):
+def lang_detection_accuracy(samples, lang : str, nlp : NLP):
     start_time = time.time()
 
     n_words = 0
@@ -557,8 +557,8 @@ def lang_detection_accuracy(samples, lang):
     n_correct_words = 0
     n_correct_phrases = 0
     n_correct_global = 0
-    for i, sample in enumerate(samples):
-        query = Query(sample[0])
+    for sample in samples:
+        query = nlp.compose_query(sample[0])
         if len(sample[0].split()) == 1:
             n_words += 1
         else:
@@ -586,27 +586,29 @@ def lang_detection_accuracy(samples, lang):
     return global_accuracy, words_accuracy, phrases_accuracy, elapsed_time, time_for_input
 
 if __name__ == "__main__":
+    nlp : NLP = NLP()
+
     if "--lang-detect" in sys.argv:
         print("TEST MODULE: Language detection accuracy:")
         print("")
-        lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE")
-        lang_detection_accuracy(samples_EN, "ENGLISH")
-        lang_detection_accuracy(samples_IT, "ITALIAN")
-        lang_detection_accuracy(samples_ES, "SPANISH")
-        lang_detection_accuracy(samples_DE, "DEUTUSCH")
-        lang_detection_accuracy(samples_AR, "ARABIC")
-        lang_detection_accuracy(samples_RU, "RUSSIAN")
-        lang_detection_accuracy(sample_words_DE, "DEUTUSCH WORDS")
-        lang_detection_accuracy(sample_words_EN, "ENGLISH WORDS")
-        lang_detection_accuracy(sample_words_IT, "ITALIAN WORDS")
-        lang_detection_accuracy(sample_words_FR, "FRENCH WORDS")
-        lang_detection_accuracy(sample_words_ES, "SPANISH WORDS")
+        lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE", nlp)
+        lang_detection_accuracy(samples_EN, "ENGLISH", nlp)
+        lang_detection_accuracy(samples_IT, "ITALIAN", nlp)
+        lang_detection_accuracy(samples_ES, "SPANISH", nlp)
+        lang_detection_accuracy(samples_DE, "DEUTUSCH", nlp)
+        lang_detection_accuracy(samples_AR, "ARABIC", nlp)
+        lang_detection_accuracy(samples_RU, "RUSSIAN", nlp)
+        lang_detection_accuracy(sample_words_DE, "DEUTUSCH WORDS", nlp)
+        lang_detection_accuracy(sample_words_EN, "ENGLISH WORDS", nlp)
+        lang_detection_accuracy(sample_words_IT, "ITALIAN WORDS", nlp)
+        lang_detection_accuracy(sample_words_FR, "FRENCH WORDS", nlp)
+        lang_detection_accuracy(sample_words_ES, "SPANISH WORDS", nlp)
     if "--wiki-search" in sys.argv:
         print("TEST MODULE: Ability to search on wikipedia")
         print("")
         scraper = Scraper()
-        for query in sample_words_wikisearch_IT:
-            scraper.scrape(query)
-        for query in sample_words_wikisearch_EN:
-            scraper.scrape(query)
+        for word in sample_words_wikisearch_IT:
+            scraper.scrape(nlp.compose_query(word))
+        for word in sample_words_wikisearch_EN:
+            scraper.scrape(nlp.compose_query(word))
         
