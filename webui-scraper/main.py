@@ -20,12 +20,12 @@ class App:
     def submit_queries(self, queries : Query):
         self.queries.extend(queries)
         if self.debug:
-            print(f"Number of submitted queries: {len(self.queries)}")
-            print("")
             for i, query in enumerate(self.queries):
                 print(f"Query number {i}:")
                 print(f"    - Content: {query.content}")
                 print(f"    - Language: {query.lang}")
+            print("")
+            print(f"Total number of submitted queries: {len(self.queries)}")
 
 
 if __name__ == "__main__":
