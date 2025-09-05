@@ -586,7 +586,10 @@ def lang_detection_accuracy(samples, lang : str, nlp : NLP):
     return global_accuracy, words_accuracy, phrases_accuracy, elapsed_time, time_for_input
 
 if __name__ == "__main__":
+    start_time = time.time()
     nlp : NLP = NLP()
+    print(f"NLP configured in: {time.time() - start_time} s")
+    print("")
 
     if "--lang-detect" in sys.argv:
         print("TEST MODULE: Language detection accuracy:")
@@ -603,10 +606,11 @@ if __name__ == "__main__":
         lang_detection_accuracy(sample_words_IT, "ITALIAN WORDS", nlp)
         lang_detection_accuracy(sample_words_FR, "FRENCH WORDS", nlp)
         lang_detection_accuracy(sample_words_ES, "SPANISH WORDS", nlp)
+        print("")
     if "--wiki-search" in sys.argv:
         print("TEST MODULE: Ability to search on wikipedia")
         print("")
-        scraper = Scraper()
+        scraper = Scraper(debug=True)
         for word in sample_words_wikisearch_IT:
             scraper.scrape(nlp.compose_query(word))
         for word in sample_words_wikisearch_EN:
