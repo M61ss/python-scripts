@@ -1,0 +1,82 @@
+NLP configured in: 3.6809310913085938 s
+
+TEST MODULE: Language detection accuracy:
+
+Language detection on PERIODS:
+
+Computed language detection accuracy on ENGLISH:
+    - Words accuracy: 0.2
+    - Phrases accuracy: 1.0
+    - Global accuracy: 0.6
+Execution time: 0.4533529281616211 s
+Average detection time for single input: 197.10996876592222 μs
+Computed language detection accuracy on ITALIAN:
+    - Words accuracy: 0.4
+    - Phrases accuracy: 1.0
+    - Global accuracy: 0.7
+Execution time: 0.21416091918945312 s
+Average detection time for single input: 93.11344312584919 μs
+Computed language detection accuracy on SPANISH:
+    - Words accuracy: 0.2
+    - Phrases accuracy: 0.8
+    - Global accuracy: 0.5
+Execution time: 0.20881438255310059 s
+Average detection time for single input: 90.78886197960895 μs
+Computed language detection accuracy on DEUTUSCH:
+    - Words accuracy: 0.4
+    - Phrases accuracy: 1.0
+    - Global accuracy: 0.7
+Execution time: 0.20939850807189941 s
+Average detection time for single input: 91.042829596478 μs
+Computed language detection accuracy on ARABIC:
+    - Words accuracy: 1.0
+    - Phrases accuracy: 1.0
+    - Global accuracy: 1.0
+Execution time: 0.16812396049499512 s
+Average detection time for single input: 73.09737412825875 μs
+Computed language detection accuracy on RUSSIAN:
+    - Words accuracy: 0.6
+    - Phrases accuracy: 1.0
+    - Global accuracy: 0.8
+Execution time: 0.19586491584777832 s
+Average detection time for single input: 85.15865906425145 μs
+Computed language detection accuracy on MULTIPLE LANGUAGE:
+    - Words accuracy: 0.6046511627906976
+    - Phrases accuracy: 0.9405940594059405
+    - Global accuracy: 0.7521739130434782
+Execution time: 3.7114152908325195 s
+Average detection time for single input: 1613.6588221010952 μs
+
+Language detection on WORDS:
+
+Computed language detection accuracy on DEUTUSCH:
+    - Words accuracy: 0.45
+    - Phrases accuracy: None
+    - Global accuracy: 0.45
+Execution time: 0.264448881149292 s
+Average detection time for single input: 114.97777441273566 μs
+Computed language detection accuracy on ENGLISH:
+    - Words accuracy: 0.35
+    - Phrases accuracy: None
+    - Global accuracy: 0.35
+Execution time: 0.2619805335998535 s
+Average detection time for single input: 113.90457982602327 μs
+Computed language detection accuracy on ITALIAN:
+    - Words accuracy: 0.45
+    - Phrases accuracy: None
+    - Global accuracy: 0.45
+Execution time: 0.28148770332336426 s
+Average detection time for single input: 122.38595796668012 μs
+Computed language detection accuracy on FRENCH:
+    - Words accuracy: 0.75
+    - Phrases accuracy: None
+    - Global accuracy: 0.75
+Execution time: 0.28048038482666016 s
+Average detection time for single input: 121.94799340289572 μs
+Computed language detection accuracy on SPANISH:
+    - Words accuracy: 0.4
+    - Phrases accuracy: None
+    - Global accuracy: 0.4
+Execution time: 0.26497340202331543 s
+Average detection time for single input: 115.20582696665889 μs
+
