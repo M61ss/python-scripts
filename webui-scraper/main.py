@@ -1,6 +1,7 @@
 from scraper import Scraper
 from query import Query
 import sys
+from nlp import NLP
 
 class App:
     def __init__(self):
@@ -29,19 +30,20 @@ class App:
 
 if __name__ == "__main__":
     app = App()
+    nlp = NLP(app.debug)
 
     queries = [
-        Query("Oggi il sole splende e il cielo è sereno.", app.debug),             # Italiano, IT
-        Query("The quick brown fox jumps over the lazy dog.", app.debug),          # Inglese, EN
-        Query("Demain, il fera beau et nous irons au marché.", app.debug),         # Francese, FR
-        Query("La biblioteca está cerrada durante el fin de semana.", app.debug),  # Spagnolo, ES
-        Query("Der Winter ist kalt, aber auch sehr schön.", app.debug),            # Tedesco, DE
-        Query("O café da manhã foi delicioso hoje.", app.debug),                   # Portoghese, PT
-        Query("De kinderen spelen buiten in de tuin.", app.debug),                 # Olandese, NL
-        Query("Сегодня вечером будет очень холодно.", app.debug),                  # Russo, RU
-        Query("今天的天气非常好。", app.debug),                                      # Cinese, ZH
-        Query("今日は学校に行きます。", app.debug),                                   # Giapponese, JA
-        Query("السماء صافية اليوم والشمس مشرقة.", app.debug)                     # Arabo, AR
+        Query("Oggi il sole splende e il cielo è sereno.", nlp),             # Italiano, IT
+        Query("The quick brown fox jumps over the lazy dog.", nlp),          # Inglese, EN
+        Query("Demain, il fera beau et nous irons au marché.", nlp),         # Francese, FR
+        Query("La biblioteca está cerrada durante el fin de semana.", nlp),  # Spagnolo, ES
+        Query("Der Winter ist kalt, aber auch sehr schön.", nlp),            # Tedesco, DE
+        Query("O café da manhã foi delicioso hoje.", nlp),                   # Portoghese, PT
+        Query("De kinderen spelen buiten in de tuin.", nlp),                 # Olandese, NL
+        Query("Сегодня вечером будет очень холодно.", nlp),                  # Russo, RU
+        Query("今天的天气非常好。", nlp),                                      # Cinese, ZH
+        Query("今日は学校に行きます。", nlp),                                   # Giapponese, JA
+        Query("السماء صافية اليوم والشمس مشرقة.", nlp)                     # Arabo, AR
     ]
     
     app.submit_queries(queries)

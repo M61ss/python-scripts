@@ -1,16 +1,7 @@
-from lingua import Language, LanguageDetectorBuilder
-from keybert import KeyBERT
+from nlp import NLP
 
 class Query:
-    def __init__(self, content, debug = False):
-        self.debug = debug
+    def __init__(self, content, nlp : NLP):
         self.content = content
-        self.lang = self.__detect_language()
-
-    def __detect_language(self):
-        detector = LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build()
-        language : Language = detector.detect_language_of(self.content)
-        if self.debug:
-            print(f"Detected language for query '{self.content}': {language.iso_code_639_1.name}")
-        return language.iso_code_639_1.name
-    
+        self.lang = nlp.detect_language(self.content)
+        self.keywords = nlp.extract_keywords(self.content)  
