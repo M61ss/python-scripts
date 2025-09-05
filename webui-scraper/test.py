@@ -549,6 +549,68 @@ sample_words_wikisearch_EN = [
     "history",
 ]
 
+samples_periods_wikisearch_IT = [
+    "Oggi il sole splende e molti turisti passeggiano nel centro storico, fermandosi spesso nei caffè e nei negozi di souvenir.",
+    "La biblioteca comunale è stata rinnovata di recente. Ora offre spazi digitali, sale studio moderne e una collezione di manoscritti antichi che attirano ricercatori da tutta Europa.",
+    "Il calcio è lo sport più seguito in Italia. Le squadre locali hanno un forte legame con i tifosi, che partecipano con entusiasmo a ogni partita.",
+    "Ho comprato un nuovo libro di storia dell’arte. È molto interessante e ben illustrato, con spiegazioni che rendono comprensibili anche i concetti più complessi.",
+    "Il treno ad alta velocità collega Milano e Roma in poche ore, trasformando radicalmente il modo di viaggiare tra le due città.",
+    "La cucina italiana è famosa per la pasta, la pizza e il vino. Ogni regione ha specialità diverse e tradizioni culinarie tramandate da generazioni.",
+    "Molti studenti si preparano agli esami universitari nelle biblioteche cittadine, spesso lavorando in gruppo fino a tarda sera.",
+    "Il mare Mediterraneo ospita una grande varietà di pesci e specie marine, ma è anche minacciato dall’inquinamento e dalla pesca intensiva.",
+    "La tecnologia sta cambiando il modo in cui lavoriamo e comunichiamo, creando nuove opportunità ma anche nuove sfide per la società.",
+    "Le Dolomiti sono considerate tra le montagne più belle del mondo, meta preferita di escursionisti, fotografi e amanti della natura.",
+]
+samples_periods_wikisearch_EN = [
+    "The quick brown fox jumps over the lazy dog.",
+    "Technology is evolving rapidly. Artificial intelligence and machine learning are now part of daily life, shaping industries and redefining how people interact with information.",
+    "I love reading books in the evening. They help me relax after work and often inspire new ideas for my own writing projects.",
+    "The city has built new parks and playgrounds for children, creating safer spaces and greener areas for the community.",
+    "Traveling by train is fast and convenient in many European countries, and it is also more environmentally friendly than flying.",
+    "Music has the power to inspire and connect people. It is a universal language that transcends borders, cultures, and generations.",
+    "The library downtown is a peaceful place where many students gather, especially during exam season when every desk is full.",
+    "Climate change is one of the biggest challenges humanity faces today, demanding urgent solutions and cooperation between nations.",
+    "Modern art often surprises viewers with unusual shapes and colors, provoking debates about what art really means in contemporary society.",
+    "The new museum exhibition explores ancient civilizations and their cultures, presenting artifacts that reveal the complexity of early human societies.",
+]
+samples_periods_wikisearch_FR = [
+    "Le soleil brille aujourd’hui et la place principale est pleine de visiteurs.",
+    "La bibliothèque nationale a ouvert une nouvelle section. Elle contient des manuscrits rares et précieux, étudiés par des spécialistes venus du monde entier.",
+    "Le football est un sport très populaire en France. Les supporters suivent chaque match avec passion et remplissent les stades de chants et de drapeaux.",
+    "J’aime écouter de la musique classique le soir. Cela me détend et me donne de l’énergie, surtout après une longue journée de travail.",
+    "Le train à grande vitesse relie Paris et Lyon en moins de deux heures, facilitant les voyages d’affaires et le tourisme.",
+    "La cuisine française est célèbre pour ses fromages, ses vins et ses desserts raffinés, qui varient considérablement d’une région à l’autre.",
+    "De nombreux étudiants fréquentent les cafés pour étudier ensemble, discuter de leurs projets et profiter d’une ambiance conviviale.",
+    "La Méditerranée est une mer riche en histoire et en commerce, mais elle est aujourd’hui confrontée à de sérieux problèmes écologiques.",
+    "La technologie change nos habitudes quotidiennes et nos relations sociales, créant parfois plus de dépendance que de liberté.",
+    "Les Alpes françaises offrent des paysages magnifiques et des stations de ski réputées, attirant touristes et sportifs du monde entier.",
+]
+samples_periods_wikisearch_ES = [
+    "Hoy hace sol y la ciudad está llena de turistas, que pasean por las calles antiguas y disfrutan de la gastronomía local.",
+    "La biblioteca central fue renovada recientemente. Ahora tiene áreas digitales y espacios de estudio modernos que facilitan la investigación.",
+    "El fútbol es el deporte más seguido en España. Los aficionados apoyan a sus equipos con entusiasmo y llenan los estadios en cada temporada.",
+    "Compré un nuevo libro de literatura contemporánea. Es muy interesante y profundo, con personajes que reflejan la sociedad actual.",
+    "El tren de alta velocidad conecta Madrid y Barcelona en pocas horas, ofreciendo comodidad y eficiencia a miles de viajeros cada día.",
+    "La cocina española es famosa por la paella, el jamón y las tapas. Cada región tiene su estilo propio y sus tradiciones culinarias.",
+    "Muchos estudiantes preparan sus exámenes en las bibliotecas universitarias, donde encuentran un ambiente tranquilo y concentrado.",
+    "El mar Mediterráneo es hogar de una gran diversidad de especies, pero enfrenta amenazas relacionadas con el cambio climático.",
+    "La tecnología influye cada día más en la forma en que trabajamos y nos comunicamos, transformando también la educación y el ocio.",
+    "Los Pirineos son montañas hermosas con paisajes impresionantes y una gran variedad de actividades deportivas durante todo el año.",
+]
+samples_periods_wikisearch_DE = [
+    "Heute scheint die Sonne und viele Menschen spazieren durch die Altstadt.",
+    "Die Stadtbibliothek wurde kürzlich renoviert. Sie bietet jetzt digitale Bereiche und moderne Lesesäle, die besonders bei Studenten beliebt sind.",
+    "Fußball ist der beliebteste Sport in Deutschland. Die Fans sind sehr engagiert und folgen ihren Mannschaften durch das ganze Land.",
+    "Ich habe ein neues Buch über Philosophie gekauft. Es ist spannend und gut geschrieben, mit Argumenten, die zum Nachdenken anregen.",
+    "Der Hochgeschwindigkeitszug verbindet Berlin und München in wenigen Stunden, was Geschäftsreisen deutlich erleichtert.",
+    "Die deutsche Küche ist bekannt für Brot, Wurst und Bier. Jede Region hat ihre Spezialitäten, die oft mit langen Traditionen verbunden sind.",
+    "Viele Studenten bereiten sich in Bibliotheken auf ihre Prüfungen vor, manchmal bis spät in die Nacht.",
+    "Die Nordsee ist bekannt für ihre raue Küste und starken Winde, aber auch für ihre malerischen Inseln.",
+    "Technologie verändert die Art, wie wir leben und arbeiten, jeden Tag, und eröffnet neue Möglichkeiten für Innovation.",
+    "Die Alpen bieten wunderschöne Landschaften und beliebte Skigebiete, die im Winter Tausende von Touristen anziehen.",
+]
+
+
 def lang_detection_accuracy(samples, lang : str, nlp : NLP):
     start_time = time.time()
 
@@ -611,8 +673,23 @@ if __name__ == "__main__":
         print("TEST MODULE: Ability to search on wikipedia")
         print("")
         scraper = Scraper(debug=True)
+        print("Testing WORDS:")
+        print("")
         for word in sample_words_wikisearch_IT:
             scraper.scrape(nlp.compose_query(word))
         for word in sample_words_wikisearch_EN:
             scraper.scrape(nlp.compose_query(word))
+        print("")
+        print("Testing PERIODS:")
+        print("")
+        for period in samples_periods_wikisearch_IT:
+            scraper.scrape(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_EN:
+            scraper.scrape(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_DE:
+            scraper.scrape(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_ES:
+            scraper.scrape(nlp.compose_query(period))
+        for period in samples_periods_wikisearch_FR:
+            scraper.scrape(nlp.compose_query(period))
         
