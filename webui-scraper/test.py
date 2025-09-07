@@ -634,7 +634,7 @@ class TestLangDetectData:
     def compute_periods_accuracy(self):
         return self.tot_n_correct_periods / self.tot_n_periods
     
-    def compute_batches_accuracy(self):
+    def compute_module_accuracy(self):
         return self.get_total_correct() / self.get_total_input()
 
     def compute_batch_lang_detection_accuracy(self, samples, lang : str, nlp : NLP):
@@ -660,7 +660,12 @@ class TestLangDetectData:
         words_accuracy = (n_correct_words / n_words) if n_words != 0 else None
         periods_accuracy = (n_correct_periods / n_periods) if n_periods != 0 else None
         batch_accuracy = (n_correct_words + n_correct_periods) / len(samples)
-        print(f"Computed language detection accuracy on {lang}:")
+        print(f"Report generated on {lang} language detection test batch:")
+        print("Input:")
+        print(f"    - Words: {n_words}")
+        print(f"    - Periods: {n_periods}")
+        print(f"    - Total: {n_words + n_periods}")
+        print("Computed language detection accuracy:")
         print(f"    - Words accuracy: {words_accuracy}")
         print(f"    - Periods accuracy: {periods_accuracy}")
         print(f"    - Batch accuracy: {batch_accuracy}")
@@ -677,16 +682,21 @@ class TestLangDetectData:
         self.tot_elapsed_time += elapsed_time
 
     def compute_global_lang_detection_accuracy(self):
-        global_words_accuracy = test_lang_detect_data.compute_words_accuracy()
-        global_periods_accuracy = test_lang_detect_data.compute_periods_accuracy()
-        global_batches_accuracy = test_lang_detect_data.compute_batches_accuracy()
+        global_words_accuracy = self.compute_words_accuracy()
+        global_periods_accuracy = self.compute_periods_accuracy()
+        global_module_accuracy = self.compute_module_accuracy()
         print("******************************************************************")
-        print("GLOBAL report on test module:")
+        print("GLOBAL report for language detection test module:")
+        print("Input:")
+        print(f"    - Words: {self.tot_n_words}")
+        print(f"    - Periods: {self.tot_n_periods}")
+        print(f"    - Total: {self.get_total_input()}")
+        print("Computed global language detection accuracy:")
         print(f"    - Words accuracy: {global_words_accuracy}")
         print(f"    - Periods accuracy: {global_periods_accuracy}")
-        print(f"    - Batches accuracy: {global_batches_accuracy}")
-        print(f"Total elapsed time: {test_lang_detect_data.tot_elapsed_time} s")
-        time_for_input = test_lang_detect_data.tot_elapsed_time / test_lang_detect_data.get_total_input()
+        print(f"    - Module accuracy: {global_module_accuracy}")
+        print(f"Total elapsed time: {self.tot_elapsed_time} s")
+        time_for_input = self.tot_elapsed_time / self.get_total_input()
         print(f"Average detection time for single input: {time_for_input * 1000} ms")
         print("******************************************************************")
 

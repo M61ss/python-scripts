@@ -1,106 +1,171 @@
 !!! NOTES !!!
 
-1. Results obtained with raw detector: LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models()
+1. Report generated using raw LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models().build() detector
 
-!!! END NOTES !!!
+!!! END NOTED !!!
 
-NLP configured in: 3.470923662185669 s
+NLP configured in: 3.425929546356201 s
 
 TEST MODULE: Language detection accuracy:
 
 Language detection on PERIODS:
 
-Computed language detection accuracy on ENGLISH:
+Report generated on ENGLISH language detection test batch:
+Input:
+    - Words: 5
+    - Periods: 5
+    - Total: 10
+Computed language detection accuracy:
     - Words accuracy: 0.2
     - Periods accuracy: 1.0
     - Batch accuracy: 0.6
-Execution time: 0.4176151752471924 s
-Average detection time for single input: 41.76151752471924 ms
+Execution time: 0.40775489807128906 s
+Average detection time for single input: 40.775489807128906 ms
 
-Computed language detection accuracy on ITALIAN:
+Report generated on ITALIAN language detection test batch:
+Input:
+    - Words: 5
+    - Periods: 5
+    - Total: 10
+Computed language detection accuracy:
     - Words accuracy: 0.4
     - Periods accuracy: 1.0
     - Batch accuracy: 0.7
-Execution time: 0.18796372413635254 s
-Average detection time for single input: 18.796372413635254 ms
+Execution time: 0.1883537769317627 s
+Average detection time for single input: 18.83537769317627 ms
 
-Computed language detection accuracy on SPANISH:
+Report generated on SPANISH language detection test batch:
+Input:
+    - Words: 5
+    - Periods: 5
+    - Total: 10
+Computed language detection accuracy:
     - Words accuracy: 0.2
     - Periods accuracy: 0.8
     - Batch accuracy: 0.5
-Execution time: 0.18498945236206055 s
-Average detection time for single input: 18.498945236206055 ms
+Execution time: 0.19093656539916992 s
+Average detection time for single input: 19.093656539916992 ms
 
-Computed language detection accuracy on DEUTUSCH:
+Report generated on DEUTUSCH language detection test batch:
+Input:
+    - Words: 5
+    - Periods: 5
+    - Total: 10
+Computed language detection accuracy:
     - Words accuracy: 0.4
     - Periods accuracy: 1.0
     - Batch accuracy: 0.7
-Execution time: 0.19989275932312012 s
-Average detection time for single input: 19.98927593231201 ms
+Execution time: 0.15819001197814941 s
+Average detection time for single input: 15.819001197814941 ms
 
-Computed language detection accuracy on ARABIC:
+Report generated on ARABIC language detection test batch:
+Input:
+    - Words: 5
+    - Periods: 5
+    - Total: 10
+Computed language detection accuracy:
     - Words accuracy: 1.0
     - Periods accuracy: 1.0
     - Batch accuracy: 1.0
-Execution time: 0.1795496940612793 s
-Average detection time for single input: 17.95496940612793 ms
+Execution time: 0.20158648490905762 s
+Average detection time for single input: 20.15864849090576 ms
 
-Computed language detection accuracy on RUSSIAN:
+Report generated on RUSSIAN language detection test batch:
+Input:
+    - Words: 5
+    - Periods: 5
+    - Total: 10
+Computed language detection accuracy:
     - Words accuracy: 0.6
     - Periods accuracy: 1.0
     - Batch accuracy: 0.8
-Execution time: 0.14463019371032715 s
-Average detection time for single input: 14.463019371032715 ms
+Execution time: 0.17036867141723633 s
+Average detection time for single input: 17.036867141723633 ms
 
-Computed language detection accuracy on MULTIPLE LANGUAGE:
+Report generated on MULTIPLE LANGUAGE language detection test batch:
+Input:
+    - Words: 129
+    - Periods: 101
+    - Total: 230
+Computed language detection accuracy:
     - Words accuracy: 0.6046511627906976
     - Periods accuracy: 0.9405940594059405
     - Batch accuracy: 0.7521739130434782
-Execution time: 3.40179705619812 s
-Average detection time for single input: 14.790421983470088 ms
+Execution time: 3.6688430309295654 s
+Average detection time for single input: 15.951491438824197 ms
 
 Language detection on WORDS:
 
-Computed language detection accuracy on DEUTUSCH:
+Report generated on DEUTUSCH language detection test batch:
+Input:
+    - Words: 20
+    - Periods: 0
+    - Total: 20
+Computed language detection accuracy:
     - Words accuracy: 0.45
     - Periods accuracy: None
     - Batch accuracy: 0.45
-Execution time: 0.2622201442718506 s
-Average detection time for single input: 13.11100721359253 ms
+Execution time: 0.28793859481811523 s
+Average detection time for single input: 14.396929740905762 ms
 
-Computed language detection accuracy on ENGLISH:
+Report generated on ENGLISH language detection test batch:
+Input:
+    - Words: 20
+    - Periods: 0
+    - Total: 20
+Computed language detection accuracy:
     - Words accuracy: 0.35
     - Periods accuracy: None
     - Batch accuracy: 0.35
-Execution time: 0.27652645111083984 s
-Average detection time for single input: 13.826322555541992 ms
+Execution time: 0.26571083068847656 s
+Average detection time for single input: 13.285541534423828 ms
 
-Computed language detection accuracy on ITALIAN:
+Report generated on ITALIAN language detection test batch:
+Input:
+    - Words: 20
+    - Periods: 0
+    - Total: 20
+Computed language detection accuracy:
     - Words accuracy: 0.45
     - Periods accuracy: None
     - Batch accuracy: 0.45
-Execution time: 0.2597353458404541 s
-Average detection time for single input: 12.986767292022705 ms
+Execution time: 0.2647972106933594 s
+Average detection time for single input: 13.239860534667969 ms
 
-Computed language detection accuracy on FRENCH:
+Report generated on FRENCH language detection test batch:
+Input:
+    - Words: 20
+    - Periods: 0
+    - Total: 20
+Computed language detection accuracy:
     - Words accuracy: 0.75
     - Periods accuracy: None
     - Batch accuracy: 0.75
-Execution time: 0.2589378356933594 s
-Average detection time for single input: 12.946891784667969 ms
+Execution time: 0.2937479019165039 s
+Average detection time for single input: 14.687395095825195 ms
 
-Computed language detection accuracy on SPANISH:
+Report generated on SPANISH language detection test batch:
+Input:
+    - Words: 20
+    - Periods: 0
+    - Total: 20
+Computed language detection accuracy:
     - Words accuracy: 0.4
     - Periods accuracy: None
     - Batch accuracy: 0.4
-Execution time: 0.2671849727630615 s
-Average detection time for single input: 13.359248638153076 ms
+Execution time: 0.2651050090789795 s
+Average detection time for single input: 13.255250453948975 ms
 
 ******************************************************************
-GLOBAL report on test module:
+GLOBAL report for language detection test module:
+Input:
+    - Words: 259
+    - Periods: 131
+    - Total: 390
+Computed global language detection accuracy:
     - Words accuracy: 0.5405405405405406
     - Periods accuracy: 0.9465648854961832
-    - Batches accuracy: 0.676923076923077
-Total elapsed time: 6.041042804718018 s
-Average detection time for single input: 15.489853345430813 ms
+    - Module accuracy: 0.676923076923077
+Total elapsed time: 6.363332986831665 s
+Average detection time for single input: 16.316238427773502 ms
 ******************************************************************
