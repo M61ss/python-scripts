@@ -666,7 +666,6 @@ if __name__ == "__main__":
         lang_detection_accuracy(samples_AR, "ARABIC", nlp)
         lang_detection_accuracy(samples_RU, "RUSSIAN", nlp)
         lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE", nlp)
-        print("")
         print("Language detection on WORDS:")
         print("")
         lang_detection_accuracy(sample_words_DE, "DEUTUSCH", nlp)
@@ -674,7 +673,6 @@ if __name__ == "__main__":
         lang_detection_accuracy(sample_words_IT, "ITALIAN", nlp)
         lang_detection_accuracy(sample_words_FR, "FRENCH", nlp)
         lang_detection_accuracy(sample_words_ES, "SPANISH", nlp)
-        print("")
     if "--wiki-search" in sys.argv:
         print("TEST MODULE: Ability to search on Wikipedia")
         print("")
