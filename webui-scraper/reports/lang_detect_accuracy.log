@@ -80,3 +80,7 @@ Computed language detection accuracy on SPANISH:
 Execution time: 0.26497340202331543 s
 Average detection time for single input: 115.20582696665889 μs
 
+
+NOTES:
+
+Results obtained with raw detector: LanguageDetectorBuilder.from_all_languages().with_preloaded_language_models()
