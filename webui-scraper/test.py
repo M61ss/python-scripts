@@ -618,7 +618,6 @@ def lang_detection_accuracy(samples, lang : str, nlp : NLP):
     n_phrases = 0
     n_correct_words = 0
     n_correct_phrases = 0
-    n_correct_global = 0
     for sample in samples:
         query = nlp.compose_query(sample[0])
         if len(sample[0].split()) == 1:
@@ -626,7 +625,6 @@ def lang_detection_accuracy(samples, lang : str, nlp : NLP):
         else:
             n_phrases += 1
         if query.lang == sample[1]:
-            n_correct_global += 1
             if len(sample[0].split()) == 1:
                 n_correct_words += 1
             else:
@@ -635,7 +633,7 @@ def lang_detection_accuracy(samples, lang : str, nlp : NLP):
     elapsed_time = time.time() - start_time
 
     # Compute accuracies
-    global_accuracy = n_correct_global / (n_words + n_phrases)
+    global_accuracy = (n_correct_words + n_correct_phrases) / (n_words + n_phrases)
     words_accuracy = (n_correct_words / n_words) if n_words != 0 else None
     phrases_accuracy = (n_correct_phrases / n_phrases) if n_phrases != 0 else None
     print(f"Computed language detection accuracy on {lang}:")
@@ -646,7 +644,7 @@ def lang_detection_accuracy(samples, lang : str, nlp : NLP):
     print(f"Execution time: {elapsed_time} s")
     print(f"Average detection time for single input: {time_for_input * 100000} μs")
     print("")
-    return global_accuracy, words_accuracy, phrases_accuracy, elapsed_time, time_for_input
+    return n_words, n_phrases, n_correct_phrases, n_correct_words, elapsed_time
 
 if __name__ == "__main__":
     start_time = time.time()
