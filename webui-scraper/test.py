@@ -611,40 +611,84 @@ samples_periods_wikisearch_DE = [
 ]
 
 
-def lang_detection_accuracy(samples, lang : str, nlp : NLP):
-    start_time = time.time()
+class TestLangDetectData:
+    def __init__(self):
+        self.tot_n_words = 0
+        self.tot_n_periods = 0
+        self.tot_n_correct_words = 0
+        self.tot_n_correct_periods = 0
+        self.tot_elapsed_time = 0
 
-    n_words = 0
-    n_phrases = 0
-    n_correct_words = 0
-    n_correct_phrases = 0
-    for sample in samples:
-        query = nlp.compose_query(sample[0])
-        if len(sample[0].split()) == 1:
-            n_words += 1
-        else:
-            n_phrases += 1
-        if query.lang == sample[1]:
-            if len(sample[0].split()) == 1:
-                n_correct_words += 1
-            else:
-                n_correct_phrases += 1
+    def reset(self):
+        self.__init__()
     
-    elapsed_time = time.time() - start_time
+    def get_total_input(self):
+        return self.tot_n_words + self.tot_n_periods
+    
+    def get_total_correct(self):
+        return self.tot_n_correct_words + self.tot_n_correct_periods
+    
+    def compute_words_accuracy(self):
+        return self.tot_n_correct_words / self.tot_n_words
+    
+    def compute_periods_accuracy(self):
+        return self.tot_n_correct_periods / self.tot_n_periods
+    
+    def compute_batches_accuracy(self):
+        return self.get_total_correct() / self.get_total_input()
 
-    # Compute accuracies
-    global_accuracy = (n_correct_words + n_correct_phrases) / (n_words + n_phrases)
-    words_accuracy = (n_correct_words / n_words) if n_words != 0 else None
-    phrases_accuracy = (n_correct_phrases / n_phrases) if n_phrases != 0 else None
-    print(f"Computed language detection accuracy on {lang}:")
-    print(f"    - Words accuracy: {words_accuracy}")
-    print(f"    - Phrases accuracy: {phrases_accuracy}")
-    print(f"    - Global accuracy: {global_accuracy}")
-    time_for_input = elapsed_time / len(samples_mix)
-    print(f"Execution time: {elapsed_time} s")
-    print(f"Average detection time for single input: {time_for_input * 100000} μs")
-    print("")
-    return n_words, n_phrases, n_correct_phrases, n_correct_words, elapsed_time
+    def compute_batch_lang_detection_accuracy(self, samples, lang : str, nlp : NLP):
+        start_time = time.time()
+        n_words = 0
+        n_periods = 0
+        n_correct_words = 0
+        n_correct_periods = 0
+        for sample in samples:
+            query = nlp.compose_query(sample[0])
+            if len(sample[0].split()) == 1:
+                n_words += 1
+            else:
+                n_periods += 1
+            if query.lang == sample[1]:
+                if len(sample[0].split()) == 1:
+                    n_correct_words += 1
+                else:
+                    n_correct_periods += 1
+        elapsed_time = time.time() - start_time
+
+        # Compute accuracies
+        words_accuracy = (n_correct_words / n_words) if n_words != 0 else None
+        periods_accuracy = (n_correct_periods / n_periods) if n_periods != 0 else None
+        batch_accuracy = (n_correct_words + n_correct_periods) / len(samples)
+        print(f"Computed language detection accuracy on {lang}:")
+        print(f"    - Words accuracy: {words_accuracy}")
+        print(f"    - Periods accuracy: {periods_accuracy}")
+        print(f"    - Batch accuracy: {batch_accuracy}")
+        time_for_input = elapsed_time / len(samples)
+        print(f"Execution time: {elapsed_time} s")
+        print(f"Average detection time for single input: {time_for_input * 1000} ms")
+        print("")
+        
+        # Update class values
+        self.tot_n_words += n_words
+        self.tot_n_periods += n_periods
+        self.tot_n_correct_words += n_correct_words
+        self.tot_n_correct_periods += n_correct_periods
+        self.tot_elapsed_time += elapsed_time
+
+    def compute_global_lang_detection_accuracy(self):
+        global_words_accuracy = test_lang_detect_data.compute_words_accuracy()
+        global_periods_accuracy = test_lang_detect_data.compute_periods_accuracy()
+        global_batches_accuracy = test_lang_detect_data.compute_batches_accuracy()
+        print("******************************************************************")
+        print("GLOBAL report on test module:")
+        print(f"    - Words accuracy: {global_words_accuracy}")
+        print(f"    - Periods accuracy: {global_periods_accuracy}")
+        print(f"    - Batches accuracy: {global_batches_accuracy}")
+        print(f"Total elapsed time: {test_lang_detect_data.tot_elapsed_time} s")
+        time_for_input = test_lang_detect_data.tot_elapsed_time / test_lang_detect_data.get_total_input()
+        print(f"Average detection time for single input: {time_for_input * 1000} ms")
+        print("******************************************************************")
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -653,24 +697,27 @@ if __name__ == "__main__":
     print("")
 
     if "--lang-detect" in sys.argv:
+        test_lang_detect_data = TestLangDetectData()
         print("TEST MODULE: Language detection accuracy:")
         print("")
         print("Language detection on PERIODS:")
         print("")
-        lang_detection_accuracy(samples_EN, "ENGLISH", nlp)
-        lang_detection_accuracy(samples_IT, "ITALIAN", nlp)
-        lang_detection_accuracy(samples_ES, "SPANISH", nlp)
-        lang_detection_accuracy(samples_DE, "DEUTUSCH", nlp)
-        lang_detection_accuracy(samples_AR, "ARABIC", nlp)
-        lang_detection_accuracy(samples_RU, "RUSSIAN", nlp)
-        lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_EN, "ENGLISH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_IT, "ITALIAN", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_ES, "SPANISH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_DE, "DEUTUSCH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_AR, "ARABIC", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_RU, "RUSSIAN", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(samples_mix, "MULTIPLE LANGUAGE", nlp)
         print("Language detection on WORDS:")
         print("")
-        lang_detection_accuracy(sample_words_DE, "DEUTUSCH", nlp)
-        lang_detection_accuracy(sample_words_EN, "ENGLISH", nlp)
-        lang_detection_accuracy(sample_words_IT, "ITALIAN", nlp)
-        lang_detection_accuracy(sample_words_FR, "FRENCH", nlp)
-        lang_detection_accuracy(sample_words_ES, "SPANISH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(sample_words_DE, "DEUTUSCH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(sample_words_EN, "ENGLISH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(sample_words_IT, "ITALIAN", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(sample_words_FR, "FRENCH", nlp)
+        test_lang_detect_data.compute_batch_lang_detection_accuracy(sample_words_ES, "SPANISH", nlp)
+
+        test_lang_detect_data.compute_global_lang_detection_accuracy()
     if "--wiki-search" in sys.argv:
         print("TEST MODULE: Ability to search on Wikipedia")
         print("")
