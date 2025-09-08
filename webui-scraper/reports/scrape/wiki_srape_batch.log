@@ -1,0 +1,261 @@
+NLP configured in: 3.3967933654785156 s
+
+TEST MODULE: Ability to scrape information from Wikipedia
+
+Testing WORDS:
+
+Wikipedia API language set on: it
+Search results for query 'gatto':
+Keywords: [('gatto', 1.0)]
+- 1.1: Felis silvestris catus
+- 1.2: Gatto calico
+- 1.3: Gatto siberiano
+Page found for 'Felis silvestris catus':
+Page summary: Il gatto domestico (Felis catus Linnaeus, 1758 o Felis silvestris catus Linnaeus, 1758) è un piccolo mammifero carnivoro appartenente alla famiglia dei felidi.
+Dall'indole essenzialmente territoriale e crepuscolare, il gatto è un predatore di piccoli animali, specialmente roditori e uccelli. Per comunicare utilizza vari vocalizzi (più di sedici), le fusa, le posizioni del corpo e i feromoni. Prevalentemente domestico, il gatto può essere addestrato ad accettare istruzioni semplici e può imparare da solo a manipolare svariati meccanismi, anche complessi, tra cui le maniglie delle porte o le chiusure delle gabbie.
+È il felino col più vasto areale nel mondo e con la popolazione più numerosa, protagonista anche di fenomeni d'inselvatichimento così ampi da determinarne l'inclusione nella lista delle cento specie invasive più dannose da parte dell'Unione internazionale per la conservazione della natura.
+Si possono contare una cinquantina di razze differenti, riconosciute con certificazioni.
+Page found for 'Gatto calico':
+Page summary: Il gatto calico è un gatto domestico di qualsiasi razza con un mantello tricolore composto in prevalenza (dal 25% al 75%) di colore bianco con grandi macchie arancioni e nere (o talvolta macchie crema e grigie). Gli occhi sono solitamente verdi o più raramente azzurri.
+Il calico non va confuso con il gatto tartarugato il cui mantello è per lo più screziato e composto dai colori nero/arancio o grigio/crema con segni bianchi relativamente pochi o assenti.
+Come il tartarugato, anche i calico sono quasi esclusivamente femmine tranne che in rare condizioni genetiche in cui il maschio calico è sterile.
+Nella provincia del Québec, in Canada, le calico sono chiamate anche chatte d'Espagne (gatte di Spagna). Altri nomi sono tigrato, gatto tricolore, mikeneko (三毛猫) (in giapponese letteralmente  'gatto a tre pellicce'), e lapjeskat (in olandese 'gatto con toppe'). I calico con una colorazione diluita sono chiamati calimanco o tigre nebulosa. Occasionalmente, la colorazione tricolore calico è combinata con un motivo tabby e, in tal caso, prende il nome di caliby.
+Page found for 'Gatto siberiano':
+Page summary: Il gatto siberiano è una razza di gatto risultata dalla selezione naturale fra il gatto selvatico dei boschi e il gatto domestico portato nella Russia siberiana da alcuni coloni nel loro peregrinare, avvenuta intorno all'anno 1050. Gli esemplari di questa razza sono caratterizzati dal pelo semi-lungo e da dimensioni massicce, ma compatte. Le condizioni climatiche molto rigide hanno reso questo piccolo felino un forte, resistente e scaltro cacciatore dal mantello idrorepellente e cute particolarmente spessa per una migliore termoregolazione corporea.
+Una particolarità di questa razza consiste nella sua totale o quasi incapacità di produzione della proteina Fel D1. Questa proteina, prodotta dalle ghiandole sebacee e presente in concentrazioni molto elevate nella saliva dei gatti, è la principale responsabile delle reazioni allergiche degli esseri umani. Non è il pelo, come spesso erroneamente si crede, a scatenare le reazioni allergiche, ma principalmente questa proteina che il gatto deposita sul proprio mantello durante le consuete operazioni di pulizia dello stesso pelo. La ridotta (e in alcuni casi nulla) produzione di Fel D1 da parte del gatto siberiano lo rende, di fatto, una razza ipoallergenica.
+Wikipedia API language set on: zu
+Search results for query 'cane':
+Keywords: [('cane', 1.0)]
+- 1.1: Izilwane
+- 1.2: Ivondwe
+Page found for 'Izilwane':
+Page summary: iziLwane ezitholakala eNingizimu Afrika yilezi :
+
+Indlovu (Elephant)
+Ibhubesi or Ingonyama (Lion)
+Ingwe  (Leopard)
+Inyathi (Buffalo)
+Ubhejane (Black Rhino)
+Umkhombe (White Rhino)
+Ikhanka / Impungushe (Jackal)
+Inkentshane (Wild Dog)
+Impisi (Hyena)
+Ingulule (Cheetah)
+Indlonzi/ndlozi/hlosi (serval cat)
+Impala (Impala)
+Inyala (Nyala)
+Imbokodo (Springbuck)
+Insimba (Genet cat/wild Cat)
+Insele (Honey Badger)
+Unogolantethe (White Stork)
+Ingungumbane (Porcupine)
+Isambane (Aardvark)
+Isidla-izintuthwane (Anteater)
+Ivondwe (Cane Rat)
+Uchakide (Weasel/mongoose)
+Ingulube yehlathi (Wild Pig)
+Unogwaja (Rabbit)
+Intibane (Warthog)
+Idube (Zebra)
+Indlulamithi (Giraffe)
+Imboma or Imvubu (Hippo)
+Ingwenya (Crocodile)
+Inkawu (Vervet Monkey)
+Insimango (Samango Monkey)
+Imfene (Baboon)
+Intulo (Agama lizard)
+Imbila (Dassie or hyrax)
+Inkonkoni (Wildebeest or Gnu)
+Inqe (Vulture)
+Inhlwathi (Python)
+Ibululu (Puff adder)
+Ihlengethwa (Dolphin)
+Iselesele (Frog)
+Isilo (Tiger)
+nezinye eziningi.
+Page found for 'Ivondwe':
+Page summary: Amavondwe ayizilwane ezihlala e-Afrika.
+Wikipedia API language set on: it
+Search results for query 'scienza':
+Keywords: [('scienza', 1.0)]
+- 1.1: Scienza
+- 1.2: Scienza Cristiana
+- 1.3: Léo Scienza
+Page found for 'Scienza':
+Page summary: La scienza è un sistema di conoscenze ottenute attraverso un'attività di ricerca, prevalentemente organizzata con procedimenti metodici e rigorosi, coniugando la sperimentazione con ragionamenti e esperimenti logici condotti a partire da un insieme di assiomi, tipici delle discipline formali. Uno dei primi esempi del loro utilizzo si può incontrare negli Elementi di Euclide, mentre il metodo sperimentale, tipico della scienza moderna, venne introdotto da Galileo Galilei, e prevede di controllare continuamente che le osservazioni sperimentali siano coerenti con le ipotesi e i ragionamenti svolti.
+Il suo obiettivo è di pervenire a una descrizione verosimile, con carattere predittivo, della realtà e delle leggi che regolano l'apparenza dei fenomeni.
+Le discipline scientifiche possono essere suddivise in due categorie:
+
+le scienze empiriche, che sono suddivise in scienze naturali (fisica, chimica, biologia, geologia, astronomia) e scienze sociali (filosofia, sociologia, antropologia, storia, scienze politiche, economia, geopolitica, psicologia, pedagogia ecc.), studiano la natura a partire da osservazioni empiriche;
+le scienze applicate, tra cui ad esempio ingegneria e medicina, si servono dei risultati delle prime due per fare progredire la tecnologia e l'industria sviluppando nuovi prodotti e servizi.
+Si tratta comunque di categorie strettamente interconnesse, fortemente relazionate alle discipline formali, di cui fa parte anche la matematica le quali costruiscono teorie astratte.
+L'insegnamento della scienza e la ricerca scientifica vengono praticati prevalentemente nelle università, negli istituti di ricerca e nelle imprese. Vengono detti scienziati tutti coloro che si dedicano alla ricerca di nuove conoscenze utilizzando metodi scientifici.
+La scienza moderna si sviluppa in modo particolare a partire dalla rivoluzione scientifica del XVI secolo con l'accumulo di conoscenze nei più svariati ambiti del sapere. La storia della scienza ne descrive lo sviluppo nel tempo.
+
+
+Page found for 'Scienza Cristiana':
+Page summary: Scienza Cristiana (in inglese Christian Science) è un nuovo movimento religioso cristiano metafisico fondato nel 1879 negli Stati Uniti d'America da Mary Baker Eddy (1821-1910).
+La sua missione dichiarata è quella di ripristinare il cristianesimo primitivo ed il suo elemento perduto di guarigione. La Chiesa Madre di questo movimento, La Prima chiesa del Cristo, Scientista, ha sede a Boston, nel Massachusetts, USA. Sebbene le denominazioni di Scienza Cristiana e Scientology siano somiglianti, le due entità non hanno niente a che fare tra di loro. Solo l'influenza del sistema di Phineas Quimby e del movimento Nuovo Pensiero sulla teologia e gli insegnamenti della Scienza Cristiana rimane oggetto di dibattito; tuttavia Mary Baker Eddy successivamente si allontanò dagli insegnamenti di Phineas Quimby, sostenendo che la guarigione arriva direttamente da Dio e non attraverso la mediazione della mente: la Scienza Cristiana pertanto non si considera parte del movimento Nuovo Pensiero.
+Page found for 'Léo Scienza':
+Page summary: Léo Scienza, pseudonimo di Leonardo Weschenfelder Scienza (Venâncio Aires, 13 settembre 1998), è un calciatore brasiliano, centrocampista del Southampton.
+Wikipedia API language set on: it
+Search results for query 'università':
+Keywords: [('università', 1.0)]
+- 1.1: Università
+- 1.2: Università degli Studi di Roma "La Sapienza"
+- 1.3: Università degli Studi di Milano
+Page found for 'Università':
+Page summary: L'università (dal latino universitas, -atis: comunità, corporazione, associazione) è un modello d'istruzione originatosi nel tardo Medioevo. L'istituto ha le sue scaturigini nelle chiese e nei conventi europei, dove, attorno all'XI secolo, iniziarono a tenersi lezioni, con lettura e commento di testi filosofici e giuridici, e presso di essi, o in genere attorno a grandi personalità ecclesiastiche, varie categorie di docenti e studenti cominciarono a organizzarsi in corporazioni chiamate universitates.
+Page found for 'Università degli Studi di Roma "La Sapienza"':
+Page summary: L'Università degli Studi di Roma "La Sapienza" (nota anche come Sapienza Università di Roma o semplicemente La Sapienza) è un'università statale italiana fondata nel 1303, tra le più antiche del mondo nonché la più antica della città.
+Nata per volontà di papa Bonifacio VIII che, il 20 aprile 1303, con la bolla pontificia In Supremae praeminentia Dignitatis, istituì a Roma lo Studium Urbis, con oltre 120 000 studenti (2022) è la più grande università d'Europa, a lungo l'unica università statale di Roma.
+La Sapienza ha ospitato, nel corso della sua plurisecolare storia, alunni illustri e ha contribuito a formare gran parte della “classe dirigente” italiana. La Sapienza annovera collaborazioni con alcune delle università più illustri e prestigiose al mondo, come l'Università Columbia di New York, l'Università Cornell di Ithaca, la Sorbonne Université di Parigi e l'Università Complutense di Madrid. Nel 2025, secondo la classifica del Center for World University Rankings (CWUR), si conferma il primo ateneo italiano nel mondo a nel sud Europa per il 14º anno consecutivi
+Le tasse universitarie variano a seconda del livello di studi, del corso scelto e della condizione familiare attraverso il documento ISEE. In particolare, il costo di partecipazione può variare dai 500 a 3000 euro all'anno.
+
+
+Page found for 'Università degli Studi di Milano':
+Page summary: L'Università degli Studi di Milano (in acronimo UniMi), anche nota colloquialmente come La Statale, è un'università pubblica fondata nel 1924. La sede centrale è situata nell'edificio rinascimentale della Ca' Granda a Milano, voluto dal duca di Milano Francesco Sforza.
+Wikipedia API language set on: it
+Search results for query 'Italia':
+Keywords: [('italia', 1.0)]
+- 1.1: Italia
+- 1.2: Italia 1
+- 1.3: Lingua italiana
+Page found for 'Italia':
+Page summary: L'Italia (AFI: /iˈtalja/, ), ufficialmente Repubblica italiana, è uno Stato membro dell'Unione europea, situato nell'Europa meridionale e occidentale, il cui territorio coincide in gran parte con l'omonima regione geografica. L'Italia è una repubblica parlamentare unitaria e conta una popolazione di circa 59 milioni di abitanti, che ne fanno il terzo Stato dell'Unione europea per numero di abitanti dopo Germania e Francia. 
+Delimitata dall'arco alpino, l'Italia confina a nord, da ovest a est, con Francia, Svizzera, Austria e Slovenia; la penisola italiana si protende nel mar Mediterraneo, circondata dai mari Ligure, Tirreno, Ionio e Adriatico, e da numerose isole (le maggiori sono Sicilia e Sardegna), per un totale di 302068,26 km². Gli Stati della Città del Vaticano e di San Marino sono enclavi della Repubblica, mentre Campione d'Italia è un'exclave della Repubblica italiana e un'enclave della Confederazione svizzera.
+Crocevia di numerose civiltà, l'Italia antica fu unificata da Roma nel 266 a.C. diventando il centro amministrativo, economico, culturale e politico della Repubblica romana e il successivo Impero romano. Dopo la caduta dell'Impero romano d'Occidente, l'Italia medievale fu soggetta a invasioni e dominazioni di popolazioni barbariche, perdendo la propria unità politica. Tra XV e XVI secolo, con la diffusione dell'Umanesimo e del Rinascimento, divenne nuovamente il centro culturale del mondo occidentale. La penisola conobbe poi la controriforma, il barocco e il neoclassicismo. 
+Dopo la parentesi napoleonica, gli italiani lottarono per l'unificazione e l'indipendenza nazionale durante il Risorgimento, finché, dopo la seconda guerra d'indipendenza e la spedizione dei Mille, il 17 marzo 1861 nacque il Regno d'Italia, che ottenne la vittoria nella prima guerra mondiale (1918), completando il processo di unificazione nazionale. Dopo il ventennio fascista (1922-1943), la seconda guerra mondiale, e la definitiva guerra di liberazione, a seguito di un referendum istituzionale, nel 1946 lo Stato italiano divenne una repubblica.
+Nel 2022 l'Italia, ottava potenza economica mondiale e terza nell'Unione europea, è un paese con un alto livello di vita: l'indice di sviluppo umano è molto alto, 0.906, e la speranza di vita è di 82,8 anni. È membro fondatore dell'Unione europea, della NATO, del Consiglio d'Europa e dell'OCSE; aderisce all'ONU e alla Convenzione di Schengen. L'Italia è membro del G7 e del G20, partecipa al progetto di condivisione nucleare della NATO, si colloca in dodicesima posizione nel mondo per spesa militare ed è sia una potenza regionale che una grande potenza globale. È il sesto maggior esportatore a livello mondiale, il quinto paese più visitato al mondo e vanta il maggior numero di siti dichiarati patrimonio dell'umanità dall'UNESCO (60).
+Page found for 'Italia 1':
+Page summary: Italia 1 è un canale televisivo italiano privato di tipo generalista con target giovanile, diffuso a livello nazionale ed edito da Mediaset, società che ha acquistato il canale nel dicembre del 1982 dalla Rusconi, che lo aveva lanciato il 3 gennaio dello stesso anno.
+Page found for 'Lingua italiana':
+Page summary: L'italiano è una lingua romanza parlata principalmente in Italia. Per ragioni storiche e geografiche, l'italiano è la lingua romanza meno divergente dal latino (complessivamente a pari merito, anche se in parametri diversi, con la lingua sarda).
+L'italiano è classificato al 23º posto tra le lingue per numero di parlanti nel mondo e, in Italia, è utilizzato da circa 58 milioni di residenti. Nel 2015 era la lingua materna del 90,4% dei residenti in Italia, che spesso lo acquisiscono e lo usano insieme alle varianti regionali dell'italiano, alle lingue regionali e ai dialetti. In Italia viene ampiamente usato per tutti i tipi di comunicazione della vita quotidiana e prevale largamente nei mezzi di comunicazione nazionali, nell'amministrazione pubblica dello Stato italiano e nell'editoria.
+Oltre ad essere la lingua ufficiale dell'Italia e di San Marino,, è anche una delle lingue ufficiali dell'Unione europea, della Svizzera, della Città del Vaticano e del Sovrano militare ordine di Malta. È inoltre riconosciuto e tutelato come «lingua della minoranza nazionale italiana» dalla Costituzione slovena e croata nei territori in cui vivono popolazioni di dialetto istriano.
+È diffuso nelle comunità di emigrazione italiana, è ampiamente noto anche per ragioni pratiche in diverse aree geografiche ed è una delle lingue straniere più studiate nel mondo.
+Dal punto di vista storico, l'italiano è una lingua codificata tra Quattrocento e Cinquecento sulla base del fiorentino letterario usato nel Trecento.
+Wikipedia API language set on: it
+Search results for query 'politica':
+Keywords: [('politica', 1.0)]
+- 1.1: Politica
+- 1.2: Politico
+- 1.3: Indipendente (politica)
+Page found for 'Politica':
+Page summary: Il termine politica viene utilizzato in riferimento all'attività e alle modalità di governo, o anche nel lessico politico alla cosiddetta attività di opposizione; può riferirsi a Stati, confederazioni e organizzazioni intergovernative, oppure a entità locali e territoriali più circoscritte, come regioni e comuni: in questi ultimi casi l'azione di governo è detta più propriamente amministrazione locale.
+Page found for 'Politico':
+Page summary: Un politico è una persona che detiene una carica negli organismi statali, a livello di governo centrale o ente territoriale, o un esponente degli apparati dei partiti politici con responsabilità di rappresentanza e/o coordinamento e/o gestionali della macchina partitica.
+Page found for 'Indipendente (politica)':
+Page summary: In politica, un indipendente è un politico o una persona non affiliata a partiti o movimenti politici.
+Wikipedia API language set on: eu
+Search results for query 'arte':
+Keywords: [('arte', 1.0)]
+- 1.1: Arte
+- 1.2: Arte prerromanikoa
+- 1.3: Arte kritika
+Page found for 'Arte':
+Page summary: Artea edo ertia errealitatea edo irudimena nolabait adierazteko giza ekintza da. Horretarako, askotariko tresnak erabili ohi dira, hala nola materia, irudia, soinua, gorputz-adierazpena eta abar, hartzailearen irudimena edota emozioa suspertzeko helburuarekin.
+Page found for 'Arte prerromanikoa':
+Page summary: Arte prerromanikoa edo aurrerromanikoa Europako Goi Erdi Aroko artearen garai bat izan zen, Erromatar Inperioaren erorialditik (K.o. 476) erromanikoa hasi zen arte (1000. urtearen inguruan) iraun zuena. Ez da arte estilo bakarra, baizik eta Europako mendebaldeko herrialdeetan garai haietan izan zen arte estiloen multzoa.
+Ikerlariek bi ezaugarri nagusi ikusten dizkiote: alde batetik, erromanikoaren aurrekari edo aitzindaria dugu; eta, bestetik, Antzinaroko artearen jarraipena.
+Europan garai zailak izan ziren, inbasio ugari izan baitziren Erromatar Inperioaren barruan. Herri berri haiek beren artea ekarri zuten:
+
+Karolingiar artea
+Lombardiar artea
+Otondar artea
+Espainian ere baziren hainbat arte mota une hartan. V. mendean germaniarrak sartu ziren lehenengo mugimendu batean, eta bigarren batean bisigodoak azaldu ziren. Ezegonkortasun handiko garaiak izan ziren. Arteari dagokionez, lau bereiz ditzakegu:
+
+Arte bisigotikoa
+Asturiar artea
+Mozarabiar artea
+Birpopulaketaren artea
+Page found for 'Arte kritika':
+Page summary: Arte kritika literatura eta mundu akademikoaren arteko generoa da. Testu hauen bitartez arte-espezialistek lan desberdinen inguruko haien iritziak ematen dituzte. Beraz, arte kritikaren lana zera da: arte-lanak analizatu eta epaitzea, zerbaiten balioaren azterketa egitea.
+Wikipedia API language set on: la
+Search results for query 'musica':
+Keywords: [('musica', 1.0)]
+- 1.1: Musica
+- 1.2: Musica rock
+- 1.3: Musica punkiana
+Page found for 'Musica':
+Page summary: Musica (a vocabulo Graeco μουσική 'ars Musarum') est artificium cuius medium est sonus et silentium. Sua elementa communia saepissime sunt diagramma (quod melodiam harmoniamque gubernat), rhythmus vel numerus (et adsociatae notione cognatae tempus, metrum vel etiam numerus, et articulatio), dynamica, et tympanum (Anglice, Francice timbre) et textura, proprietates sonicae.
+
+Creatio, perfunctio, significatio, et adeo definitio musicae inter se secundum culturam et adiuncta societatis variant. Musica a compositionibus rigide ordinatis (et eorum recreatione in perfunctione), per musica subitaria, ad musicam aleatoricam transit. Musica in genera et subgenera dividi potest, sed normae describendi in genera et coniunctiones inter genera saepe sunt subtiles, aliquando singularibus interpretationibus subiectae, et per occasionem controversae. Intra res artes appellatas, musica pro arti exsecutivae, arti liberali, et arti auditoriae haberi potest.
+
+Musica multis hominibus in multis culturis est gravis vitae pars. Philosophi Graeci et Indici antiqui musicam definiebant tonos ad libram ordinatos ut melodiae et ad perpendiculum ut harmoniae. Sententiae communes sicut "harmonia sphaerarum" et "meis auribus id est musica" notionem sustinent quod musica ordinari potest, suavisque auditu. Putabat autem Ioannes Cage, Americanus saeculi vicensimi compositor, quemlibet sonum posse musicam; insigniter inquit, "Non est strepitus, solum sonus." Ioannes Iacobus Nattiez, musicologus Canadiensis, iudicium postmodernum et "relativisticum" breviter repetit : "The border between music and noise is always culturally defined—which implies that, even within a single society, this border does not always pass through the same place; in short, there is rarely a consensus. . . . By all accounts there is no single and intercultural universal concept defining what music might be."
+Page found for 'Musica rock':
+Page summary: Musica rock vel musica rockiana est genus musicae, in parte meridiana Civitatum Foederatarum Americae circa annum 1950 exortum. "Rockistarum" prodromi sive "antesignani nigritae"? fuerunt, inter quos Carolus Berry (Chuck" Berry), Ricardulus (Little Richard), Bo Diddley, Fats Domino. Primaevum illud rock (quod voce rock 'n roll indicari solet) ex musica blues, "nigritarum" propria, "eque"? genere rhythm and blues vocato natum esse videtur. Cum autem ad "albicolores"? musica rock transiisset, vim etiam musicae rusticanae (Anglice: country) subiit. Ab his initiis, musica rock ad totum orbem terrarum mox propagata annis paucis ita crevit, ut alia omnia musicae popularis genera numero studioque auscultantium facile superaret.
+Musica rock haud facile finitur. Voce canit unus vel plures; his succinere solent citharae electricae citharaque "gravisona" ac tympanum; accedunt interdum saxophonum, tuba recta, tuba diductilis, instrumenta alia. Modorum ictus vehementior percipitur, unde in auscultantium animis vix "coercibilis" tripudiandi libido nonnumquam excitatur. 
+Rockistae omnium notissimi Beatles exstiterunt, nempe grex Britannorum Liverpolensium, quorum nomen ut videtur est conglutinatio ex beat et scarabaeis.
+Page found for 'Musica punkiana':
+Page summary: Musica punkiana (pro stilo punkiano, "rátio punkiana" (-onis, f); pro persona punkiana, "rationis punkianae ássecla") (-ae, m/f) est genus musicum ex musica rockiana tractum. Annibus 1970 in Civitatibus Foederatis, Britanniarum Regno, et Australia apparuit.
+Greges qui ad punkicos saepius afferuntur sicut maxime influentes? sunt Sex Pistols, Ramones, The Clash, Banda Bassotti, etc. Appellandi quoque experimenti David Bowie sunt.
+Wikipedia API language set on: it
+Search results for query 'letteratura':
+Keywords: [('letteratura', 1.0)]
+- 1.1: Letteratura
+- 1.2: Premio Nobel per la letteratura
+- 1.3: Vincitori del premio Nobel per la letteratura
+Page found for 'Letteratura':
+Page summary: Una letteratura è una qualsiasi collezione di opere scritte; il termine, tuttavia, è normalmente utilizzato in modo più ristretto per riferirsi a opere scritte (o anche trasmesse oralmente) che siano state composte con una intenzionalità precisa e con una logica interna, e che possano essere ricondotte a una qualsiasi forma di arte, in particolare alle opere di prosa, poesia e teatro. 
+Le definizioni che del termine "letteratura" sono state date nel tempo, sensibili a diverse ideologie, visioni del mondo, sensibilità politiche o filosofiche, sono diverse tra loro e spesso assolutamente inconciliabili. Assai varia è anche la misura del "campo" della letteratura e incerta la definizione di ciò che letteratura non è, tanto che vi è stato chi ha affermato che letteratura è ciò che viene chiamato letteratura, chi ha trovato nell'impossibilità della definizione la sola definizione possibile, o chi, sottolineando "la polivalenza e ambiguità del fenomeno letterario", sostiene tuttavia che "non tutto ciò che è scritto è letteratura, per diventarlo, un testo scritto dev'essere mosso da un'intenzionalità precisa e da una conseguente logica strutturante".
+Vi è tuttavia un certo consenso sul fatto che la letteratura di una nazione costituisca una "sintesi organica dell'anima e del pensiero d'un popolo", ovvero uno specchio della rispettiva società in un tempo definito e che varia di opera in opera.
+
+
+Page found for 'Premio Nobel per la letteratura':
+Page summary: Il premio Nobel per la letteratura è uno dei cinque premi istituiti dal testamento di Alfred Nobel nel 1895 ed è attribuito all'autore nel campo della letteratura mondiale che "si sia maggiormente distinto per le sue opere in una direzione ideale": è stato assegnato per la prima volta nel 1901, come gli altri premi istituiti da Nobel stesso.
+Considerato il premio più prestigioso e più mediatico del mondo, il Premio Nobel mette in evidenza un autore e il suo lavoro. Gli assicura una promozione su scala planetaria, una reputazione internazionale e una certa tranquillità finanziaria.
+Non è raro che il premio Nobel assuma un significato politico, a volte con valore di disconoscimento di fronte a regimi autoritari. In effetti, diversi scrittori esiliati, dissidenti, manifestanti, perseguitati o banditi dalla pubblicazione nel loro paese sono stati premiati, come Miguel Ángel Asturias, Boris Pasternak, Pablo Neruda, Aleksandr Solženicyn e Gao Xingjian.
+Il Premio Nobel onora innanzitutto romanzieri, saggisti, poeti e drammaturghi. Tuttavia, l'elenco dei vincitori comprende anche quattro filosofi (Rudolf Christoph Eucken, Henri Bergson e Bertrand Russell) tra cui anche Jean-Paul Sartre che lo rifiutò, uno storico (Theodor Mommsen), uno statista (Winston Churchill, distintosi anche per la sua autobiografia e per i suoi discorsi politici) e un cantautore (Bob Dylan).
+Page found for 'Vincitori del premio Nobel per la letteratura':
+Page summary: Segue un elenco dei vincitori del Premio Nobel per la letteratura. Il Premio viene assegnato annualmente dall'Accademia svedese.
+Wikipedia API language set on: la
+Search results for query 'storia':
+Keywords: [('storia', 1.0)]
+- 1.1: Rai Historia
+- 1.2: Italia
+- 1.3: Exit: una storia personale
+Page found for 'Rai Historia':
+Page summary: Rai Historia (Italiane: Rai Storia) canale televisifici culturae Italici est. Ad RAIam pertinet et transmissionum initium fecit anno 2009.
+Page found for 'Italia':
+Page summary: Italia, rite Res Publica Italica (Italiane Repubblica italiana), est unitaria respublica parlamentaria in Europa meridiana sita. Ad septentriones, fines Alpinos cum Francia, Helvetia, Austria, Slovenia habet. Ad meridiem ex omni paeninsula Italica, Sicilia et Sardinia (maximis insulis in mari nostro patentibus), multisque insulis minoribus constat. Respublica Sancti Marini et Civitas Vaticana, perparvae civitates sui iuris, sunt inclavaturae intra Italiam, atque Italiae Campilionum est exclavatura Italica intra Helvetiam. Fines Italici fere 301 338 chiliometrorum quadratorum terrestrium comprehendunt, a climate mediterraneo in zona temperata temporali adfecti. Civitas, circa 60.8 milliones habitantium habens, numero populorum est quinta in Europa et vicensima tertia in orbe terrarum.
+Page found for 'Exit: una storia personale':
+Page summary: Exit: una storia personale est pellicula Italiana a moderatore cinematographico Maximiliano Amato ducta et anno 2010 edita. In hac pellicula quae de euthanasia enarrat et quae numquam in Italia edita est quamquam praemia in Francia vicerat, agunt hi actores:
+
+Lucas Guastini: Marco Serrano
+Nicolaus Garofalo: Davide Serrano
+Marcella Braga: Nina
+Paulus Di Gialluca: Medicus Caracci
+Antonius Calamonici: Maurizio
+Paula Frediani: Sara
+Didacus Bottiglieri: Mauritii socius
+Marcus Cortesi: Francesco
+Saroja Alasko: Anna
+Claudius Spadola: Editor
+Margharita Mastrone: Daniela
+Katia Nani: Editor
+Fabius Valletta: Danielae amasius
+Ioanna Pavoni: meretrix batavica
+Fabius De Caro: valetudinarii praefectus
+Azzurra Rocchi: puella in spelunca
+Iosephus Iacono: puer in insula
+Paulus Pipitone: valetudinarii praefectus
+Aurin Proietti: valetudinarii praefectus batavicus
+Sergius Toscano: Nick
+Alexander Rossetti: aegrorum minister SPDC
+Petrus Franciscus Sampaolo: Medicus SPDC
+Michaela Parzanese: communitatis medica
+Andreas Spila: Editor
+Fridericus Firmani: Gianni
+Constantinus Comito: communitatis aegrorum minister
+Angelica Novak: Carla
+Vincentius Scuruchi: aegrorum minister
+Catalina Bularda: vir aegrus
+Petrus Bresolin: Francisci pater
+Carmen Di Marzo: vir aegrus
+Iosephus Torcasio: Peppe
+Antonius Fazio: Mirco
+Ioannes Lucas Testa: tabernae puella
+Claudius Caminito: tabernae puer
+Simona Padovini: Carolae mater
+Margharita Bonanno: Mauritii soror

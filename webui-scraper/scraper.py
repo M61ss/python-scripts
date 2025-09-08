@@ -4,6 +4,7 @@ from query import Query
 class Scraper:
     def __init__(self, debug : bool = False):
         self.debug : bool = debug
+        wikipedia.BeautifulSoup(features="html.parser")
 
     def set_language(self, query : Query):
         query_lang : str = query.lang.lower()
