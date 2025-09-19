@@ -1,0 +1,578 @@
+NLP configured in: 12.591543912887573 s
+
+TEST MODULE: Ability to search on Wikipedia
+
+Testing WORDS:
+
+Wikipedia API language set on: it
+Search results for query 'gatto':
+Keywords: [('gatto', 1.0)]
+- 1.1: Felis silvestris catus
+- 1.2: Gatto siberiano
+- 1.3: Paradosso del gatto di Schrödinger
+Wikipedia API language set on: zu
+Search results for query 'cane':
+Keywords: [('cane', 1.0)]
+- 1.1: Izilwane
+- 1.2: Ivondwe
+Wikipedia API language set on: it
+Search results for query 'scienza':
+Keywords: [('scienza', 1.0)]
+- 1.1: Scienza
+- 1.2: Scienza Cristiana
+- 1.3: Scienza politica
+Wikipedia API language set on: it
+Search results for query 'università':
+Keywords: [('università', 1.0)]
+- 1.1: Università
+- 1.2: Università degli Studi di Roma "La Sapienza"
+- 1.3: Università degli Studi di Milano
+Wikipedia API language set on: it
+Search results for query 'Italia':
+Keywords: [('italia', 0.9879)]
+- 1.1: Italia
+- 1.2: Italia 1
+- 1.3: Lingua italiana
+Wikipedia API language set on: it
+Search results for query 'politica':
+Keywords: [('politica', 1.0)]
+- 1.1: Politica
+- 1.2: Politico
+- 1.3: Indipendente (politica)
+Wikipedia API language set on: eu
+Search results for query 'arte':
+Keywords: [('arte', 1.0)]
+- 1.1: Arte
+- 1.2: Arte prerromanikoa
+- 1.3: Arte kritika
+Wikipedia API language set on: la
+Search results for query 'musica':
+Keywords: [('musica', 1.0)]
+- 1.1: Musica
+- 1.2: Musica rock
+- 1.3: Musica punkiana
+Wikipedia API language set on: it
+Search results for query 'letteratura':
+Keywords: [('letteratura', 1.0)]
+- 1.1: Letteratura
+- 1.2: Premio Nobel per la letteratura
+- 1.3: Vincitori del premio Nobel per la letteratura
+Wikipedia API language set on: la
+Search results for query 'storia':
+Keywords: [('storia', 1.0)]
+- 1.1: Rai Historia
+- 1.2: Italia
+- 1.3: Exit: una storia personale
+Wikipedia API language set on: ro
+Search results for query 'cat':
+Keywords: [('cat', 1.0)]
+- 1.1: Cat Music
+- 1.2: Cat Power
+- 1.3: Cat People (film din 1942)
+Wikipedia API language set on: da
+Search results for query 'dog':
+Keywords: [('dog', 1.0)]
+- 1.1: Dog Eat Dog
+- 1.2: Tilde
+- 1.3: Forsvarsspiller (fodbold)
+Wikipedia API language set on: fr
+Search results for query 'science':
+Keywords: [('science', 1.0)]
+- 1.1: Science
+- 1.2: Science-fiction
+- 1.3: Science politique
+Wikipedia API language set on: en
+Search results for query 'university':
+Keywords: [('university', 1.0)]
+- 1.1: University
+- 1.2: Howard University
+- 1.3: University of Oxford
+Wikipedia API language set on: tl
+Search results for query 'Italy':
+Keywords: [('italy', 0.9929)]
+- 1.1: Italya
+- 1.2: Syracuse, Italy
+- 1.3: Loreo, Italy
+Wikipedia API language set on: en
+Search results for query 'politics':
+Keywords: [('politics', 1.0)]
+- 1.1: Politics
+- 1.2: Right-wing politics
+- 1.3: Left-wing politics
+Wikipedia API language set on: eu
+Search results for query 'art':
+Keywords: [('art', 1.0)]
+- 1.1: Art Déco
+- 1.2: Art Nouveau
+- 1.3: Body art
+Wikipedia API language set on: la
+Search results for query 'music':
+Keywords: [('music', 1.0)]
+- 1.1: Musica
+- 1.2: Make Mine Music
+- 1.3: The Sound of Music (pellicula)
+Wikipedia API language set on: eu
+Search results for query 'literature':
+Keywords: [('literature', 1.0)]
+- 1.1: Iparraldeko Kontseiluaren Literatura Saria
+- 1.2: Islandierazko literatura
+- 1.3: Belgikako literatura
+Wikipedia API language set on: en
+Search results for query 'history':
+Keywords: [('history', 1.0)]
+- 1.1: History
+- 1.2: HIStory: Past, Present and Future, Book I
+- 1.3: SAMPLE history
+
+Testing PERIODS:
+
+Wikipedia API language set on: it
+Search results for query 'Oggi il sole splende e molti turisti passeggiano nel centro storico, fermandosi spesso nei caffè e nei negozi di souvenir.':
+Keywords: [('turisti', 0.519), ('souvenir', 0.4268)]
+- 1.1: Turisti per caso
+- 1.2: Turisti
+- 1.3: Turismo
+- 2.1: Souvenir
+- 2.2: Souvenir (Emma)
+- 2.3: Souvenir d'Italie (film)
+Wikipedia API language set on: it
+Search results for query 'La biblioteca comunale è stata rinnovata di recente. Ora offre spazi digitali, sale studio moderne e una collezione di manoscritti antichi che attirano ricercatori da tutta Europa.':
+Keywords: [('biblioteca', 0.6143), ('digitali', 0.343)]
+- 1.1: Biblioteca
+- 1.2: Biblioteca nazionale di Francia
+- 1.3: Biblioteca nazionale di Spagna
+- 2.1: Euro digitale
+- 2.2: Competenze digitali
+- 2.3: Impronta digitale
+Wikipedia API language set on: it
+Search results for query 'Il calcio è lo sport più seguito in Italia. Le squadre locali hanno un forte legame con i tifosi, che partecipano con entusiasmo a ogni partita.':
+Keywords: [('italia', 0.5596), ('sport', 0.4037)]
+- 1.1: Italia
+- 1.2: Italia 1
+- 1.3: Lingua italiana
+- 2.1: Sport
+- 2.2: SPOrt
+- 2.3: La Gazzetta dello Sport
+Wikipedia API language set on: it
+Search results for query 'Ho comprato un nuovo libro di storia dell’arte. È molto interessante e ben illustrato, con spiegazioni che rendono comprensibili anche i concetti più complessi.':
+Keywords: [('arte', 0.4895), ('libro', 0.448)]
+- 1.1: Arte
+- 1.2: Arte (disambigua)
+- 1.3: Arte romanica
+- 2.1: Libro
+- 2.2: Libro di Enoch
+- 2.3: Libro di Mormon
+Wikipedia API language set on: it
+Search results for query 'Il treno ad alta velocità collega Milano e Roma in poche ore, trasformando radicalmente il modo di viaggiare tra le due città.':
+Keywords: [('milano', 0.4648), ('treno', 0.3855)]
+- 1.1: Milano
+- 1.2: Pallacanestro Olimpia Milano
+- 1.3: Associazione Calcio Milan
+- 2.1: Treno
+- 2.2: Il treno dei bambini
+- 2.3: Alta velocità ferroviaria
+Wikipedia API language set on: it
+Search results for query 'La cucina italiana è famosa per la pasta, la pizza e il vino. Ogni regione ha specialità diverse e tradizioni culinarie tramandate da generazioni.':
+Keywords: [('pizza', 0.575), ('italiana', 0.4999)]
+- 1.1: Pizza
+- 1.2: Licorice Pizza
+- 1.3: Mystic Pizza
+- 2.1: Italiana
+- 2.2: Lingua italiana
+- 2.3: Italia
+Wikipedia API language set on: it
+Search results for query 'Molti studenti si preparano agli esami universitari nelle biblioteche cittadine, spesso lavorando in gruppo fino a tarda sera.':
+Keywords: [('studenti', 0.4927), ('biblioteche', 0.4444)]
+- 1.1: Studente
+- 1.2: Kurt Student
+- 1.3: Rete degli studenti medi
+- 2.1: Biblioteca
+- 2.2: Biblioteca nazionale di Francia
+- 2.3: Biblioteca nazionale di Spagna
+Wikipedia API language set on: it
+Search results for query 'Il mare Mediterraneo ospita una grande varietà di pesci e specie marine, ma è anche minacciato dall’inquinamento e dalla pesca intensiva.':
+Keywords: [('pesci', 0.4521), ('mediterraneo', 0.4203)]
+- 1.1: Pesce
+- 1.2: Joe Pesci
+- 1.3: Osteichthyes
+- 2.1: Mar Mediterraneo
+- 2.2: Giochi del Mediterraneo
+- 2.3: Linea 7 (servizio ferroviario metropolitano di Napoli)
+Wikipedia API language set on: it
+Search results for query 'La tecnologia sta cambiando il modo in cui lavoriamo e comunichiamo, creando nuove opportunità ma anche nuove sfide per la società.':
+Keywords: [('tecnologia', 0.5246), ('cambiando', 0.3937)]
+- 1.1: Tecnologia
+- 1.2: Tecnologia dell'informazione
+- 1.3: Esoscheletro (tecnologia)
+- 2.1: Windstorm 4 - Il vento sta cambiando
+- 2.2: Milano
+- 2.3: Qualificazioni al campionato mondiale di calcio 2026 - CONCACAF
+Wikipedia API language set on: it
+Search results for query 'Le Dolomiti sono considerate tra le montagne più belle del mondo, meta preferita di escursionisti, fotografi e amanti della natura.':
+Keywords: [('montagne', 0.4872), ('escursionisti', 0.4252)]
+- 1.1: Montagne
+- 1.2: Alle montagne della follia
+- 1.3: Le otto montagne
+- 2.1: Escursionismo
+- 2.2: Escursionisti Esteri
+- 2.3: Incidente del passo di Djatlov
+Wikipedia API language set on: en
+Search results for query 'The quick brown fox jumps over the lazy dog.':
+Keywords: [('fox', 0.5462), ('dog', 0.4695)]
+- 1.1: Fox
+- 1.2: Fox Broadcasting Company
+- 1.3: Fox News
+- 2.1: Dog
+- 2.2: Dog (disambiguation)
+- 2.3: Dog Eat Dog
+Wikipedia API language set on: en
+Search results for query 'Technology is evolving rapidly. Artificial intelligence and machine learning are now part of daily life, shaping industries and redefining how people interact with information.':
+Keywords: [('technology', 0.451), ('evolving', 0.4348)]
+- 1.1: Technology
+- 1.2: Information technology
+- 1.3: Oracle Corporation
+- 2.1: Evolution
+- 2.2: Evolve
+- 2.3: Evolvability
+Wikipedia API language set on: en
+Search results for query 'I love reading books in the evening. They help me relax after work and often inspire new ideas for my own writing projects.':
+Keywords: [('evening', 0.4634), ('writing', 0.4237)]
+- 1.1: Evening
+- 1.2: Evening Star
+- 1.3: Evening Post
+- 2.1: Writing
+- 2.2: Writing about Writing
+- 2.3: Collaborative writing
+Wikipedia API language set on: en
+Search results for query 'The city has built new parks and playgrounds for children, creating safer spaces and greener areas for the community.':
+Keywords: [('parks', 0.5902), ('playgrounds', 0.5667)]
+- 1.1: Park
+- 1.2: Rosa Parks
+- 1.3: Parks and Recreation
+- 2.1: Playground
+- 2.2: Playground (disambiguation)
+- 2.3: NBA Playgrounds
+Wikipedia API language set on: en
+Search results for query 'Traveling by train is fast and convenient in many European countries, and it is also more environmentally friendly than flying.':
+Keywords: [('train', 0.4517), ('traveling', 0.3992)]
+- 1.1: Train
+- 1.2: Train (disambiguation)
+- 1.3: A Train
+- 2.1: Travel
+- 2.2: Traveling Wilburys
+- 2.3: Travelling salesman
+Wikipedia API language set on: en
+Search results for query 'Music has the power to inspire and connect people. It is a universal language that transcends borders, cultures, and generations.':
+Keywords: [('music', 0.5675), ('cultures', 0.4432)]
+- 1.1: Music
+- 1.2: Music (disambiguation)
+- 1.3: .music
+- 2.1: Culture
+- 2.2: The Culture
+- 2.3: The Two Cultures
+Wikipedia API language set on: en
+Search results for query 'The library downtown is a peaceful place where many students gather, especially during exam season when every desk is full.':
+Keywords: [('library', 0.4752), ('desk', 0.4407)]
+- 1.1: Library
+- 1.2: Z-Library
+- 1.3: The Library
+- 2.1: Desk
+- 2.2: Tiny Desk Concerts
+- 2.3: Campaign desk
+Wikipedia API language set on: en
+Search results for query 'Climate change is one of the biggest challenges humanity faces today, demanding urgent solutions and cooperation between nations.':
+Keywords: [('climate', 0.4119), ('challenges', 0.3994)]
+- 1.1: Climate
+- 1.2: Climate change
+- 1.3: Köppen climate classification
+- 2.1: Challenge
+- 2.2: Centennial Challenges
+- 2.3: Grand Challenges
+Wikipedia API language set on: en
+Search results for query 'Modern art often surprises viewers with unusual shapes and colors, provoking debates about what art really means in contemporary society.':
+Keywords: [('art', 0.4459), ('contemporary', 0.3708)]
+- 1.1: Art
+- 1.2: ART
+- 1.3: .art
+- 2.1: Contemporary history
+- 2.2: Adult contemporary music
+- 2.3: Contemporary literature
+Wikipedia API language set on: en
+Search results for query 'The new museum exhibition explores ancient civilizations and their cultures, presenting artifacts that reveal the complexity of early human societies.':
+Keywords: [('artifacts', 0.5776), ('museum', 0.5406)]
+- 1.1: Artifact
+- 1.2: Compression artifact
+- 1.3: Artifacts (group)
+- 2.1: Museum
+- 2.2: Society of Christian Doctrine
+- 2.3: .museum
+Wikipedia API language set on: de
+Search results for query 'Heute scheint die Sonne und viele Menschen spazieren durch die Altstadt.':
+Keywords: [('altstadt', 0.4733), ('spazieren', 0.4128)]
+- 1.1: Historischer Stadtkern
+- 1.2: Altstadt (Salzburg)
+- 1.3: Graz
+- 2.1: Spaziergang
+- 2.2: Vom Spazieren
+- 2.3: Prädikat (Grammatik)
+Wikipedia API language set on: de
+Search results for query 'Die Stadtbibliothek wurde kürzlich renoviert. Sie bietet jetzt digitale Bereiche und moderne Lesesäle, die besonders bei Studenten beliebt sind.':
+Keywords: [('stadtbibliothek', 0.6615), ('digitale', 0.4099)]
+- 1.1: Stadtbibliothek
+- 1.2: Stadtbibliothek Stuttgart
+- 1.3: Münchner Stadtbibliothek
+- 2.1: Digital
+- 2.2: Digitale Rechteverwaltung
+- 2.3: Digitale Signatur
+Wikipedia API language set on: de
+Search results for query 'Fußball ist der beliebteste Sport in Deutschland. Die Fans sind sehr engagiert und folgen ihren Mannschaften durch das ganze Land.':
+Keywords: [('fußball', 0.5193), ('deutschland', 0.5117)]
+- 1.1: Fußball
+- 1.2: 2. Fußball-Bundesliga
+- 1.3: Fußball-Weltmeisterschaft
+- 2.1: Deutschland
+- 2.2: Land (Deutschland)
+- 2.3: Nd
+Wikipedia API language set on: de
+Search results for query 'Ich habe ein neues Buch über Philosophie gekauft. Es ist spannend und gut geschrieben, mit Argumenten, die zum Nachdenken anregen.':
+Keywords: [('philosophie', 0.578), ('buch', 0.4182)]
+- 1.1: Philosophie
+- 1.2: Philosophie (Begriffsklärung)
+- 1.3: Werden (Philosophie)
+- 2.1: Buch
+- 2.2: Buch Mormon
+- 2.3: Levitikus
+Wikipedia API language set on: de
+Search results for query 'Der Hochgeschwindigkeitszug verbindet Berlin und München in wenigen Stunden, was Geschäftsreisen deutlich erleichtert.':
+Keywords: [('berlin', 0.5937), ('hochgeschwindigkeitszug', 0.499)]
+- 1.1: Berlin
+- 1.2: Berlin, Berlin
+- 1.3: Humboldt-Universität zu Berlin
+- 2.1: Hochgeschwindigkeitszug
+- 2.2: Fuxing (Hochgeschwindigkeitszug)
+- 2.3: Liste von Zuggattungen
+Wikipedia API language set on: de
+Search results for query 'Die deutsche Küche ist bekannt für Brot, Wurst und Bier. Jede Region hat ihre Spezialitäten, die oft mit langen Traditionen verbunden sind.':
+Keywords: [('deutsche', 0.4641), ('bier', 0.3398)]
+- 1.1: Deutsche
+- 1.2: Deutschland
+- 1.3: Deutsche Sprache
+- 2.1: Bier
+- 2.2: Pilsner Bier
+- 2.3: Ale (Bier)
+Wikipedia API language set on: de
+Search results for query 'Viele Studenten bereiten sich in Bibliotheken auf ihre Prüfungen vor, manchmal bis spät in die Nacht.':
+Keywords: [('studenten', 0.523), ('bibliotheken', 0.4799)]
+- 1.1: Student
+- 1.2: Harvard University
+- 1.3: Georg-August-Universität Göttingen
+- 2.1: Bibliothek
+- 2.2: Deutsche Nationalbibliothek
+- 2.3: Deutsche Digitale Bibliothek
+Wikipedia API language set on: de
+Search results for query 'Die Nordsee ist bekannt für ihre raue Küste und starken Winde, aber auch für ihre malerischen Inseln.':
+Keywords: [('winde', 0.2858), ('malerischen', 0.2526)]
+- 1.1: Wind
+- 1.2: Winde
+- 1.3: Vom Winde verweht (Film)
+- 2.1: Gemälde
+- 2.2: Impressionismus
+- 2.3: The Tourist (2010)
+Wikipedia API language set on: de
+Search results for query 'Technologie verändert die Art, wie wir leben und arbeiten, jeden Tag, und eröffnet neue Möglichkeiten für Innovation.':
+Keywords: [('innovation', 0.6331), ('technologie', 0.4922)]
+- 1.1: Innovation
+- 1.2: Innovation (Begriffsklärung)
+- 1.3: Open Innovation
+- 2.1: Technologie
+- 2.2: Disruptive Technologie
+- 2.3: Bundesministerium für Forschung, Technologie und Raumfahrt
+Wikipedia API language set on: de
+Search results for query 'Die Alpen bieten wunderschöne Landschaften und beliebte Skigebiete, die im Winter Tausende von Touristen anziehen.':
+Keywords: [('skigebiete', 0.6776), ('winter', 0.4353)]
+- 1.1: Liste der Skigebiete in der Schweiz
+- 1.2: Liste der Skigebiete in Österreich
+- 1.3: Wintersportgebiet
+- 2.1: Winter
+- 2.2: Eric Winter
+- 2.3: Ariel Winter
+Wikipedia API language set on: es
+Search results for query 'Hoy hace sol y la ciudad está llena de turistas, que pasean por las calles antiguas y disfrutan de la gastronomía local.':
+Keywords: [('turistas', 0.4498), ('ciudad', 0.4413)]
+- 1.1: Turista
+- 1.2: Banda de Turistas
+- 1.3: Turistas (película de 2009)
+- 2.1: Ciudad
+- 2.2: Ciudad-Estado
+- 2.3: Ciudad de Panamá
+Wikipedia API language set on: es
+Search results for query 'La biblioteca central fue renovada recientemente. Ahora tiene áreas digitales y espacios de estudio modernos que facilitan la investigación.':
+Keywords: [('biblioteca', 0.5506), ('digitales', 0.3977)]
+- 1.1: Biblioteca
+- 1.2: Biblioteca Nacional (Argentina)
+- 1.3: Biblioteca (informática)
+- 2.1: Digitalis
+- 2.2: Cámara digital
+- 2.3: Medios digitales
+Wikipedia API language set on: es
+Search results for query 'El fútbol es el deporte más seguido en España. Los aficionados apoyan a sus equipos con entusiasmo y llenan los estadios en cada temporada.':
+Keywords: [('fútbol', 0.4993), ('estadios', 0.3392)]
+- 1.1: Fútbol
+- 1.2: Fútbol en Argentina
+- 1.3: Fútbol en Uruguay
+- 2.1: Estadio
+- 2.2: Estadio de Maracaná
+- 2.3: Estadio multiusos
+Wikipedia API language set on: es
+Search results for query 'Compré un nuevo libro de literatura contemporánea. Es muy interesante y profundo, con personajes que reflejan la sociedad actual.':
+Keywords: [('literatura', 0.4985), ('libro', 0.4809)]
+- 1.1: Literatura
+- 1.2: Literatura española
+- 1.3: Literatura francesa
+- 2.1: Libro
+- 2.2: Libro electrónico
+- 2.3: Libro de Mormón
+Wikipedia API language set on: es
+Search results for query 'El tren de alta velocidad conecta Madrid y Barcelona en pocas horas, ofreciendo comodidad y eficiencia a miles de viajeros cada día.':
+Keywords: [('barcelona', 0.5093), ('madrid', 0.5081)]
+- 1.1: Barcelona
+- 1.2: Universidad de Barcelona
+- 1.3: Provincia de Barcelona
+- 2.1: Madrid
+- 2.2: Cercanías Madrid
+- 2.3: Ayuntamiento de Madrid
+Wikipedia API language set on: es
+Search results for query 'La cocina española es famosa por la paella, el jamón y las tapas. Cada región tiene su estilo propio y sus tradiciones culinarias.':
+Keywords: [('culinarias', 0.4648), ('española', 0.4174)]
+- 1.1: Arte culinario
+- 1.2: Técnicas culinarias
+- 1.3: Receta culinaria
+- 2.1: España
+- 2.2: La Española
+- 2.3: Unión Española
+Wikipedia API language set on: es
+Search results for query 'Muchos estudiantes preparan sus exámenes en las bibliotecas universitarias, donde encuentran un ambiente tranquilo y concentrado.':
+Keywords: [('bibliotecas', 0.511), ('estudiantes', 0.4478)]
+- 1.1: Biblioteca
+- 1.2: Biblioteca digital
+- 1.3: Asociación de Bibliotecas de Estados Unidos
+- 2.1: Estudiantes
+- 2.2: Club Estudiantes de Baloncesto
+- 2.3: Club Estudiantes de La Plata
+Wikipedia API language set on: es
+Search results for query 'El mar Mediterráneo es hogar de una gran diversidad de especies, pero enfrenta amenazas relacionadas con el cambio climático.':
+Keywords: [('mediterráneo', 0.4542), ('climático', 0.2825)]
+- 1.1: Mar Mediterráneo
+- 1.2: Clima mediterráneo
+- 1.3: Cuenca del Mediterráneo
+- 2.1: Clima
+- 2.2: Cambio climático
+- 2.3: Óptimo climático
+Wikipedia API language set on: es
+Search results for query 'La tecnología influye cada día más en la forma en que trabajamos y nos comunicamos, transformando también la educación y el ocio.':
+Keywords: [('tecnología', 0.5462), ('educación', 0.3578)]
+- 1.1: Tecnología
+- 1.2: Alta tecnología
+- 1.3: Tecnología educativa
+- 2.1: Educación
+- 2.2: Educación física
+- 2.3: Educación preescolar
+Wikipedia API language set on: es
+Search results for query 'Los Pirineos son montañas hermosas con paisajes impresionantes y una gran variedad de actividades deportivas durante todo el año.':
+Keywords: [('montañas', 0.5811), ('paisajes', 0.3981)]
+- 1.1: Montaña
+- 1.2: Montañas Rocosas
+- 1.3: Montaña rusa
+- 2.1: Paisaje
+- 2.2: Pintura del paisaje
+- 2.3: Fotografía de paisaje
+Wikipedia API language set on: fr
+Search results for query 'Le soleil brille aujourd’hui et la place principale est pleine de visiteurs.':
+Keywords: [('soleil', 0.623), ('visiteurs', 0.5298)]
+- 1.1: Soleil
+- 1.2: SOLEIL
+- 1.3: Louis XIV
+- 2.1: Les Visiteurs
+- 2.2: Les Visiteurs (film, 1993)
+- 2.3: Les Visiteurs (série de films)
+Wikipedia API language set on: fr
+Search results for query 'La bibliothèque nationale a ouvert une nouvelle section. Elle contient des manuscrits rares et précieux, étudiés par des spécialistes venus du monde entier.':
+Keywords: [('bibliothèque', 0.6049), ('manuscrits', 0.5441)]
+- 1.1: Bibliothèque
+- 1.2: Bibliothèque nationale de France
+- 1.3: Bibliothèque rose
+- 2.1: Manuscrit
+- 2.2: Manuscrits de la mer Morte
+- 2.3: Manuscrit de Voynich
+Wikipedia API language set on: fr
+Search results for query 'Le football est un sport très populaire en France. Les supporters suivent chaque match avec passion et remplissent les stades de chants et de drapeaux.':
+Keywords: [('france', 0.5255), ('football', 0.5072)]
+- 1.1: France
+- 1.2: Commune (France)
+- 1.3: Hauts-de-France
+- 2.1: Football
+- 2.2: Histoire du football
+- 2.3: Manchester United Football Club
+Wikipedia API language set on: fr
+Search results for query 'J’aime écouter de la musique classique le soir. Cela me détend et me donne de l’énergie, surtout après une longue journée de travail.':
+Keywords: [('musique', 0.3761), ('soir', 0.3204)]
+- 1.1: Musique
+- 1.2: Musique de film
+- 1.3: Musique baroque
+- 2.1: Le Soir
+- 2.2: Soir
+- 2.3: C ce soir
+Wikipedia API language set on: fr
+Search results for query 'Le train à grande vitesse relie Paris et Lyon en moins de deux heures, facilitant les voyages d’affaires et le tourisme.':
+Keywords: [('paris', 0.5343), ('train', 0.4772)]
+- 1.1: Paris
+- 1.2: Pâris
+- 1.3: Paris-Brest-Paris
+- 2.1: Train
+- 2.2: Train bleu (train)
+- 2.3: Tram-train
+Wikipedia API language set on: fr
+Search results for query 'La cuisine française est célèbre pour ses fromages, ses vins et ses desserts raffinés, qui varient considérablement d’une région à l’autre.':
+Keywords: [('fromages', 0.5882), ('cuisine', 0.4971)]
+- 1.1: Fromage
+- 1.2: Liste de fromages français
+- 1.3: Raclette (fromage)
+- 2.1: Cuisine
+- 2.2: Cauchemar en cuisine (France)
+- 2.3: Cuisine+
+Wikipedia API language set on: fr
+Search results for query 'De nombreux étudiants fréquentent les cafés pour étudier ensemble, discuter de leurs projets et profiter d’une ambiance conviviale.':
+Keywords: [('cafés', 0.5636), ('étudiants', 0.552)]
+- 1.1: Café
+- 1.2: Trois Cafés gourmands
+- 1.3: Café (établissement)
+- 2.1: Étudiant
+- 2.2: Union étudiante
+- 2.3: Cocarde étudiante
+Wikipedia API language set on: fr
+Search results for query 'La Méditerranée est une mer riche en histoire et en commerce, mais elle est aujourd’hui confrontée à de sérieux problèmes écologiques.':
+Keywords: [('méditerranée', 0.6032), ('riche', 0.2098)]
+- 1.1: Mer Méditerranée
+- 1.2: La Méditerranée
+- 1.3: Prix Méditerranée
+- 2.1: Richesse
+- 2.2: La Riche
+- 2.3: Nouveau riche
+Wikipedia API language set on: fr
+Search results for query 'La technologie change nos habitudes quotidiennes et nos relations sociales, créant parfois plus de dépendance que de liberté.':
+Keywords: [('dépendance', 0.4901), ('habitudes', 0.4422)]
+- 1.1: Dépendance
+- 1.2: Dépendance affective
+- 1.3: Alcoolisme
+- 2.1: Habitude
+- 2.2: Comme d'habitude
+- 2.3: Le Pouvoir des habitudes
+Wikipedia API language set on: fr
+Search results for query 'Les Alpes françaises offrent des paysages magnifiques et des stations de ski réputées, attirant touristes et sportifs du monde entier.':
+Keywords: [('ski', 0.5011), ('paysages', 0.4121)]
+- 1.1: Ski
+- 1.2: Ski alpin
+- 1.3: Ski acrobatique
+- 2.1: Paysage
+- 2.2: Peinture de paysage
+- 2.3: Paysages électroniques
