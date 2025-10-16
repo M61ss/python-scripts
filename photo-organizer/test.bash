@@ -1,20 +1,23 @@
 #!/bin/bash
-read -p "** Option --help will be tested **"
+read -p "*** HELP TEST ***"
 printf "\n"
-./photo-organizer/main.py --help
-read -p "** Script working will be tested (no verbosity) **"
+./main.py --help
+
+read -p "*** FUNCTIONAL TEST ***"
 printf "\n"
-./photo-organizer/main.py galleria-A52 sorted/
-read -p "Verbosity will be tested."
+./main.py galleria-A52 sorted/
+
+read -p "*** VERBOSITY TEST ***"
 printf "\n"
 rm -rf sorted
-./photo-organizer/main.py galleria-A52 sorted/ --verbose
-read -p "** Stop conditions will be tested **"
+./main.py galleria-A52 sorted/ --verbose
+
+read -p "*** STOP CONDITION TEST ***"
 printf "\n"
-read -p "** Next should stop since --help cause termination **"
+read -p "    1. --help should cause termination"
 printf "\n"
-./photo-organizer/main.py --help galleria-A52 sorted/
-read -p "** Next should stop since sorted already exists and it isn't empty **"
+./main.py --help galleria-A52 sorted/
+read -p "    2. Already existing not empty folder should cause termination"
 printf "\n"
-./photo-organizer/main.py galleria-A52 sorted/
+./main.py galleria-A52 sorted/
 rm -rf sorted
