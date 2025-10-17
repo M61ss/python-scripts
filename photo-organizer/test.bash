@@ -1,23 +1,21 @@
 #!/bin/bash
 read -p "*** HELP TEST ***"
 printf "\n"
-./main.py --help
+./test.py --help
 
 read -p "*** FUNCTIONAL TEST ***"
 printf "\n"
-./main.py galleria-A52 sorted/
+./test.py test-batch sorted/
 
 read -p "*** VERBOSITY TEST ***"
 printf "\n"
 rm -rf sorted
-./main.py galleria-A52 sorted/ --verbose
+./test.py test-batch sorted/ --verbose
+rm -rf sorted
+./test.py test-batch sorted/ --verbose --debug
 
 read -p "*** STOP CONDITION TEST ***"
 printf "\n"
-read -p "    1. --help should cause termination"
+read -p "1. Already existing not empty folder should cause termination"
 printf "\n"
-./main.py --help galleria-A52 sorted/
-read -p "    2. Already existing not empty folder should cause termination"
-printf "\n"
-./main.py galleria-A52 sorted/
-rm -rf sorted
+./test.py test-batch sorted/

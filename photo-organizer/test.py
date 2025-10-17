@@ -4,6 +4,7 @@ from main import Engine
 import sys
 from common import bcolors
 
+### VERBOSITY ###
 verbose = False
 debug = False
 
@@ -14,17 +15,23 @@ if "--debug" in sys.argv:
     debug = True
     sys.argv.remove("--debug")
 
+print(f"Verbose is set on: {bcolors.BOLD}{verbose}{bcolors.ENDC}")
+print(f"Debug is set on: {bcolors.BOLD}{debug}{bcolors.ENDC}")
+
+### FUNCTIONALITY ###
 app = Engine(verbose=verbose, debug=debug)
 
+# HELP
 if "--help" in sys.argv:
     app.help()
     sys.argv.remove("--help")
 
-print(f"Current working directory is: {bcolors.BOLD}{app.ROOT_DIR}{bcolors.ENDC}")
-app.compose_paths()
-app.check_paths()
+# SORTING
+if len(sys.argv) > 1:
+    app.src_folder = sys.argv[1]
+    app.dst_folder = sys.argv[2]
 
-print(f"Verbose is set on: {bcolors.BOLD}{app.verbose}{bcolors.ENDC}")
-
-sorter = Sorter(app.ROOT_DIR, app.source_folder_path, app.destination_folder_path, app.verbose)
-sorter.sort()
+    print(f"Current working directory is: {bcolors.BOLD}{app.root_dir}{bcolors.ENDC}")
+    app.compose_paths()
+    app.check_paths()
+    app.sort_files()
