@@ -1,59 +1,37 @@
 #!/bin/python3
 
+from engine import Engine
 import sys
-import os
-import platform
-import re
 from common import bcolors
-from sorter import Sorter
 
-class Engine:
-    def __init__(self, verbose = False, debug = False):
-        self.verbose : bool = verbose
-        self.debug : bool = debug
+### VERBOSITY ###
+verbose = False
+debug = False
 
-        self.path_sep : str = "\\" if platform.system() == "Windows" else "/"
-        if self.debug:
-            print(f"Detected system is: {platform.system()}. Path separator set on {self.path_sep}")
-        
-        self.root_dir : str = f"{os.getcwd()}{self.path_sep}"
-        self.src_folder : str = None
-        self.dst_folder : str = None
+if "--verbose" in sys.argv:
+    verbose = True
+    sys.argv.remove("--verbose")
+if "--debug" in sys.argv:
+    debug = True
+    sys.argv.remove("--debug")
 
-    def help(self):
-        print(f"Usage is: {sys.argv[0]} [source-folder] [destination-folder]")
-        print(f"    - {bcolors.BOLD}source-folder{bcolors.ENDC}: the folder from which the script takes files.")
-        print(f"    - {bcolors.BOLD}destination-folder{bcolors.ENDC}: the folder where you will find ordered files.")
+print(f"Verbose is set on: {bcolors.BOLD}{verbose}{bcolors.ENDC}")
+print(f"Debug is set on: {bcolors.BOLD}{debug}{bcolors.ENDC}")
 
-    def check_paths(self):
-        if not os.path.exists(self.src_folder):
-            return 2, f"The folder '{self.src_folder}' does not exist."
-        
-        if not os.path.exists(self.dst_folder):
-            os.makedirs(self.dst_folder)
-        elif os.listdir(self.dst_folder):
-            return 2, f"Folder '{self.dst_folder}' already exists in current location."
+### FUNCTIONALITY ###
+app = Engine(verbose=verbose, debug=debug)
 
-    def compose_paths(self):
-        if platform.system() == "Windows":
-            self.src_folder = sys.argv[1] if re.search(f"[A-Z]:{self.path_sep}", sys.argv[1]) else self.root_dir + sys.argv[1]
-            self.dst_folder = sys.argv[2] if re.search(f"[A-Z]:{self.path_sep}", sys.argv[2]) else self.root_dir + sys.argv[2]
-            if not self.src_folder.endswith(self.path_sep):
-                self.src_folder += self.path_sep
-            if not self.dst_folder.endswith(self.path_sep):
-                self.dst_folder += self.path_sep
-        else:
-            self.src_folder = sys.argv[1] if sys.argv[1].startswith(self.path_sep) else self.root_dir + sys.argv[1]
-            self.dst_folder = sys.argv[2] if sys.argv[2].startswith(self.path_sep) else self.root_dir + sys.argv[2]
-            if not self.src_folder.endswith(self.path_sep):
-                self.src_folder += self.path_sep
-            if not self.dst_folder.endswith(self.path_sep):
-                self.dst_folder += self.path_sep
+# HELP
+if "--help" in sys.argv:
+    app.help()
+    sys.argv.remove("--help")
 
-        if self.verbose:
-            print(f"Source folder path is: {self.src_folder}")
-            print(f"Destination folder path is: {self.dst_folder}")
+# SORTING
+if len(sys.argv) == 3:
+    app.src_folder = sys.argv[1]
+    app.dst_folder = sys.argv[2]
 
-    def sort_files(self):
-        Sorter(self.root_dir, self.src_folder, self.dst_folder, verbose=self.verbose).sort()
-        return 0, None
+    print(f"Current working directory is: {bcolors.BOLD}{app.root_dir}{bcolors.ENDC}")
+    app.compose_paths()
+    app.check_paths()
+    app.sort_files()

@@ -9,7 +9,7 @@ from common import bcolors
 
 class Sorter:
     def __init__(self, ROOT_DIR : str, SOURCE_FOLDER_PATH : str, DESTINATION_FOLDER_PATH : str, verbose : bool = False, debug : bool = False):
-        self.verbose : bool = verbose
+        self.verbose : bool = debug if debug else verbose
         self.debug : bool = debug
 
         self.path_sep : str = "\\" if platform.system() == "Windows" else "/"

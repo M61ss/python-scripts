@@ -1,21 +1,52 @@
 #!/bin/bash
-read -p "*** HELP TEST ***"
-printf "\n"
-./test.py --help
 
-read -p "*** FUNCTIONAL TEST ***"
-printf "\n"
-./test.py test-batch sorted/
+######################################### HELP
 
-read -p "*** VERBOSITY TEST ***"
+echo "*** HELP TEST START ***"
+printf "\n"
+
+./main.py --help
+
+printf "\n"
+echo "*** HELP TEST END ***"
+
+######################################### FUNCTIONAL
+
+echo "*** FUNCTIONAL TEST START ***"
+printf "\n"
+
+./main.py test-batch sorted/
+
+printf "\n"
+echo "*** FUNCTIONAL TEST END ***"
+
+######################################### VERBOSITY
+
+echo "*** VERBOSITY TEST START ***"
+printf "\n"
+
+echo "  1. Checking --verbose output"
 printf "\n"
 rm -rf sorted
-./test.py test-batch sorted/ --verbose
-rm -rf sorted
-./test.py test-batch sorted/ --verbose --debug
+./main.py test-batch sorted/ --verbose
+printf "\n"
 
-read -p "*** STOP CONDITION TEST ***"
+echo "  2. Checking --debug output"
 printf "\n"
-read -p "1. Already existing not empty folder should cause termination"
+rm -rf sorted
+./main.py test-batch sorted/ --verbose --debug
+
 printf "\n"
-./test.py test-batch sorted/
+echo "*** VERBOSITY TEST END ***"
+
+######################################### STOP
+
+echo "*** STOP CONDITION TEST START ***"
+printf "\n"
+
+echo "  1. Already existing not empty folder should cause termination"
+printf "\n"
+./main.py test-batch sorted/
+
+printf "\n"
+echo "*** STOP CONDITION TEST END ***"
