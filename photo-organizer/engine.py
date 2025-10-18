@@ -4,7 +4,6 @@ import sys
 import os
 import platform
 import re
-from common import bcolors
 from sorter import Sorter
 
 class Engine:
@@ -22,8 +21,9 @@ class Engine:
 
     def help(self):
         print(f"Usage is: {sys.argv[0]} [source-folder] [destination-folder]")
-        print(f"    - {bcolors.BOLD}source-folder{bcolors.ENDC}: the folder from which the script takes files.")
-        print(f"    - {bcolors.BOLD}destination-folder{bcolors.ENDC}: the folder where you will find ordered files.")
+        print(f"    - source-folder: the folder from which the script takes files.")
+        print(f"    - destination-folder: the folder where you will find ordered files.")
+        print("")
 
     def check_paths(self):
         if not os.path.exists(self.src_folder):

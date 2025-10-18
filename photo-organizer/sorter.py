@@ -5,7 +5,6 @@ import platform
 import re
 import shutil
 from datetime import date
-from common import bcolors
 
 class Sorter:
     def __init__(self, ROOT_DIR : str, SOURCE_FOLDER_PATH : str, DESTINATION_FOLDER_PATH : str, verbose : bool = False, debug : bool = False):
@@ -26,7 +25,7 @@ class Sorter:
         for year in self.years:
             if year in filename:
                 return year
-        return f"{bcolors.WARNING}NO-TAKEN-DATE{bcolors.ENDC}"
+        return f"NO-TAKEN-DATE"
     
     def inspector(self):
         for file_node in os.listdir(self.SOURCE_FOLDER_PATH):
@@ -41,10 +40,9 @@ class Sorter:
         if self.verbose:
             print(f"File name list:\n{self.filenames}")
             print("")
-        print(f"Total number of file: {bcolors.BOLD}{self.total_file_number}{bcolors.ENDC}")
+        print(f"Total number of file: {self.total_file_number}")
         print("")
-        if not re.search("y|| ", input("Is it ok to proceed ([y]/n)? ")):
-            return 0, None
+        return 0, None
 
     def sort(self):
         self.inspector()

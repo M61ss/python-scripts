@@ -2,7 +2,6 @@
 
 from engine import Engine
 import sys
-from common import bcolors
 
 ### VERBOSITY ###
 verbose = False
@@ -15,8 +14,8 @@ if "--debug" in sys.argv:
     debug = True
     sys.argv.remove("--debug")
 
-print(f"Verbose is set on: {bcolors.BOLD}{verbose}{bcolors.ENDC}")
-print(f"Debug is set on: {bcolors.BOLD}{debug}{bcolors.ENDC}")
+print(f"Verbose is set on: {verbose}")
+print(f"Debug is set on: {debug}")
 
 ### FUNCTIONALITY ###
 app = Engine(verbose=verbose, debug=debug)
@@ -31,7 +30,7 @@ if len(sys.argv) == 3:
     app.src_folder = sys.argv[1]
     app.dst_folder = sys.argv[2]
 
-    print(f"Current working directory is: {bcolors.BOLD}{app.root_dir}{bcolors.ENDC}")
+    print(f"Current working directory is: {app.root_dir}")
     app.compose_paths()
     app.check_paths()
     app.sort_files()
