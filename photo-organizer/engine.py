@@ -31,12 +31,12 @@ class Engine:
 
     def check_paths(self):
         if not os.path.exists(self.src_folder):
-            return 2, f"The folder '{self.src_folder}' does not exist."
+            raise FileNotFoundError(f"The folder '{self.src_folder}' does not exist.")
         
         if not os.path.exists(self.dst_folder):
             os.makedirs(self.dst_folder)
         elif os.listdir(self.dst_folder):
-            return 2, f"Folder '{self.dst_folder}' already exists in current location."
+            raise FileExistsError(f"Folder '{self.dst_folder}' already exists in current location.")
 
     def compose_paths(self):
         if platform.system() == "Windows":
@@ -59,5 +59,6 @@ class Engine:
             print(f"Destination folder path is: {self.dst_folder}")
 
     def sort_files(self):
-        Sorter(self.root_dir, self.src_folder, self.dst_folder, verbose=self.verbose).sort()
-        return 0, None
+        print(f"Current working directory is: {self.root_dir}")
+        
+        Sorter(self.root_dir, self.src_folder, self.dst_folder, verbose=self.verbose, debug=self.debug).sort()

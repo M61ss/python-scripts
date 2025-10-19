@@ -26,7 +26,9 @@ if len(sys.argv) == 3:
     app.src_folder = sys.argv[1]
     app.dst_folder = sys.argv[2]
 
-    print(f"Current working directory is: {app.root_dir}")
-    app.compose_paths()
-    app.check_paths()
-    app.sort_files()
+    try:
+        app.compose_paths()
+        app.check_paths()
+        app.sort_files()
+    except BaseException as e:
+        print(e)

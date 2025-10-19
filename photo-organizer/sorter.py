@@ -41,7 +41,6 @@ class Sorter:
             print("")
         print(f"Total number of file: {self.total_file_number}")
         print("")
-        return 0, None
 
     def sort(self):
         self.inspector()
@@ -57,8 +56,8 @@ class Sorter:
                 try:
                     shutil.copy2(self.file_paths[i], DESTINATION_SUBFOLDER_PATH)
                 except IOError:
-                    return {4 : f"Unable to copy from {self.file_paths[i]} to {DESTINATION_SUBFOLDER_PATH}"}
+                    raise RuntimeError(f"Unable to copy from {self.file_paths[i]} to {DESTINATION_SUBFOLDER_PATH}")
 
         if len(self.file_dates) != self.total_file_number or len(self.file_paths) != self.total_file_number:
-            return 3, "Filename list and file date list have different size."
+            raise RuntimeError("Filename list and file date list have different size.")
             
