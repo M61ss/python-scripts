@@ -10,6 +10,10 @@ class Engine:
     def __init__(self, verbose = False, debug = False):
         self.verbose : bool = debug if debug else verbose
         self.debug : bool = debug
+        if self.verbose:
+            print(f"Verbose is set on: {verbose}")
+        if self.debug:
+            print(f"Debug is set on: {debug}")
 
         self.path_sep : str = "\\" if platform.system() == "Windows" else "/"
         if self.debug:

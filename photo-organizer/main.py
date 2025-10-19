@@ -14,10 +14,6 @@ if "--debug" in sys.argv:
     debug = True
     sys.argv.remove("--debug")
 
-print(f"Verbose is set on: {verbose}")
-print(f"Debug is set on: {debug}")
-
-### FUNCTIONALITY ###
 app = Engine(verbose=verbose, debug=debug)
 
 # HELP

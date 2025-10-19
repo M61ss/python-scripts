@@ -2,7 +2,6 @@
 
 import os
 import platform
-import re
 import shutil
 from datetime import date
 
@@ -31,7 +30,7 @@ class Sorter:
         for file_node in os.listdir(self.SOURCE_FOLDER_PATH):
             file_node_path : str = f"{self.SOURCE_FOLDER_PATH}{self.path_sep}{file_node}"
             if os.path.isfile(file_node_path):
-                if self.verbose:
+                if self.debug:
                     print(f"Found file '{file_node}' at {file_node_path}")
                 self.file_paths.append(file_node_path)
                 self.filenames.append(file_node)
