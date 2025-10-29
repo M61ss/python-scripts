@@ -24,7 +24,11 @@ class Sorter:
         for year in self.years:
             if year in filename:
                 return year
-        return f"NO-TAKEN-DATE"
+        if platform.system() == "Windows":
+            creation = os.path.getctime()
+            print(f"Creation date for {filename}: {creation}")
+            return creation
+        return f"UNK"
     
     def inspector(self):
         for file_node in os.listdir(self.SRC_FOLDER):
