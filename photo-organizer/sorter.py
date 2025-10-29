@@ -42,7 +42,7 @@ class Sorter:
         print(f"Total number of file: {self.total_file_number}")
         print("")
 
-    def sort(self):
+    def divide_by_year(self):
         self.inspector()
 
         for i, filename in enumerate(self.filenames):
@@ -50,13 +50,13 @@ class Sorter:
             if self.verbose:
                 print(f"{filename} creation date: {self.file_dates[i]}")
             if self.file_dates[i] in self.years:
-                DESTINATION_SUBFOLDER_PATH = self.DESTINATION_FOLDER_PATH + self.file_dates[i]
-                if not os.path.exists(DESTINATION_SUBFOLDER_PATH):
-                    os.makedirs(DESTINATION_SUBFOLDER_PATH)
+                dst_subfolder = self.DESTINATION_FOLDER_PATH + self.file_dates[i]
+                if not os.path.exists(dst_subfolder):
+                    os.makedirs(dst_subfolder)
                 try:
-                    shutil.copy2(self.file_paths[i], DESTINATION_SUBFOLDER_PATH)
+                    shutil.copy2(self.file_paths[i], dst_subfolder)
                 except IOError:
-                    raise RuntimeError(f"Unable to copy from {self.file_paths[i]} to {DESTINATION_SUBFOLDER_PATH}")
+                    raise RuntimeError(f"Unable to copy from {self.file_paths[i]} to {dst_subfolder}")
 
         if len(self.file_dates) != self.total_file_number or len(self.file_paths) != self.total_file_number:
             raise RuntimeError("Filename list and file date list have different size.")

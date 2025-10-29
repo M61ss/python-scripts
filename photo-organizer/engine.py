@@ -61,4 +61,4 @@ class Engine:
     def sort_files(self):
         print(f"Current working directory is: {self.root_dir}")
         
-        Sorter(self.root_dir, self.src_folder, self.dst_folder, verbose=self.verbose, debug=self.debug).sort()
+        Sorter(self.root_dir, self.src_folder, self.dst_folder, verbose=self.verbose, debug=self.debug).divide_by_year()
