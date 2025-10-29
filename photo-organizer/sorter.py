@@ -20,7 +20,7 @@ class Sorter:
         self.file_dates : list[str] = []
         self.total_file_number : int = 0
 
-    def get_taken_date(self, filename):
+    def get_creation_date(self, filename):
         for year in self.years:
             if year in filename:
                 return year
@@ -46,7 +46,7 @@ class Sorter:
         self.inspector()
 
         for i, filename in enumerate(self.filenames):
-            self.file_dates.append(self.get_taken_date(filename))
+            self.file_dates.append(self.get_creation_date(filename))
             if self.verbose:
                 print(f"{filename} creation date: {self.file_dates[i]}")
             if self.file_dates[i] in self.years:
