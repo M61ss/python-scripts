@@ -6,14 +6,14 @@ import shutil
 from datetime import date
 
 class Sorter:
-    def __init__(self, ROOT_DIR : str, SOURCE_FOLDER_PATH : str, DESTINATION_FOLDER_PATH : str, verbose : bool = False, debug : bool = False):
+    def __init__(self, ROOT_DIR : str, SRC_FOLDER : str, DST_FOLDER : str, verbose : bool = False, debug : bool = False):
         self.verbose : bool = debug if debug else verbose
         self.debug : bool = debug
 
         self.path_sep : str = "\\" if platform.system() == "Windows" else "/"
         self.ROOT_DIR : str = ROOT_DIR
-        self.SOURCE_FOLDER_PATH : str = SOURCE_FOLDER_PATH
-        self.DESTINATION_FOLDER_PATH : str = DESTINATION_FOLDER_PATH
+        self.SRC_FOLDER : str = SRC_FOLDER
+        self.DST_FOLDER : str = DST_FOLDER
         self.years : list[int] = [str(year) for year in range(2000, date.today().year + 1)]
         self.filenames : list[str] = []
         self.file_paths : list[str] = []
@@ -27,8 +27,8 @@ class Sorter:
         return f"NO-TAKEN-DATE"
     
     def inspector(self):
-        for file_node in os.listdir(self.SOURCE_FOLDER_PATH):
-            file_node_path : str = f"{self.SOURCE_FOLDER_PATH}{self.path_sep}{file_node}"
+        for file_node in os.listdir(self.SRC_FOLDER):
+            file_node_path : str = f"{self.SRC_FOLDER}{self.path_sep}{file_node}"
             if os.path.isfile(file_node_path):
                 if self.debug:
                     print(f"Found file '{file_node}' at {file_node_path}")
@@ -50,13 +50,13 @@ class Sorter:
             if self.verbose:
                 print(f"{filename} creation date: {self.file_dates[i]}")
             if self.file_dates[i] in self.years:
-                dst_subfolder = self.DESTINATION_FOLDER_PATH + self.file_dates[i]
-                if not os.path.exists(dst_subfolder):
-                    os.makedirs(dst_subfolder)
+                DST_SUBFOLDER = self.DST_FOLDER + self.file_dates[i]
+                if not os.path.exists(DST_SUBFOLDER):
+                    os.makedirs(DST_SUBFOLDER)
                 try:
-                    shutil.copy2(self.file_paths[i], dst_subfolder)
+                    shutil.copy2(self.file_paths[i], DST_SUBFOLDER)
                 except IOError:
-                    raise RuntimeError(f"Unable to copy from {self.file_paths[i]} to {dst_subfolder}")
+                    raise RuntimeError(f"Unable to copy from {self.file_paths[i]} to {DST_SUBFOLDER}")
 
         if len(self.file_dates) != self.total_file_number or len(self.file_paths) != self.total_file_number:
             raise RuntimeError("Filename list and file date list have different size.")
