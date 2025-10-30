@@ -28,6 +28,8 @@ class Sorter:
             creation = os.path.getctime()
             print(f"Creation date for {filename}: {creation}")
             return creation
+        elif platform.system() == "Linux":
+            pass
         return f"UNK"
     
     def inspector(self):
