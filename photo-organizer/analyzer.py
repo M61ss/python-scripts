@@ -16,6 +16,12 @@ def get_creation_date(filename : str):
         return creation
     return f"UNK"
 
+def get_creation_dates(filenames : list[str]):
+    file_dates = []
+    for filename in filenames:
+        file_dates.append(get_creation_date(filename))
+    return file_dates
+
 def find_files(SRC_FOLDER, PATH_SEP, verbose : bool = False, debug : bool = False):
     filenames : list[str] = []
     file_paths : list[str] = []
