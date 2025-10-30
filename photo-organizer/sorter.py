@@ -19,7 +19,7 @@ class Sorter:
         self.file_dates : list[str] = []
         self.total_file_number : int = 0
     
-    def inspector(self):
+    def find_files(self):
         for file_node in os.listdir(self.SRC_FOLDER):
             file_node_path : str = f"{self.SRC_FOLDER}{self.path_sep}{file_node}"
             if os.path.isfile(file_node_path):
@@ -36,7 +36,7 @@ class Sorter:
         print("")
 
     def divide_by_year(self):
-        self.inspector()
+        self.find_files()
 
         for i, filename in enumerate(self.filenames):
             self.file_dates.append(analyzer.get_creation_date(filename))
