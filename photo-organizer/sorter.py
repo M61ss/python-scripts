@@ -3,7 +3,7 @@
 import os
 import platform
 import shutil
-from datetime import date
+import analyzer
 
 class Sorter:
     def __init__(self, ROOT_DIR : str, SRC_FOLDER : str, DST_FOLDER : str, verbose : bool = False, debug : bool = False):
@@ -14,21 +14,10 @@ class Sorter:
         self.ROOT_DIR : str = ROOT_DIR
         self.SRC_FOLDER : str = SRC_FOLDER
         self.DST_FOLDER : str = DST_FOLDER
-        self.years : list[int] = [str(year) for year in range(2000, date.today().year + 1)]
         self.filenames : list[str] = []
         self.file_paths : list[str] = []
         self.file_dates : list[str] = []
         self.total_file_number : int = 0
-
-    def get_creation_date(self, filename):
-        for year in self.years:
-            if year in filename:
-                return year
-        if platform.system() == "Windows":
-            creation = os.path.getctime()
-            print(f"Creation date for {filename}: {creation}")
-            return creation
-        return f"UNK"
     
     def inspector(self):
         for file_node in os.listdir(self.SRC_FOLDER):
@@ -50,10 +39,10 @@ class Sorter:
         self.inspector()
 
         for i, filename in enumerate(self.filenames):
-            self.file_dates.append(self.get_creation_date(filename))
+            self.file_dates.append(analyzer.get_creation_date(filename))
             if self.verbose:
                 print(f"{filename} creation date: {self.file_dates[i]}")
-            if self.file_dates[i] in self.years:
+            if self.file_dates[i] in analyzer.YEARS:
                 DST_SUBFOLDER = self.DST_FOLDER + self.file_dates[i]
                 if not os.path.exists(DST_SUBFOLDER):
                     os.makedirs(DST_SUBFOLDER)
