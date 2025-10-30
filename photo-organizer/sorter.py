@@ -52,5 +52,5 @@ class Sorter:
                     raise RuntimeError(f"Unable to copy from {self.file_paths[i]} to {DST_SUBFOLDER}")
 
         if len(self.file_dates) != self.total_file_number or len(self.file_paths) != self.total_file_number:
-            raise RuntimeError("Filename list and file date list have different size.")
+            raise RuntimeError("Filename list and file date length doesn't match.")
             
