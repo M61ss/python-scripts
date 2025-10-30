@@ -10,7 +10,7 @@ class Sorter:
         self.verbose : bool = debug if debug else verbose
         self.debug : bool = debug
 
-        self.path_sep : str = "\\" if platform.system() == "Windows" else "/"
+        self.PATH_SEP : str = "\\" if platform.system() == "Windows" else "/"
         self.ROOT_DIR : str = ROOT_DIR
         self.SRC_FOLDER : str = SRC_FOLDER
         self.DST_FOLDER : str = DST_FOLDER
@@ -18,25 +18,10 @@ class Sorter:
         self.file_paths : list[str] = []
         self.file_dates : list[str] = []
         self.total_file_number : int = 0
-    
-    def find_files(self):
-        for file_node in os.listdir(self.SRC_FOLDER):
-            file_node_path : str = f"{self.SRC_FOLDER}{self.path_sep}{file_node}"
-            if os.path.isfile(file_node_path):
-                if self.debug:
-                    print(f"Found file '{file_node}' at {file_node_path}")
-                self.file_paths.append(file_node_path)
-                self.filenames.append(file_node)
-        self.total_file_number = len(self.file_paths)
-
-        if self.verbose:
-            print(f"File name list:\n{self.filenames}")
-            print("")
-        print(f"Total number of file: {self.total_file_number}")
-        print("")
 
     def divide_by_year(self):
-        self.find_files()
+        self.filenames, self.file_paths = analyzer.find_files(self.SRC_FOLDER, self.PATH_SEP)
+        self.total_file_number = len(self.file_paths)
 
         for i, filename in enumerate(self.filenames):
             self.file_dates.append(analyzer.get_creation_date(filename))
