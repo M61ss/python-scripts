@@ -15,11 +15,11 @@ class Engine:
         if self.debug:
             print(f"Debug is set on: {debug}")
 
-        self.path_sep : str = "\\" if platform.system() == "Windows" else "/"
+        self.PATH_SEP : str = "\\" if platform.system() == "Windows" else "/"
         if self.debug:
-            print(f"Detected system is: {platform.system()}. Path separator set on {self.path_sep}")
+            print(f"Detected system is: {platform.system()}. Path separator set on {self.PATH_SEP}")
         
-        self.root_dir : str = f"{os.getcwd()}{self.path_sep}"
+        self.root_dir : str = f"{os.getcwd()}{self.PATH_SEP}"
         self.src_folder : str = None
         self.dst_folder : str = None
 
@@ -40,19 +40,19 @@ class Engine:
 
     def compose_paths(self, src_path : str, dst_path : str):
         if platform.system() == "Windows":
-            self.src_folder = src_path if re.search(f"[A-Z]:{self.path_sep}", src_path) else self.root_dir + src_path
-            self.dst_folder = dst_path if re.search(f"[A-Z]:{self.path_sep}", dst_path) else self.root_dir + dst_path
-            if not self.src_folder.endswith(self.path_sep):
-                self.src_folder += self.path_sep
-            if not self.dst_folder.endswith(self.path_sep):
-                self.dst_folder += self.path_sep
+            self.src_folder = src_path if re.search(f"[A-Z]:{self.PATH_SEP}", src_path) else self.root_dir + src_path
+            self.dst_folder = dst_path if re.search(f"[A-Z]:{self.PATH_SEP}", dst_path) else self.root_dir + dst_path
+            if not self.src_folder.endswith(self.PATH_SEP):
+                self.src_folder += self.PATH_SEP
+            if not self.dst_folder.endswith(self.PATH_SEP):
+                self.dst_folder += self.PATH_SEP
         else:
-            self.src_folder = src_path if src_path.startswith(self.path_sep) else self.root_dir + src_path
-            self.dst_folder = dst_path if dst_path.startswith(self.path_sep) else self.root_dir + dst_path
-            if not self.src_folder.endswith(self.path_sep):
-                self.src_folder += self.path_sep
-            if not self.dst_folder.endswith(self.path_sep):
-                self.dst_folder += self.path_sep
+            self.src_folder = src_path if src_path.startswith(self.PATH_SEP) else self.root_dir + src_path
+            self.dst_folder = dst_path if dst_path.startswith(self.PATH_SEP) else self.root_dir + dst_path
+            if not self.src_folder.endswith(self.PATH_SEP):
+                self.src_folder += self.PATH_SEP
+            if not self.dst_folder.endswith(self.PATH_SEP):
+                self.dst_folder += self.PATH_SEP
 
         self.check_paths()
 
@@ -62,4 +62,4 @@ class Engine:
 
     def sort_files(self):
         print(f"Current working directory is: {self.root_dir}")
-        sorter.divide_by_year(self.src_folder, self.dst_folder, self.path_sep, self.verbose, self.debug)
+        sorter.divide_by_year(self.src_folder, self.dst_folder, self.PATH_SEP, self.verbose, self.debug)
