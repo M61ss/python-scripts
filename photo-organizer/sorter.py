@@ -5,7 +5,7 @@ import shutil
 import analyzer
 
 def divide_by_year(SRC_FOLDER : str, DST_FOLDER : str, PATH_SEP : str, verbose : bool = False, debug : bool = False):
-    filenames, file_paths = analyzer.find_files(SRC_FOLDER, PATH_SEP)
+    filenames, file_paths = analyzer.find_files(SRC_FOLDER, PATH_SEP, verbose, debug)
     total_file_number = len(file_paths)
     file_dates = []
 
