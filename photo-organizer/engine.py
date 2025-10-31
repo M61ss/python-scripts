@@ -4,7 +4,7 @@ import sys
 import os
 import platform
 import re
-from sorter import Sorter
+import sorter
 
 class Engine:
     def __init__(self, verbose = False, debug = False):
@@ -35,24 +35,26 @@ class Engine:
         
         if not os.path.exists(self.dst_folder):
             os.makedirs(self.dst_folder)
-        elif os.listdir(self.dst_folder):
+        elif len(os.listdir(self.dst_folder)) > 0:
             raise FileExistsError(f"Folder '{self.dst_folder}' already exists in current location.")
 
-    def compose_paths(self):
+    def compose_paths(self, src_path : str, dst_path : str):
         if platform.system() == "Windows":
-            self.src_folder = sys.argv[1] if re.search(f"[A-Z]:{self.path_sep}", sys.argv[1]) else self.root_dir + sys.argv[1]
-            self.dst_folder = sys.argv[2] if re.search(f"[A-Z]:{self.path_sep}", sys.argv[2]) else self.root_dir + sys.argv[2]
+            self.src_folder = src_path if re.search(f"[A-Z]:{self.path_sep}", src_path) else self.root_dir + src_path
+            self.dst_folder = dst_path if re.search(f"[A-Z]:{self.path_sep}", dst_path) else self.root_dir + dst_path
             if not self.src_folder.endswith(self.path_sep):
                 self.src_folder += self.path_sep
             if not self.dst_folder.endswith(self.path_sep):
                 self.dst_folder += self.path_sep
         else:
-            self.src_folder = sys.argv[1] if sys.argv[1].startswith(self.path_sep) else self.root_dir + sys.argv[1]
-            self.dst_folder = sys.argv[2] if sys.argv[2].startswith(self.path_sep) else self.root_dir + sys.argv[2]
+            self.src_folder = src_path if src_path.startswith(self.path_sep) else self.root_dir + src_path
+            self.dst_folder = dst_path if dst_path.startswith(self.path_sep) else self.root_dir + dst_path
             if not self.src_folder.endswith(self.path_sep):
                 self.src_folder += self.path_sep
             if not self.dst_folder.endswith(self.path_sep):
                 self.dst_folder += self.path_sep
+
+        self.check_paths()
 
         if self.verbose:
             print(f"Source folder path is: {self.src_folder}")
@@ -60,5 +62,4 @@ class Engine:
 
     def sort_files(self):
         print(f"Current working directory is: {self.root_dir}")
-        
-        Sorter(self.root_dir, self.src_folder, self.dst_folder, verbose=self.verbose, debug=self.debug).divide_by_year()
+        sorter.divide_by_year(self.src_folder, self.dst_folder, self.path_sep, self.verbose, self.debug)
