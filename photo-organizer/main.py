@@ -28,3 +28,6 @@ if len(sys.argv) == 3:
         app.sort_files()
     except BaseException as e:
         print(e)
+else:
+    app.help()
+    raise RuntimeError("Too few arguments.")
