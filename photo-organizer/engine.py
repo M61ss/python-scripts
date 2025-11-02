@@ -27,7 +27,6 @@ class Engine:
         print(f"Usage is: {sys.argv[0]} [source-folder] [destination-folder]")
         print(f"    - source-folder: the folder from which the script takes files.")
         print(f"    - destination-folder: the folder where you will find ordered files.")
-        print("")
 
     def check_paths(self):
         if not os.path.exists(self.src_folder):

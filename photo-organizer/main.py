@@ -19,7 +19,7 @@ app = Engine(verbose=verbose, debug=debug)
 # HELP
 if "--help" in sys.argv:
     app.help()
-    sys.argv.remove("--help")
+    exit(0)
 
 # SORTING
 if len(sys.argv) == 3:
