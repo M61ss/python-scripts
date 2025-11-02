@@ -36,10 +36,10 @@ image = data.camera()
 # three classes.
 thresholds = threshold_multiotsu(image)
 
-start_time = time.time_ns() / 1000
+start_time = time.time_ns() / 1000000
 # Using the threshold values, we generate the three regions.
 regions = np.digitize(image, bins=thresholds)
-end_time = time.time_ns() / 1000 - start_time
+end_time = time.time_ns() / 1000000 - start_time
 print(f"Elapsed time: {end_time}ms ({end_time / 1000}s)")
 
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(10, 3.5))
