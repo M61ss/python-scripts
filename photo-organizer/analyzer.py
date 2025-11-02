@@ -1,7 +1,6 @@
 #!/bin/python3
 
 from datetime import date
-import platform
 import os
 
 YEARS : list[str] = [str(year) for year in range(2000, date.today().year + 1)]
