@@ -5,6 +5,7 @@ import os
 import platform
 import re
 import sorter
+import time
 
 class Engine:
     def __init__(self, verbose = False, debug = False):
@@ -39,8 +40,8 @@ class Engine:
 
     def compose_paths(self, src_path : str, dst_path : str):
         if platform.system() == "Windows":
-            self.src_folder = src_path if re.search(f"[A-Z]:{self.PATH_SEP}", src_path) else self.root_dir + src_path
-            self.dst_folder = dst_path if re.search(f"[A-Z]:{self.PATH_SEP}", dst_path) else self.root_dir + dst_path
+            self.src_folder = src_path if re.search(f"[A-Z]:\\{self.PATH_SEP}", src_path) else self.root_dir + src_path
+            self.dst_folder = dst_path if re.search(f"[A-Z]:\\{self.PATH_SEP}", dst_path) else self.root_dir + dst_path
             if not self.src_folder.endswith(self.PATH_SEP):
                 self.src_folder += self.PATH_SEP
             if not self.dst_folder.endswith(self.PATH_SEP):
@@ -61,4 +62,7 @@ class Engine:
 
     def sort_files(self):
         print(f"Current working directory is: {self.root_dir}")
+        start_time = time.time_ns() / 1000000000
         sorter.divide_by_year(self.src_folder, self.dst_folder, self.PATH_SEP, self.verbose, self.debug)
+        elapsed_time = time.time_ns() / 1000000000 - start_time
+        print(f"Sorted in {elapsed_time:.3}s ({elapsed_time / 60:.3}min)")
