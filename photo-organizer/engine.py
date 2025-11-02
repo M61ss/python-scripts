@@ -36,7 +36,7 @@ class Engine:
         if not os.path.exists(self.dst_folder):
             os.makedirs(self.dst_folder)
         elif len(os.listdir(self.dst_folder)) > 0:
-            raise FileExistsError(f"Folder '{self.dst_folder}' already exists in current location.")
+            raise FileExistsError(f"Folder '{self.dst_folder}' already exists.")
 
     def compose_paths(self, src_path : str, dst_path : str):
         if platform.system() == "Windows":
