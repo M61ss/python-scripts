@@ -4,16 +4,14 @@ from datetime import date
 import platform
 import os
 
-YEARS : list[int] = [str(year) for year in range(2000, date.today().year + 1)]
+YEARS : list[str] = [str(year) for year in range(2000, date.today().year + 1)]
 
 def get_creation_date(filename : str):
+    prefix : str = "IMG-" if filename.startswith("IMG-") else ""
+    prefix = "VID-" if filename.startswith("VID-") else prefix
     for year in YEARS:
-        if year in filename:
+        if filename.startswith(f"{prefix}{year}"):
             return year
-    if platform.system() == "Windows":
-        creation : str = os.path.getctime()
-        print(f"Creation date for {filename}: {creation}")
-        return creation
     return f"UNK"
 
 def get_creation_dates(filenames : list[str]):
