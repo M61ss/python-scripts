@@ -17,7 +17,7 @@ class Engine:
 
         self.PATH_SEP : str = "\\" if platform.system() == "Windows" else "/"
         if self.debug:
-            print(f"Detected system is: {platform.system()}. Path separator set on {self.PATH_SEP}")
+            print(f"Detected system is: {platform.system()} => Path separator set on {self.PATH_SEP}")
         
         self.root_dir : str = f"{os.getcwd()}{self.PATH_SEP}"
         self.src_folder : str = None
