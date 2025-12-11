@@ -18,7 +18,7 @@ training_data = MNIST('data',
                     )
 dl = DataLoader(dataset=training_data,
                 batch_size=BATCH_SIZE,
-                num_workers=2,
+                num_workers=0,
                 drop_last=True,
                 shuffle=True
             )
