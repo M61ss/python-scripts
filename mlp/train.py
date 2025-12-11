@@ -1,7 +1,7 @@
 #!/bin/python3
 
 from torchvision.datasets import MNIST
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import DataLoader
 from torchvision import transforms
 
 BATCH_SIZE = 128
