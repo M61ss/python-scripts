@@ -19,16 +19,15 @@ app = Engine(verbose=verbose, debug=debug)
 # HELP
 if "--help" in sys.argv:
     app.help()
-    sys.argv.remove("--help")
+    exit(0)
 
 # SORTING
 if len(sys.argv) == 3:
-    app.src_folder = sys.argv[1]
-    app.dst_folder = sys.argv[2]
-
     try:
-        app.compose_paths()
-        app.check_paths()
+        app.compose_paths(sys.argv[1], sys.argv[2])
         app.sort_files()
     except BaseException as e:
         print(e)
+else:
+    app.help()
+    raise RuntimeError("Too few arguments.")
