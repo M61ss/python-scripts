@@ -25,7 +25,7 @@ transform = transforms.Compose([
     transforms.Normalize((0.1307,), (0.3081,))
 ])
 
-training_data = MNIST('data', 
+training_data = MNIST('train_data', 
                       train=True, 
                       transform=transform, 
                       download=True
