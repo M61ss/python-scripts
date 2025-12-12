@@ -6,6 +6,9 @@ N_CLASSES = 10
 HIDDEN_DIM = 128
 
 class MLP(nn.Module):
+    """
+    Works with 28 * 28 images
+    """
     def __init__(self):
         super(MLP, self).__init__()
 
