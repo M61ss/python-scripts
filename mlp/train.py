@@ -41,7 +41,7 @@ def compute_accuracy():
             x, y = x.to(DEVICE), y.to(DEVICE)
             pred = mlp(x)
             pred = torch.argmax(pred, dim=1)
-            correct += torch.sum((pred == y))
+            correct += torch.sum(pred == y)
             total += pred.shape[0]
 
     return correct / total
