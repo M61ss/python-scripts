@@ -1,7 +1,6 @@
 #!/bin/python3
 
 import torch
-import numpy as np
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
 from torchvision import transforms
