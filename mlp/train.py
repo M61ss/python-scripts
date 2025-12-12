@@ -8,14 +8,11 @@ from torch.optim import Adam
 from mlp import MLP
 
 BATCH_SIZE = 128
-
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+
 NUM_EPOCHS = 10
-FAN_IN = 28 * 28
-N_CLASSES = 10
-HIDDEN_DIM = 128
 LEARNING_RATE = 0.001
-mlp = MLP(FAN_IN, HIDDEN_DIM, N_CLASSES).to(DEVICE)
+mlp = MLP().to(DEVICE)
 opt = Adam(mlp.parameters(), lr=LEARNING_RATE)
 loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)
 
