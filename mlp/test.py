@@ -15,6 +15,7 @@ N_CLASSES = 10
 HIDDEN_DIM = 128
 LEARNING_RATE = 0.001
 mlp = MLP(FAN_IN, HIDDEN_DIM, N_CLASSES).to(DEVICE)
+mlp.load_state_dict(torch.load('weights.pth'))
 
 transform = transforms.Compose([
     transforms.ToTensor(),
