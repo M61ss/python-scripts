@@ -64,4 +64,4 @@ for i in range(NUM_EPOCHS):
 
         opt.step()
 
-torch.save(mlp.state_dict(), 'mlp_weights.pth')
+torch.save(mlp.state_dict(), 'weights.pth')
