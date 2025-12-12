@@ -1,6 +1,7 @@
 #!/bin/python3
 
 import torch
+import numpy as np
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
 from torchvision import transforms
@@ -12,10 +13,10 @@ BATCH_SIZE = 128
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 NUM_EPOCHS = 10
 FAN_IN = 28 * 28
-FAN_OUT = 10
+N_CLASSES = 10
 HIDDEN_DIM = 128
 LEARNING_RATE = 0.001
-mlp = MLP(FAN_IN, HIDDEN_DIM, FAN_OUT)
+mlp = MLP(FAN_IN, HIDDEN_DIM, N_CLASSES).to(DEVICE)
 opt = Adam(mlp.parameters(), lr=LEARNING_RATE)
 loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)
 
@@ -36,7 +37,23 @@ dl = DataLoader(dataset=training_data,
                 shuffle=True
             )
 
+def compute_accuracy():
+    correct = 0
+    total = 0
+
+    with torch.no_grad():
+        for x, y in dl:
+            x, y = x.to(DEVICE), y.to(DEVICE)
+            pred = mlp(x)
+            pred = torch.argmax(pred, dim=1)
+            correct += torch.sum((pred == y).float())
+            total += pred.shape[0]
+
+    return correct / total
+        
+
 for i in range(NUM_EPOCHS):
+    print(f"Epoch [{i}]: acc: {compute_accuracy():.3f}")
     for x, y in dl:
         x, y = x.to(DEVICE), y.to(DEVICE)
         opt.zero_grad()
@@ -46,3 +63,5 @@ for i in range(NUM_EPOCHS):
         loss.backward()
 
         opt.step()
+
+torch.save(mlp.state_dict(), 'mlp_weights.pth')
