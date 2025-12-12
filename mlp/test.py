@@ -1,3 +1,5 @@
+#!/bin/python3
+
 import torch
 from torch.utils.data import DataLoader
 from torchvision.transforms import transforms
@@ -38,3 +40,9 @@ total = 0
 
 for x, y in dl:
     x, y = x.to(DEVICE), y.to(DEVICE)
+    pred = mlp(x)
+    pred = torch.argmax(pred, dim=1)
+    correct += torch.sum(pred == y)
+    total += pred.shape[0]
+
+print(f"Test accuracy: {correct / total:.3f}")
