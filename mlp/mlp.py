@@ -1,20 +1,17 @@
 import torch
 import torch.nn as nn
 
-FAN_IN = 28 * 28
-N_CLASSES = 10
-HIDDEN_DIM = 128
 
 class MLP(nn.Module):
     """
     Works with 28 * 28 images
     """
-    def __init__(self, *args, **kwargs):
+    def __init__(self, fan_in, hidden_dim, n_classes, *args, **kwargs):
         super(MLP, self).__init__(*args, **kwargs)
 
-        self.in_dim = FAN_IN
-        self.h_dim = HIDDEN_DIM
-        self.out_dim = N_CLASSES
+        self.in_dim = fan_in
+        self.h_dim = hidden_dim
+        self.out_dim = n_classes
 
         self.net = nn.Sequential(
             nn.Linear(self.in_dim, self.h_dim),
