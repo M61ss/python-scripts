@@ -9,8 +9,8 @@ class MLP(nn.Module):
     """
     Works with 28 * 28 images
     """
-    def __init__(self):
-        super(MLP, self).__init__()
+    def __init__(self, *args, **kwargs):
+        super(MLP, self).__init__(*args, **kwargs)
 
         self.in_dim = FAN_IN
         self.h_dim = HIDDEN_DIM
