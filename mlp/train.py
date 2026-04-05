@@ -41,11 +41,11 @@ dl = DataLoader(dataset=training_data,
             )
 
 
-INPUT_DIM = 28 * 28
-HIDDEN_DIM = 256
-OUTPUT_DIM = 10
-NUM_EPOCHS = 3
-LEARNING_RATE = 0.001
+INPUT_DIM       = 28 * 28
+HIDDEN_DIM      = 256
+OUTPUT_DIM      = 10
+NUM_EPOCHS      = 3
+LEARNING_RATE   = 0.001
 
 mlp = MLP(
     fan_in=INPUT_DIM,
