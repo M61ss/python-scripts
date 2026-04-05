@@ -12,7 +12,10 @@ NUM_EPOCHS = 10
 LEARNING_RATE = 0.001
 
 mlp = MLP().to(DEVICE)
-opt = Adam(mlp.parameters(), lr=LEARNING_RATE)
+opt = Adam(
+    mlp.parameters(),
+    lr=LEARNING_RATE
+)
 loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)
 
 transform = transforms.Compose([
