@@ -1,5 +1,3 @@
-#!/bin/python3
-
 import torch
 from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
