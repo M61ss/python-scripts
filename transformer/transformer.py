@@ -44,17 +44,30 @@ class MultiHeadAttetion(nn.Module):
 
 
 class TransformerEncoderBlock(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, fc_hidden_dim: int = 512, *args, **kwargs):
+    def __init__(self, num_heads: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.num_heads = num_heads
         self.d_model = d_model
         self.fc_hidden_dim = fc_hidden_dim
+        self.d_qk = d_qk
+        self.d_v = d_v
 
-        self.mha = MultiHeadAttetion(num_heads, d_model)
+        self.mha = MultiHeadAttetion(
+            num_heads=num_heads, 
+            d_model=d_model, 
+            d_qk=d_qk, 
+            d_v=d_v
+        )
         self.ln_1 = nn.LayerNorm()
         self.fc = nn.Sequential(
-            nn.Linear(in_features=d_model, out_features=512),
-            nn.Linear(in_features=512, out_features=d_model)
+            nn.Linear(
+                in_features=d_model, 
+                out_features=fc_hidden_dim
+            ),
+            nn.Linear(
+                in_features=fc_hidden_dim, 
+                out_features=d_model
+            )
         )
         self.ln_2 = nn.LayerNorm()
 
