@@ -25,6 +25,6 @@ class MLP(nn.Module):
             nn.Linear(self.h_dim, self.out_dim),
         )
 
-    def forward(self, x : torch.Tensor):
-        x = torch.flatten(x, 1)
-        return self.net(x)
+    def forward(self, X: torch.Tensor):
+        X = torch.flatten(X, 1)
+        return self.net(X)
