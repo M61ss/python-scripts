@@ -86,19 +86,3 @@ class TransformerEncoderBlock(nn.Module):
         X = self.ln_1(out + X)
         out = self.fc(X)
         return self.ln_2(out + X)
-
-
-class Transformer(nn.Module):
-    def __init__(self, num_blocks: int, num_heads: int, d_model: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.num_blocks = num_blocks
-        self.num_heads  = num_heads
-        self.d_model    = d_model
-        
-        self.net = nn.ModuleList(
-            [TransformerEncoderBlock(num_heads, d_model) for _ in range(num_blocks)]
-        )
-
-
-    def forward(self, X: torch.Tensor):
-        pass
