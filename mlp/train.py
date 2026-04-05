@@ -50,7 +50,8 @@ def compute_accuracy():
         
 
 for i in range(NUM_EPOCHS):
-    print(f"Epoch [{i}]: acc: {compute_accuracy():.3f}")
+    print(f'Epoch [{i}]')
+    print(f'    Accuracy: {compute_accuracy():.3f}')
     for x, y in dl:
         x, y = x.to(DEVICE), y.to(DEVICE)
         opt.zero_grad()
