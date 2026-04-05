@@ -3,9 +3,6 @@ import torch.nn as nn
 
 
 class MLP(nn.Module):
-    """
-    Works with 28 * 28 images
-    """
     def __init__(self, in_dim: int, h_dim: int, out_dim: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
