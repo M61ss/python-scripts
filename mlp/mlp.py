@@ -26,5 +26,4 @@ class MLP(nn.Module):
         )
 
     def forward(self, X: torch.Tensor):
-        X = torch.flatten(X, 1)
         return self.net(X)

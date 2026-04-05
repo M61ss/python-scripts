@@ -39,6 +39,7 @@ total = 0
 
 for x, y in dl:
     x, y = x.to(DEVICE), y.to(DEVICE)
+    x = torch.flatten(x, 1)
     pred = mlp(x)
     pred = torch.argmax(pred, dim=1)
     correct += torch.sum(pred == y)

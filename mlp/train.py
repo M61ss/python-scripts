@@ -14,6 +14,7 @@ def compute_accuracy():
     with torch.no_grad():
         for x, y in dl:
             x, y = x.to(DEVICE), y.to(DEVICE)
+            x = torch.flatten(x, 1)
             pred = mlp(x)
             pred = torch.argmax(pred, dim=1)
             correct += torch.sum(pred == y)
@@ -66,6 +67,7 @@ for i in range(NUM_EPOCHS):
         x, y = x.to(DEVICE), y.to(DEVICE)
         opt.zero_grad()
 
+        x = torch.flatten(x, 1)
         y_pred = mlp(x)
         loss = loss_function(y_pred, y)
         loss.backward()
