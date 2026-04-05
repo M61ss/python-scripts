@@ -5,11 +5,12 @@ from torchvision import transforms
 from torch.optim import Adam
 from .mlp import MLP
 
-BATCH_SIZE = 128
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+BATCH_SIZE = 128
 NUM_EPOCHS = 10
 LEARNING_RATE = 0.001
+
 mlp = MLP().to(DEVICE)
 opt = Adam(mlp.parameters(), lr=LEARNING_RATE)
 loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)
