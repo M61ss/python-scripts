@@ -11,11 +11,21 @@ BATCH_SIZE = 128
 NUM_EPOCHS = 10
 LEARNING_RATE = 0.001
 
-mlp = MLP().to(DEVICE)
+INPUT_DIM = 28 * 28
+HIDDEN_DIM = 512
+OUTPUT_DIM = 10
+
+mlp = MLP(
+    fan_in=INPUT_DIM,
+    hidden_dim=HIDDEN_DIM,
+    n_classes=OUTPUT_DIM
+).to(DEVICE)
+
 opt = Adam(
     mlp.parameters(),
     lr=LEARNING_RATE
 )
+
 loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)
 
 transform = transforms.Compose([
