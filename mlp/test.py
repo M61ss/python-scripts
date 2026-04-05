@@ -5,16 +5,8 @@ from torchvision.datasets import MNIST
 from .mlp import MLP
 
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-FAN_IN = 28 * 28
-HIDDEN_DIM = 128
-N_CLASSES = 10
 
 BATCH_SIZE = 128
-NUM_EPOCHS = 10
-LEARNING_RATE = 0.001
-
-mlp = MLP(FAN_IN, HIDDEN_DIM, N_CLASSES).to(DEVICE)
-mlp.load_state_dict(torch.load('weights.pth'))
 
 transform = transforms.Compose([
     transforms.ToTensor(),
@@ -34,6 +26,13 @@ dl = DataLoader(
     shuffle=True,
     drop_last=True
 )
+
+INPUT_DIM   = 28 * 28
+HIDDEN_DIM  = 128
+OUTPUT_DIM  = 10
+
+mlp = MLP(INPUT_DIM, HIDDEN_DIM, OUTPUT_DIM).to(DEVICE)
+mlp.load_state_dict(torch.load('weights.pth'))
 
 correct = 0
 total = 0
