@@ -48,9 +48,9 @@ NUM_EPOCHS      = 3
 LEARNING_RATE   = 0.001
 
 mlp = MLP(
-    fan_in=INPUT_DIM,
-    hidden_dim=HIDDEN_DIM,
-    n_classes=OUTPUT_DIM
+    in_dim=INPUT_DIM,
+    h_dim=HIDDEN_DIM,
+    out_dim=OUTPUT_DIM
 ).to(DEVICE)
 
 opt = Adam(
