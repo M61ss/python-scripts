@@ -8,7 +8,7 @@ from mlp import MLP
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 BATCH_SIZE = 128
-NUM_EPOCHS = 10
+NUM_EPOCHS = 3
 LEARNING_RATE = 0.001
 
 INPUT_DIM = 28 * 28
