@@ -61,8 +61,7 @@ opt = Adam(
 loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)   
 
 for i in range(NUM_EPOCHS):
-    print(f'Epoch [{i}]')
-    print(f'    Accuracy: {compute_accuracy():.3f}')
+    print(f'Epoch [{i}]:')
     for x, y in dl:
         x, y = x.to(DEVICE), y.to(DEVICE)
         opt.zero_grad()
@@ -72,5 +71,7 @@ for i in range(NUM_EPOCHS):
         loss.backward()
 
         opt.step()
+    print(f' - Accuracy: {compute_accuracy():.3f}')
+    print('-' * 20)
 
 torch.save(mlp.state_dict(), 'weights.pth')
