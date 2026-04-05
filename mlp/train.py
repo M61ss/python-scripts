@@ -7,26 +7,22 @@ from mlp import MLP
 
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+def compute_accuracy():
+    correct = 0
+    total = 0
+
+    with torch.no_grad():
+        for x, y in dl:
+            x, y = x.to(DEVICE), y.to(DEVICE)
+            pred = mlp(x)
+            pred = torch.argmax(pred, dim=1)
+            correct += torch.sum(pred == y)
+            total += pred.shape[0]
+
+    return correct / total
+
+
 BATCH_SIZE = 128
-NUM_EPOCHS = 3
-LEARNING_RATE = 0.001
-
-INPUT_DIM = 28 * 28
-HIDDEN_DIM = 256
-OUTPUT_DIM = 10
-
-mlp = MLP(
-    fan_in=INPUT_DIM,
-    hidden_dim=HIDDEN_DIM,
-    n_classes=OUTPUT_DIM
-).to(DEVICE)
-
-opt = Adam(
-    mlp.parameters(),
-    lr=LEARNING_RATE
-)
-
-loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)
 
 transform = transforms.Compose([
     transforms.ToTensor(),
@@ -44,20 +40,25 @@ dl = DataLoader(dataset=training_data,
                 shuffle=True
             )
 
-def compute_accuracy():
-    correct = 0
-    total = 0
 
-    with torch.no_grad():
-        for x, y in dl:
-            x, y = x.to(DEVICE), y.to(DEVICE)
-            pred = mlp(x)
-            pred = torch.argmax(pred, dim=1)
-            correct += torch.sum(pred == y)
-            total += pred.shape[0]
+INPUT_DIM = 28 * 28
+HIDDEN_DIM = 256
+OUTPUT_DIM = 10
+NUM_EPOCHS = 3
+LEARNING_RATE = 0.001
 
-    return correct / total
-        
+mlp = MLP(
+    fan_in=INPUT_DIM,
+    hidden_dim=HIDDEN_DIM,
+    n_classes=OUTPUT_DIM
+).to(DEVICE)
+
+opt = Adam(
+    mlp.parameters(),
+    lr=LEARNING_RATE
+)
+
+loss_function = torch.nn.CrossEntropyLoss().to(DEVICE)   
 
 for i in range(NUM_EPOCHS):
     print(f'Epoch [{i}]')
