@@ -22,7 +22,6 @@ def compute_accuracy():
 
     return correct / total
 
-
 BATCH_SIZE = 128
 
 transform = transforms.Compose([
@@ -40,7 +39,6 @@ dl = DataLoader(dataset=training_data,
                 drop_last=True,
                 shuffle=True
             )
-
 
 INPUT_DIM       = 28 * 28
 HIDDEN_DIM      = 256
