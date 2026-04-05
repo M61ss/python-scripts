@@ -23,13 +23,19 @@ class SelfAttention(nn.Module):
 
 
 class MultiHeadAttetion(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, *args, **kwargs):
+    def __init__(self, num_heads: int, d_model: int, d_qk: int, d_v: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.num_heads = num_heads
         self.d_model = d_model
+        self.d_qk = d_qk
+        self.d_v = d_v
 
         self.heads = nn.ModuleList(
-            [SelfAttention(d_model=d_model) for _ in range(num_heads)]
+            [SelfAttention(
+                d_model=d_model,
+                d_qk=d_qk,
+                d_v=d_v
+            ) for _ in range(num_heads)]
         )
 
 
