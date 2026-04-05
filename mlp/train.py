@@ -3,7 +3,7 @@ from torchvision.datasets import MNIST
 from torch.utils.data import DataLoader
 from torchvision import transforms
 from torch.optim import Adam
-from .mlp import MLP
+from mlp import MLP
 
 DEVICE = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
