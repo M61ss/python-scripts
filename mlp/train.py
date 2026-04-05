@@ -74,4 +74,5 @@ for i in range(NUM_EPOCHS):
     print(f' - Accuracy: {compute_accuracy():.3f}')
     print('-' * 20)
 
+print('Saving model weights to "weights.pth"...')
 torch.save(mlp.state_dict(), 'weights.pth')
