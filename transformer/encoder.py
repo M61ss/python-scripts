@@ -39,7 +39,7 @@ class MultiHeadAttetion(nn.Module):
         self.d_qk       = d_qk
         self.d_v        = d_v
 
-        self.heads = nn.ModuleList(
+        self.heads = nn.Sequential(
             [SelfAttention(
                 d_model=d_model,
                 d_qk=d_qk,
