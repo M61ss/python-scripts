@@ -11,7 +11,7 @@ FC_HIDDEN_DIM = 512
 
 te = TransformerEncoder(
     n_blocks=N_BLOCKS,
-    num_heads=N_HEADS,
+    n_heads=N_HEADS,
     d_model=D_MODEL,
     d_qk=D_QK,
     d_v=D_V,

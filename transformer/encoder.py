@@ -101,10 +101,10 @@ class TransformerEncoderBlock(nn.Module):
 
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_blocks: int, num_heads: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
+    def __init__(self, n_blocks: int, n_heads: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.n_blocks = n_blocks
-        self.num_heads = num_heads
+        self.n_heads = n_heads
         self.d_model = d_model
         self.fc_hidden_dim = fc_hidden_dim
         self.d_qk = d_qk
@@ -113,7 +113,7 @@ class TransformerEncoder(nn.Module):
         self.cls = nn.Parameter(torch.zeros(1, d_model))
         self.net = nn.Sequential(
             [TransformerEncoderBlock(
-                num_heads=num_heads,
+                num_heads=n_heads,
                 d_model=d_model,
                 fc_hidden_dim=fc_hidden_dim,
                 d_qk=d_qk,
