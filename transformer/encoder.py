@@ -5,23 +5,22 @@ import torch.nn as nn
 class SelfAttention(nn.Module):
     def __init__(self, d_model: int, d_qk: int, d_v: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.d_model    = d_model
-        self.d_qk       = d_qk
-        self.d_v        = d_v
+        self.d_model = d_model
+        self.d_qk = d_qk
+        self.d_v = d_v
 
         self.qW = nn.Linear(
-            in_features=d_model, 
+            in_features=d_model,
             out_features=d_qk
         )
         self.kW = nn.Linear(
-            in_features=d_model, 
+            in_features=d_model,
             out_features=d_qk
         )
         self.vW = nn.Linear(
-            in_features=d_model, 
+            in_features=d_model,
             out_features=d_v
         )
-
 
     def forward(self, X: torch.Tensor):
         Q: torch.Tensor = self.qW(X)
@@ -34,10 +33,10 @@ class SelfAttention(nn.Module):
 class MultiHeadAttetion(nn.Module):
     def __init__(self, num_heads: int, d_model: int, d_qk: int, d_v: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.num_heads  = num_heads
-        self.d_model    = d_model
-        self.d_qk       = d_qk
-        self.d_v        = d_v
+        self.num_heads = num_heads
+        self.d_model = d_model
+        self.d_qk = d_qk
+        self.d_v = d_v
 
         self.heads = nn.Sequential(
             [SelfAttention(
@@ -47,7 +46,6 @@ class MultiHeadAttetion(nn.Module):
             ) for _ in range(num_heads)]
         )
 
-
     def forward(self, X: torch.Tensor):
         return self.heads(X)
 
@@ -55,32 +53,31 @@ class MultiHeadAttetion(nn.Module):
 class TransformerEncoderBlock(nn.Module):
     def __init__(self, num_heads: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.num_heads      = num_heads
-        self.d_model        = d_model
-        self.fc_hidden_dim  = fc_hidden_dim
-        self.d_qk           = d_qk
-        self.d_v            = d_v
+        self.num_heads = num_heads
+        self.d_model = d_model
+        self.fc_hidden_dim = fc_hidden_dim
+        self.d_qk = d_qk
+        self.d_v = d_v
 
         self.mha = MultiHeadAttetion(
-            num_heads=num_heads, 
-            d_model=d_model, 
-            d_qk=d_qk, 
+            num_heads=num_heads,
+            d_model=d_model,
+            d_qk=d_qk,
             d_v=d_v
         )
         self.ln_1 = nn.LayerNorm()
         self.fc = nn.Sequential(
             nn.Linear(
-                in_features=d_model, 
+                in_features=d_model,
                 out_features=fc_hidden_dim
             ),
             nn.Linear(
-                in_features=fc_hidden_dim, 
+                in_features=fc_hidden_dim,
                 out_features=d_model
             )
         )
         self.ln_2 = nn.LayerNorm()
 
-    
     def forward(self, X: torch.Tensor):
         out = self.mha(X)
         X = self.ln_1(out + X)
