@@ -59,16 +59,17 @@ class MultiHeadAttetion(nn.Module):
         self.d_qk = d_qk
         self.d_v = d_v
 
-        self.heads = nn.Sequential(
-            [SelfAttention(
+        self.heads = [SelfAttention(
                 d_model=d_model,
                 d_qk=d_qk,
                 d_v=d_v
             ) for _ in range(num_heads)]
-        )
 
     def forward(self, X: torch.Tensor):
-        return self.heads(X)
+        for head in self.heads:
+            o = head(X)
+            out = torch.cat([out, o], dim=0)
+        return out
 
 
 class TransformerEncoderBlock(nn.Module):
@@ -101,7 +102,7 @@ class TransformerEncoderBlock(nn.Module):
 
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_blocks: int, n_heads: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
+    def __init__(self, n_blocks: int, n_heads: int, out_dim: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.n_blocks = n_blocks
         self.n_heads = n_heads
@@ -109,6 +110,7 @@ class TransformerEncoder(nn.Module):
         self.fc_hidden_dim = fc_hidden_dim
         self.d_qk = d_qk
         self.d_v = d_v
+        self.out_dim = out_dim
 
         self.cls = nn.Parameter(torch.zeros(1, d_model))
         self.net = nn.Sequential(
@@ -118,10 +120,13 @@ class TransformerEncoder(nn.Module):
                 fc_hidden_dim=fc_hidden_dim,
                 d_qk=d_qk,
                 d_v=d_v
-            ) for _ in range(n_blocks)]
+            ) for _ in range(n_blocks)],
+            nn.Linear(
+                in_features=d_model * n_blocks, 
+                out_features=out_dim
+            )
         )
 
     def forward(self, X: torch.Tensor):
         X = torch.cat([self.cls, X], dim=0)
-        out = self.net(X)
-        return out[0]
+        return self.net(X)
