@@ -3,22 +3,13 @@ import torch.nn as nn
 
 
 class SelfAttention(nn.Module):
-    def __init__(self, d_k: int, *args, **kwargs):
+    def __init__(self, d_head: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.d_model = d_k
+        self.d_model = d_head
 
-        self.qW = nn.Linear(
-            in_features=d_k,
-            out_features=d_k
-        )
-        self.kW = nn.Linear(
-            in_features=d_k,
-            out_features=d_k
-        )
-        self.vW = nn.Linear(
-            in_features=d_k,
-            out_features=d_k
-        )
+        self.qW = nn.Linear(d_head, d_head)
+        self.kW = nn.Linear(d_head, d_head)
+        self.vW = nn.Linear(d_head, d_head)
 
     def forward(self, X: torch.Tensor):
         Q: torch.Tensor = self.qW(X)
@@ -35,11 +26,9 @@ class MultiHeadSelfAttetion(nn.Module):
 
         self.num_heads = num_heads
         self.d_model = d_model
-        self.d_k = self.d_model // num_heads
+        self.d_head = self.d_model // num_heads
 
-        self.heads = [SelfAttention(
-                d_k=d_model,
-            ) for _ in range(num_heads)]
+        self.heads = [SelfAttention(self.d_head) for _ in range(num_heads)]
 
     def forward(self, X: torch.Tensor):
         for head in self.heads:
