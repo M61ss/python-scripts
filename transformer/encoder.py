@@ -6,21 +6,15 @@ from .ff import FF
 
 
 class TransformerEncoderBlock(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, d_ff: int = 512, *args, **kwargs):
+    def __init__(self, num_heads: int, d_model: int, d_ff: int, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.num_heads = num_heads
         self.d_model = d_model
         self.d_ff = d_ff
 
-        self.mha = MultiHeadSelfAttetion(
-            num_heads=num_heads,
-            d_model=d_model
-        )
+        self.mha = MultiHeadSelfAttetion(num_heads, d_model)
         self.ln_1 = nn.LayerNorm()
-        self.fc = FF(
-            d_model=d_model,
-            hidden_dim=d_ff
-        )
+        self.fc = FF(d_model, d_ff)
         self.ln_2 = nn.LayerNorm()
 
     def forward(self, X: torch.Tensor):
@@ -31,7 +25,7 @@ class TransformerEncoderBlock(nn.Module):
 
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_blocks: int, n_heads: int, out_dim: int, d_model: int, d_ff: int = 512, *args, **kwargs):
+    def __init__(self, n_blocks: int, n_heads: int, out_dim: int, d_model: int, d_ff: int = 1024, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.n_blocks = n_blocks
         self.n_heads = n_heads
@@ -46,10 +40,7 @@ class TransformerEncoder(nn.Module):
                 d_model=d_model,
                 d_ff=d_ff,
             ) for _ in range(n_blocks)],
-            nn.Linear(
-                in_features=d_model * n_blocks, 
-                out_features=out_dim
-            )
+            nn.Linear(d_model * n_blocks, out_dim)
         )
 
     def forward(self, X: torch.Tensor):
