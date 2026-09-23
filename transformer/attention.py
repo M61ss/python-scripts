@@ -15,7 +15,7 @@ class SelfAttention(nn.Module):
         Q: torch.Tensor = self.qW(X)
         K: torch.Tensor = self.kW(X)
         V: torch.Tensor = self.vW(X)
-        a: torch.Tensor = torch.softmax((Q * K.T) / self.d_qk)
+        a: torch.Tensor = torch.softmax((Q * K.T) / torch.sqrt(self.d_model))
         return a * V
 
 
