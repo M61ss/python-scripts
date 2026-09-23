@@ -1,96 +1,25 @@
 import torch
 import torch.nn as nn
 
-
-class FFN(nn.Module):
-    def __init__(self, io_dim: int, hidden_dim: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.hidden_dim = hidden_dim
-
-        self.ffn = nn.Sequential(
-            nn.Linear(
-                in_features=io_dim,
-                out_features=hidden_dim
-            ),
-            nn.LeakyReLU(),
-            nn.Linear(
-                in_features=hidden_dim,
-                out_features=io_dim
-            )
-        )
-
-    def forward(self, X: torch.Tensor):
-        return self.ffn(X)
-
-
-class SelfAttention(nn.Module):
-    def __init__(self, d_model: int, d_qk: int, d_v: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.d_model = d_model
-        self.d_qk = d_qk
-        self.d_v = d_v
-
-        self.qW = nn.Linear(
-            in_features=d_model,
-            out_features=d_qk
-        )
-        self.kW = nn.Linear(
-            in_features=d_model,
-            out_features=d_qk
-        )
-        self.vW = nn.Linear(
-            in_features=d_model,
-            out_features=d_v
-        )
-
-    def forward(self, X: torch.Tensor):
-        Q: torch.Tensor = self.qW(X)
-        K: torch.Tensor = self.kW(X)
-        V: torch.Tensor = self.vW(X)
-        a: torch.Tensor = torch.softmax((Q * K.T) / self.d_qk)
-        return a * V
-
-
-class MultiHeadAttetion(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, d_qk: int, d_v: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.num_heads = num_heads
-        self.d_model = d_model
-        self.d_qk = d_qk
-        self.d_v = d_v
-
-        self.heads = [SelfAttention(
-                d_model=d_model,
-                d_qk=d_qk,
-                d_v=d_v
-            ) for _ in range(num_heads)]
-
-    def forward(self, X: torch.Tensor):
-        for head in self.heads:
-            o = head(X)
-            out = torch.cat([out, o], dim=0)
-        return out
+from .attention import MultiHeadSelfAttetion
+from .ff import FF
 
 
 class TransformerEncoderBlock(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
+    def __init__(self, num_heads: int, d_model: int, d_ff: int = 512, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.num_heads = num_heads
         self.d_model = d_model
-        self.fc_hidden_dim = fc_hidden_dim
-        self.d_qk = d_qk
-        self.d_v = d_v
+        self.d_ff = d_ff
 
-        self.mha = MultiHeadAttetion(
+        self.mha = MultiHeadSelfAttetion(
             num_heads=num_heads,
-            d_model=d_model,
-            d_qk=d_qk,
-            d_v=d_v
+            d_model=d_model
         )
         self.ln_1 = nn.LayerNorm()
-        self.fc = FFN(
-            io_dim=d_model,
-            hidden_dim=fc_hidden_dim
+        self.fc = FF(
+            d_model=d_model,
+            hidden_dim=d_ff
         )
         self.ln_2 = nn.LayerNorm()
 
@@ -102,14 +31,12 @@ class TransformerEncoderBlock(nn.Module):
 
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_blocks: int, n_heads: int, out_dim: int, d_model: int, d_qk: int, d_v: int, fc_hidden_dim: int = 512, *args, **kwargs):
+    def __init__(self, n_blocks: int, n_heads: int, out_dim: int, d_model: int, d_ff: int = 512, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.n_blocks = n_blocks
         self.n_heads = n_heads
         self.d_model = d_model
-        self.fc_hidden_dim = fc_hidden_dim
-        self.d_qk = d_qk
-        self.d_v = d_v
+        self.d_ff = d_ff
         self.out_dim = out_dim
 
         self.cls = nn.Parameter(torch.zeros(1, d_model))
@@ -117,9 +44,7 @@ class TransformerEncoder(nn.Module):
             [TransformerEncoderBlock(
                 num_heads=n_heads,
                 d_model=d_model,
-                fc_hidden_dim=fc_hidden_dim,
-                d_qk=d_qk,
-                d_v=d_v
+                d_ff=d_ff,
             ) for _ in range(n_blocks)],
             nn.Linear(
                 in_features=d_model * n_blocks, 
