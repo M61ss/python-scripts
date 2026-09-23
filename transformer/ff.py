@@ -8,15 +8,9 @@ class FF(nn.Module):
         self.hidden_dim = hidden_dim
 
         self.ffn = nn.Sequential(
-            nn.Linear(
-                in_features=d_model,
-                out_features=hidden_dim
-            ),
+            nn.Linear(d_model, hidden_dim),
             nn.LeakyReLU(),
-            nn.Linear(
-                in_features=hidden_dim,
-                out_features=d_model
-            )
+            nn.Linear(hidden_dim, d_model)
         )
 
     def forward(self, X: torch.Tensor):
