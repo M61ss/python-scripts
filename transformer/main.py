@@ -27,3 +27,5 @@ print('Input shape:', input.shape)
 
 out: torch.Tensor = te(input)
 print(out.shape)
+
+assert input.shape == out.shape, "Input and output shapes mismatch."
