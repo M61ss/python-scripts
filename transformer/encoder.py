@@ -34,7 +34,9 @@ class TransformerEncoder(nn.Module):
 
         self.cls = nn.Parameter(torch.zeros(1, d_model))
         self.net = nn.Sequential(
-            [ TransformerEncoderBlock(n_heads, d_model, d_ff) for _ in range(n_blocks) ]
+            [ 
+                TransformerEncoderBlock(n_heads, d_model, d_ff) for _ in range(n_blocks) 
+            ]
         )
 
     def forward(self, X: torch.Tensor):
