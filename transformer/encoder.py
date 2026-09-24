@@ -13,9 +13,9 @@ class TransformerEncoderBlock(nn.Module):
         self.d_ff = d_ff
 
         self.mha = MultiHeadSelfAttetion(num_heads, d_model)
-        self.ln_1 = nn.LayerNorm()
+        self.ln_1 = nn.LayerNorm(d_model)
         self.fc = FF(d_model, d_ff)
-        self.ln_2 = nn.LayerNorm()
+        self.ln_2 = nn.LayerNorm(d_model)
 
     def forward(self, X: torch.Tensor):
         out = self.mha(X)
