@@ -28,7 +28,7 @@ class MultiHeadSelfAttetion(nn.Module):
         self.d_model = d_model
         self.d_head = self.d_model // num_heads
 
-        self.heads = [SelfAttention(self.d_head) for _ in range(num_heads)]
+        self.heads = [ SelfAttention(self.d_head) for _ in range(num_heads) ]
 
     def forward(self, X: torch.Tensor):
         for head in self.heads:
