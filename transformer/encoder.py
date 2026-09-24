@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 
-from .attention import MultiHeadSelfAttetion
-from .ff import FF
+from attention import MultiHeadSelfAttetion
+from ff import FF
 
 
 class TransformerEncoderBlock(nn.Module):
