@@ -3,8 +3,8 @@ import torch.nn as nn
 
 
 class SelfAttention(nn.Module):
-    def __init__(self, d_head: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, d_head: int):
+        super(SelfAttention, self).__init__()
         self.d_model = d_head
 
         self.qW = nn.Linear(d_head, d_head)
@@ -20,8 +20,8 @@ class SelfAttention(nn.Module):
 
 
 class MultiHeadSelfAttetion(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, num_heads: int, d_model: int):
+        super(MultiHeadSelfAttetion, self).__init__()
         assert d_model % num_heads == 0, "Embedding dimension must be multiple of head number."
 
         self.num_heads = num_heads

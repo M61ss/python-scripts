@@ -3,8 +3,8 @@ import torch.nn as nn
 
 
 class FF(nn.Module):
-    def __init__(self, d_model: int, hidden_dim: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    def __init__(self, d_model: int, hidden_dim: int):
+        super(FF, self).__init__()
         self.hidden_dim = hidden_dim
 
         self.ffn = nn.Sequential(
