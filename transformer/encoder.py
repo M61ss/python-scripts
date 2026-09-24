@@ -25,13 +25,12 @@ class TransformerEncoderBlock(nn.Module):
 
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_blocks: int, n_heads: int, out_dim: int, d_model: int, d_ff: int = 1024, *args, **kwargs):
+    def __init__(self, n_blocks: int, n_heads: int, d_model: int, d_ff: int = 1024, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.n_blocks = n_blocks
         self.n_heads = n_heads
         self.d_model = d_model
         self.d_ff = d_ff
-        self.out_dim = out_dim
 
         self.cls = nn.Parameter(torch.zeros(1, d_model))
         self.net = nn.Sequential(
