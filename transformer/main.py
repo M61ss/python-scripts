@@ -1,3 +1,5 @@
+import json
+
 import torch
 
 from encoder import TransformerEncoder
@@ -13,7 +15,7 @@ params = {
     'd_ff': 2048
 }
 
-print('Encoder parameters:', params)
+print('Encoder parameters:', json.dumps(params, indent=4))
 
 te = TransformerEncoder(
     n_blocks=params['num_layers'],
