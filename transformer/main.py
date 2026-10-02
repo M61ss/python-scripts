@@ -22,9 +22,9 @@ te = TransformerEncoder(
     n_heads=params['num_heads'],
     d_model=params['d_model'],
     d_ff=params['d_ff']
-).to(device)
+)
 
-input = torch.empty(16, params['d_model']).to(device)
+input = torch.empty(16, params['d_model'])
 print('Input shape:', input.shape)
 
 out: torch.Tensor = te(input)
