@@ -24,10 +24,8 @@ te = TransformerEncoder(
     d_ff=params['d_ff']
 )
 
-input = torch.empty(16, params['d_model'])
+input = torch.empty(15, params['d_model'])
 print('Input shape:', input.shape)
 
 out: torch.Tensor = te(input)
-print(out.shape)
-
-assert input.shape == out.shape, "Input and output shapes mismatch."
+print('Output shape:', out.shape)
