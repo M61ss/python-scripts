@@ -1,3 +1,5 @@
+from math import sqrt
+
 import torch
 import torch.nn as nn
 
@@ -10,12 +12,13 @@ class SelfAttention(nn.Module):
         self.qW = nn.Linear(d_head, d_head)
         self.kW = nn.Linear(d_head, d_head)
         self.vW = nn.Linear(d_head, d_head)
+        self.softmax = nn.Softmax(0)
 
     def forward(self, X: torch.Tensor):
         Q: torch.Tensor = self.qW(X)
         K: torch.Tensor = self.kW(X)
         V: torch.Tensor = self.vW(X)
-        a: torch.Tensor = torch.softmax((Q * K.T) / torch.sqrt(self.d_model))
+        a: torch.Tensor = self.softmax((Q * K.T) / sqrt(self.d_model))
         return a * V
 
 
@@ -31,7 +34,8 @@ class MultiHeadSelfAttetion(nn.Module):
         self.heads = [ SelfAttention(self.d_head) for _ in range(num_heads) ]
 
     def forward(self, X: torch.Tensor):
-        for head in self.heads:
-            o = head(X)
+        out = torch.empty(0, self.d_head)
+        for i, head in enumerate(self.heads):
+            o = head(X[:, self.d_head*i : self.d_head*i+self.d_head])
             out = torch.cat([out, o], dim=0)
         return out
