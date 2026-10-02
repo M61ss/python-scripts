@@ -34,8 +34,8 @@ class MultiHeadSelfAttetion(nn.Module):
         self.heads = [ SelfAttention(self.d_head) for _ in range(num_heads) ]
 
     def forward(self, X: torch.Tensor):
-        out = torch.empty(0, self.d_head)
+        out = torch.empty(self.d_head, 0)
         for i, head in enumerate(self.heads):
             o = head(X[:, self.d_head*i : self.d_head*i+self.d_head])
-            out = torch.cat([out, o], dim=0)
+            out = torch.cat([out, o], dim=1)
         return out
