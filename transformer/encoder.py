@@ -6,13 +6,14 @@ from ff import FF
 
 
 class TransformerEncoderBlock(nn.Module):
-    def __init__(self, num_heads: int, d_model: int, d_ff: int):
+    def __init__(self, num_heads: int, d_embedding: int, d_model: int, d_ff: int):
         super(TransformerEncoderBlock, self).__init__()
         self.num_heads = num_heads
+        self.d_embedding = d_embedding
         self.d_model = d_model
         self.d_ff = d_ff
 
-        self.mha = MultiHeadSelfAttetion(num_heads, d_model)
+        self.mha = MultiHeadSelfAttetion(num_heads, d_embedding, d_model)
         self.ln_1 = nn.LayerNorm(d_model)
         self.fc = FF(d_model, d_ff)
         self.ln_2 = nn.LayerNorm(d_model)
@@ -25,16 +26,17 @@ class TransformerEncoderBlock(nn.Module):
 
 
 class TransformerEncoder(nn.Module):
-    def __init__(self, n_blocks: int, n_heads: int, d_model: int, d_ff: int = 1024):
+    def __init__(self, n_blocks: int, n_heads: int, d_embedding: int, d_model: int, d_ff: int = 1024):
         super(TransformerEncoder, self).__init__()
         self.n_blocks = n_blocks
         self.n_heads = n_heads
         self.d_model = d_model
+        self.d_embedding = d_embedding
         self.d_ff = d_ff
 
-        self.cls = nn.Parameter(torch.zeros(1, d_model))
+        self.cls = nn.Parameter(torch.zeros(1, d_embedding))
         self.net = nn.Sequential(
-            *[ TransformerEncoderBlock(n_heads, d_model, d_ff) for _ in range(n_blocks) ]
+            *[ TransformerEncoderBlock(n_heads, d_embedding, d_model, d_ff) for _ in range(n_blocks) ]
         )
 
     def forward(self, X: torch.Tensor):
